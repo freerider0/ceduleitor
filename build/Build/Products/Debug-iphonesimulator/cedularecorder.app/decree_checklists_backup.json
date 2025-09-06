@@ -1,0 +1,1385 @@
+{
+  "decrees": [
+    {
+      "id": "d346_1983_nivell_b",
+      "name": "Decret 346/1983 i Decret 571/1983 (Nivell B)",
+      "description": "Requisits mínims establerts al decret per habitatges de nova edificació o creats per la reconversió d'antiga edificació (nivell B)",
+      "date_range": {
+        "start": "1984-08-11",
+        "end": "1996-04-17"
+      },
+      "room_types": {
+        "construccio": {
+          "name": "Construcció",
+          "checklist": [
+            "És sòlida",
+            "No traspua humitat",
+            "És estanca a les aigües pluvials",
+            "S'evita la inundació de l'habitatge",
+            "El sòl trepitjable de tot l'habitatge està pavimentat, no és polsegós i no implica perill",
+            "Pot suportar amb seguretat unes sobrecàrregues d'ús de 150 Kg/m2",
+            "Esta protegida contra les humitats del sòl"
+          ]
+        },
+        "espais_acces": {
+          "name": "Espais d'accés a l'habitatge",
+          "checklist": [
+            "Disposa de sistema elèctric d'il·luminació",
+            "El sòl trepitjable està pavimentat, no és polsegós i no implica perill",
+            "L'accés s'ha de fer a través d'un espai públic, d'un espai comú o d'un annex al mateix habitatge al qual es tingui accés de la mateixa manera",
+            "L'accés es exclusiu del mateix habitatge o comunitari",
+            "Desnivell entre el carrer i qualsevol habitatge es ≥ 13,75m, cal que disposi d'un ascensor o similar",
+            "Desnivell entre el carrer i qualsevol habitatge es ≥ 22,00m, cal que disposi de dos ascensors o similars",
+            "Permet la introducció i sortida de mobiliari a través d'una obertura amb una superfície ≥ 1,5 m2 i amplada ≥ 0,90m",
+            "Espai d'accés a l'habitatge amplada mínima 0,90m",
+            "Permet el pas d'un rectangle que, en posició horitzontal, mesuri 1,90 x 0,50 metres",
+            "L'accés esta ventilat de manera que, si es desenvolupen en més d'una planta, la planta baixa i l'última tenen una obertura de ventilació ≥ 1 m2",
+            "La superfície dels paraments dels accessos es resistent al cops i te una altura ≥1,5m",
+            "Si te escales: Cada tram, el màxim desnivell a salvar serà de 3,10 metres. Altura graons com a màxim 19 cm. Estesa graons com a mínim de 25 cm",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops"
+          ]
+        },
+        "habitatge_general": {
+          "name": "Habitatge en general",
+          "checklist": [
+            "Habitatge reduït (disposa, com a mínim, d'una sala, cambra higiènica i permet la instal·lació directa d'un equip de cuina), superfície útil ≥ 20 m2",
+            "Habitatge complet (disposa, com a mínim, d'una sala, cambra higiènica, una o més habitacions i permet la instal·lació directa d'un equip de cuina), superfície útil ≥ 32 m2",
+            "Altura lliure ≥ 2,25m (en sala i habitacions, altura lliure valor mitja ≥ 2,50m)",
+            "Perímetre de façana, P ≥ S/8. S= superfície útil de l'habitatge (m2) P=perímetre de façana (m)",
+            "Peces (número i disposició), n ≤ S/10. n= nombre màxim de peces de superfície útil≥5 m2. S= superfície útil de l'habitatge (m2). Si les peces d'un habitatge estan situades en un local discontinu, la comunicació entre elles s'ha de fer a través d'un espai d'ús exclusiu del mateix habitatge",
+            "Instal·lació d'aigua corrent esta en bon estat, connecta amb tot l'equip que la requereix i permet un consum de 15l/minut en la dutxa i 10l/m en la resta d'aparells",
+            "Disposa d'un dipòsit de reserva d'aigua de, almenys, 150 litres per habitació (200 litres per habitatge),si té subministrament per captació pròpia o aforament",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut",
+            "Disposa de lavabo i/o dutxa en una o diverses peces i vàter a la cambra higiènica",
+            "El sistema d'evacuació d'aigües residuals està connectat a la xarxa de clavegueres o es depura prèviament"
+          ]
+        },
+        "sala": {
+          "name": "Sala",
+          "checklist": [
+            "Té una superfície útil interior ≥ 12 m2 + 1m2 per habitació",
+            "Superfície útil ≥ 14 m2, si disposa d'equip de cuina a la mateixa sala",
+            "Permet inscriure un quadrat de 2,40 x 2,40 m",
+            "Sense estrangulaments en planta < 1,40m",
+            "Amplada accés sala ≥ 0,60 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Ventilació ≥ 0,80 m2 directa a l'exterior o a traves d'una galeria, entre 0,80 i 1,80 m d'altura",
+            "No es fa a través seu l'obertura a l'exterior o la ventilació obligatòria de cap altra peça",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Sense equip de cuina, disposa, com a mínim, de 2 endolls",
+            "Amb equip de cuina, disposa, com a mínim, de 4 endolls",
+            "Amb equip de cuina, disposa d'endolls de l'equip obligatori",
+            "Sense accés directe a cap cambra higiènica que contingui vàter o una dutxa",
+            "Compleix l'obligació de no contenir cap aparell higiènic"
+          ]
+        },
+        "habitacio": {
+          "name": "Habitació",
+          "checklist": [
+            "Superfície útil ≥ 5 m2",
+            "Amplada accés habitació ≥ 0,60 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,80x1,80 m en planta",
+            "Ventilació ≥ 0,20 m2 directa a l'exterior o a traves d'una galeria, a espai públic, pati d'illa o pati de parcel·la entre 0,80 i 1,80 m d'altura",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Sense vàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Pot independitzar-se"
+          ]
+        },
+        "cuina": {
+          "name": "Cuina",
+          "checklist": [
+            "Superfície útil ≥ 5 m2 (com a peça independent)",
+            "Té un equip de cuina format, com a mínim, per una pica i un aparell de cocció situats en una mateixa peça i sense aparells higiènics, excepte safareig",
+            "Té instal·lació d'aigua freda en bon estat, que serveix, com a mínim, a la pica de cuina amb un cabla de 10 l/minut",
+            "Amb ventilació a l'aire lliure directa o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "Sobre l'emplaçament de l'aparell de cocció hi hagi o s'admeti directament la instal·lació d'una campana que evacuï els fums a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica no implica perill i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Disposa de 2 endolls o 3 si l'equip de cocció és elèctric",
+            "No te accés directe a cap cambra higiènica que contingui un vàter o una dutxa"
+          ]
+        },
+        "cambra_higienica": {
+          "name": "Cambra higiènica i equip higiènic",
+          "checklist": [
+            "El vàter està en una cambra higiènica que disposa de ventilació directa a l'aire lliure o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "A més del WC en una cambra higiènica, disposa de lavabo, dutxa o banyera, en bon estat, encara que no estiguin en una cambra higiènica",
+            "Té instal·lació d'aigua freda i calenta en bon estat i serveix, com a mínim, un lavabo i una dutxa o banyera, encara que no estiguin en una cambra higiènica",
+            "La dutxa té impermeabilitzat el sòl i els paraments fins a una alçada de 1,50 m",
+            "La cambra està situada a l'accés de totes les habitacions",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut en dutxa o banyera",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica no implica perill i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Pot independitzar-se"
+          ]
+        },
+        "galeria": {
+          "name": "Galeria",
+          "checklist": [
+            "Té un finestral que dóna directament a l'aire lliure amb una superfície en alçada no inferior a la superfície en planta de la mateixa galeria"
+          ]
+        },
+        "equip_rentat": {
+          "name": "Equip de rentat de roba",
+          "optional": true,
+          "checklist": [
+            "L'espai disposa de ventilació directa a l'aire lliure o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "(No especificat en Decret 346 ni 571) Disposa de presa d'aigua freda",
+            "(No especificat en Decret 346 ni 571) Disposa de desguàs",
+            "(No especificat en Decret 346 ni 571) Disposa de presa de corrent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "d274_1995_annex1",
+      "name": "Decret 274/1995 Annex 1",
+      "description": "Requisits mínims establerts al decret per habitatges nous o resultants d'una gran rehabilitació",
+      "date_range": {
+        "start": "1996-04-18",
+        "end": "1996-09-23"
+      },
+      "room_types": {
+        "construccio": {
+          "name": "Construcció",
+          "checklist": [
+            "(No especificat en annex 1 Decret 274) És sòlida",
+            "(No especificat en annex 1 Decret 274) No traspua humitat",
+            "És estanca a les aigües pluvials",
+            "S'evita la inundació de l'habitatge",
+            "El sòl trepitjable de tot l'habitatge està pavimentat, es resistent al desgastament per l'ús normal, (a més no és polsegós i no implica perill, aquestes característiques no especificades en Decret 274)",
+            "Pot suportar amb seguretat unes sobrecàrregues d'ús de 200 Kg/m2",
+            "Esta protegida contra les humitats del terreny",
+            "Esta aïllada tèrmicament, acústicament i esta protegida en cas d'incendi"
+          ]
+        },
+        "espais_acces": {
+          "name": "Espais d'accés a l'habitatge",
+          "checklist": [
+            "Disposa de sistema elèctric d'il·luminació",
+            "El sòl trepitjable està pavimentat, es resistent al desgastament per l'ús normal, (a més no és polsegós i no implica perill, aquestes característiques no especificades en Decret 274)",
+            "L'accés s'ha de fer a través d'un espai públic, d'un espai comú o d'un annex al mateix habitatge al qual es tingui accés de la mateixa manera",
+            "L'accés es exclusiu del mateix habitatge o comunitari",
+            "Desnivell entre el carrer i qualsevol habitatge es ≥ 12,00m, o 3 plantes o més o quan en l'edifici hi hagi més de 12 habitatges, cal que disposi d'un ascensor",
+            "Desnivell entre el carrer i qualsevol habitatge es ≥ 21,00m, o 6 plantes o més o que en l'edifici hi hagi més de 24 habitatges, cal que disposi de dos ascensors",
+            "Si en l'edifici hi ha més de 36 habitatges, disposarà d'un altre ascensor per cada 12 habitatges o fracció",
+            "Portes de' l'espai d'accés a l'habitatge amplada mínima 0,80m",
+            "Permet el pas d'un rectangle que, en posició horitzontal, mesuri 1,90 x 0,50 metres i amplada ≥ 1,00m",
+            "L'accés esta ventilat de manera que, si es desenvolupen en més d'una planta, la planta baixa i l'última tinguin tenen una obertura de ventilació ≥ 1 m2",
+            "L'obertura de la planta superior permet la ventilació permanent",
+            "La superfície dels paraments dels accessos es resistent al cops i te una altura ≥1,5m",
+            "Si te escales: Cada tram, el màxim desnivell a salvar serà de 3,20 metres. Altura graons com a màxim 18,5 cm. Estesa graons com a mínim de 27 cm, mesurada a 40cm de la línia interior del passamà",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops, que no siguin escalables d'una alçada mínima de 1,00 m, i si la barana està composta per brèndoles, no podrà haver-hi entre elles una separació major de 0,12 m.(En decret especifica 0,95m aquesta separació)"
+          ]
+        },
+        "habitatge_general": {
+          "name": "Habitatge en general",
+          "checklist": [
+            "Habitatge reduït (disposa, com a mínim, d'una sala, cambra higiènica, permet la instal·lació directa d'un equip de cuina i d'un equip de rentat de roba), amb una superfície útil ≥ 20 m2",
+            "Habitatge complet (disposa, com a mínim, d'una sala, cambra higiènica, una o més habitacions, una d'elles amb superfície ≥ 10 m2 , i permet la instal·lació directa d'un equip de cuina i d'un equip de rentat de roba), amb una superfície útil ≥ 32 m2",
+            "Altura lliure valor mitjà ≥ 2,50m en sala i habitacions",
+            "Altura lliure valor mitja ≥ 2,10m. en Cuina, Cambra higiènica, distribuïdor i rebedor",
+            "Ample de pas dels espais interior de l'habitatge ≥ 0,90 m",
+            "Perímetre de façana, P ≥ S/8. S= superfície útil de l'habitatge (m2) P=perímetre de façana (m)",
+            "Peces (número i disposició), n ≤ S/10. n= nombre màxim de peces de superfície útil≥6 m2 S= superfície útil de l'habitatge (m2). Si les peces d'un habitatge estan situades en un local discontinu, la comunicació entre elles s'ha de fer a través d'un espai d'ús exclusiu del mateix habitatge",
+            "Instal·lació d'aigua freda i calenta corrent esta en bon estat, connecta amb tot l'equip que la requereix (lavabo, pica de la cuina, dutxa o banyera...)",
+            "Disposa d'un dipòsit de reserva d'aigua de 150 litres per habitació (200 litres per habitatge no especificat en Decret 274),si té subministrament per captació pròpia o aforament",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut",
+            "Disposa de lavabo en una o diverses peces i wàter amb dutxa o banyera en cambra higiènica",
+            "Disposa d'una clau de pas general, i d'una clau específica per cada cambra higiènica i cuina o dependència on hi hagi serveis",
+            "El sistema d'evacuació d'aigües residuals està connectat a la xarxa de clavegueres o es depura prèviament",
+            "Disposa d'una instal·lació de telefonia amb una presa com a mínim, i una instal·lació d'antena de televisió i ràdio, amb una presa com a mínim",
+            "Si existeix la possibilitat d'estendre la roba, serà a un espai exterior protegit de vistes del carrer o espai públic",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops, que no siguin escalables d'una alçada mínima de 1,00 m, i si la barana està composta per brèndoles, no podrà haver-hi entre elles una separació major de 0,12 m.(En decret especifica 0,95m aquesta separació)"
+          ]
+        },
+        "sala": {
+          "name": "Sala",
+          "checklist": [
+            "Té una superfície útil interior ≥ 12 m2 + 2 m2 per habitació",
+            "Superfície útil ≥ 16 m2, si disposa d'equip de cuina a la mateixa sala + 2 m2 per habitació",
+            "Permet inscriure un quadrat de 2,40 x 2,40 m",
+            "Sense estrangulaments en planta < 1,40m",
+            "Amplada accés sala ≥ 0,80 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Ventilació ≥ 0,80 m2 directa a l'exterior, pati d'illa o a traves d'una galeria, entre 0,80 i 1,80 m d'altura",
+            "No es fa a través seu l'obertura a l'exterior o la ventilació obligatòria de cap altra peça",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Sense equip de cuina, disposa, com a mínim, de 2 endolls",
+            "Amb equip de cuina, disposa, com a mínim, de 5 endolls",
+            "Sense accés directe a cap cambra higiènica que contingui vàter o una dutxa o banyera",
+            "Compleix l'obligació de no contenir cap aparell higiènic"
+          ]
+        },
+        "habitacio_doble": {
+          "name": "Habitació (Doble)",
+          "checklist": [
+            "Superfície útil ≥ 10 m2",
+            "Amplada accés habitació ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90x1,90 m en planta",
+            "Ventilació ≥ 0,40 m2 a espai exterior, pati de parcel·la, pati d'illa, directa o a través d'una galeria, entre 0,80 i 1,80 m d'altura",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Pot independitzar-se"
+          ]
+        },
+        "habitacio_individual": {
+          "name": "Habitació (Individual)",
+          "checklist": [
+            "Superfície útil ≥ 6 m2",
+            "Amplada accés habitació ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90x1,90 m en planta",
+            "Ventilació ≥ 0,40 m2 directa a l'exterior o a traves d'una galeria, a espai públic, pati d'illa o pati de parcel·la entre 0,80 i 1,80 m d'altura",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Pot independitzar-se"
+          ]
+        },
+        "cuina": {
+          "name": "Cuina",
+          "checklist": [
+            "Superfície útil ≥ 5 m2 (com a peça independent)",
+            "Té un equip de cuina format, com a mínim, per una pica i un aparell de cocció situats en una mateixa peça i sense aparells higiènics, excepte safareig",
+            "Amplada accés cuina ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,10 m",
+            "Té instal·lació d'aigua freda i calenta en bon estat, que serveix, com a mínim, a la pica de cuina",
+            "(No especificat en Decret) Amb ventilació a l'aire lliure directa o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "Sobre l'emplaçament de l'aparell de cocció hi hagi o s'admeti directament la instal·lació d'una campana que evacuï els fums a través d'un conducte horitzontal amb extracció mecànica. Pot ser estàtica, si el conducte és vertical",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Disposa de 3 endolls o 4 si l'equip de cocció és elèctric",
+            "No te accés directe a cap cambra higiènica que contingui un vàter o una dutxa"
+          ]
+        },
+        "cambra_higienica": {
+          "name": "Cambra higiènica i equip higiènic",
+          "checklist": [
+            "El wàter i la dutxa o banyera estan en una cambra higiènica que disposa de ventilació directa a l'aire lliure o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "A més del WC i dutxa o banyera en una cambra higiènica, disposa de rentamans, en bon estat, encara que no estigui en una cambra higiènica",
+            "Amplada accés ≥ 0,70 m",
+            "Altura lliure valor mitjà ≥ 2,10 m",
+            "Té instal·lació d'aigua freda i calenta en bon estat i serveix, com a mínim, un rentamans i dutxa o banyera, encara que no estiguin en una cambra higiènica",
+            "La dutxa o banyera té impermeabilitzat el sòl i els paraments fins a una alçada de 1,90 m",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut en dutxa o banyera",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Pot independitzar-se"
+          ]
+        },
+        "galeria": {
+          "name": "Galeria",
+          "checklist": [
+            "Té un finestral que dóna directament a l'aire lliure amb una superfície en alçada no inferior a la superfície en planta de la mateixa galeria"
+          ]
+        },
+        "equip_rentat": {
+          "name": "Equip de rentat de roba",
+          "checklist": [
+            "L'espai disposa de ventilació directa a l'aire lliure o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "(No especificat en Decret 274) Disposa de presa d'aigua freda",
+            "(No especificat en Decret 274) Disposa de desguàs",
+            "(No especificat en Decret 274) Disposa de presa de corrent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "d314_1996_annex1",
+      "name": "Decret 314/1996 (mod. Decret 274/1995) Annex 1",
+      "description": "Requisits mínims establerts al decret per habitatges nous o resultants d'una gran rehabilitació",
+      "date_range": {
+        "start": "1996-09-24",
+        "end": "1999-02-16"
+      },
+      "room_types": {
+        "construccio": {
+          "name": "Construcció",
+          "checklist": [
+            "(No especificat en annex 1 Decret 274 ni 314) És sòlida",
+            "(No especificat en annex 1 Decret 274 ni 314) No traspua humitat",
+            "És estanca a les aigües pluvials",
+            "S'evita la inundació de l'habitatge",
+            "El sòl trepitjable de tot l'habitatge està pavimentat, es resistent al desgastament per l'ús normal, (a més no és polsegós i no implica perill, aquestes característiques no especificades en Decret 274 ni 314)",
+            "Pot suportar amb seguretat unes sobrecàrregues d'ús de 200 Kg/m2",
+            "Esta protegida contra les humitats del terreny",
+            "Esta aïllada tèrmicament, acústicament i esta protegida en cas d'incendi"
+          ]
+        },
+        "espais_acces": {
+          "name": "Espais d'accés a l'habitatge",
+          "checklist": [
+            "Disposa de sistema elèctric d'il·luminació",
+            "El sòl trepitjable està pavimentat, es resistent al desgastament per l'ús normal, (a més no és polsegós i no implica perill, aquestes característiques no especificades en Decret 274 ni 314)",
+            "L'accés s'ha de fer a través d'un espai públic, d'un espai comú o d'un annex al mateix habitatge al qual es tingui accés de la mateixa manera",
+            "L'accés es exclusiu del mateix habitatge o comunitari",
+            "Desnivell entre el carrer i qualsevol habitatge es ≥ 12,00m, o 3 plantes o més o quan en una caixa d'escala d'un edifici hi hagi més de 12 habitatges per sobre o sota de la planta d'accés, cal que disposi d'un ascensor",
+            "Desnivell entre el carrer i qualsevol habitatge es ≥ 21,00m, o 6 plantes o més o quan en una caixa d'escala d'un edifici hi hagi més de 24 habitatges per sobre o sota de la planta d'accés, cal que disposi de dos ascensors",
+            "Si en l'edifici hi ha més de 36 habitatges, disposarà d'un altre ascensor per cada 12 habitatges o fracció (no especificat en Decret 314)",
+            "Portes de' l'espai d'accés a l'habitatge amplada mínima 0,80m",
+            "Permet el pas d'un rectangle que, en posició horitzontal, mesuri 1,90 x 0,50 metres i amplada ≥ 1,00m",
+            "L'accés esta ventilat de manera que, si es desenvolupen en més d'una planta, la planta baixa i l'última tinguin tenen una obertura de ventilació ≥ 1 m2",
+            "L'obertura de la planta superior permet la ventilació permanent",
+            "La superfície dels paraments dels accessos es resistent al cops i te una altura ≥1,5m",
+            "Si te escales: Cada tram, el màxim desnivell a salvar serà de 3,20 metres. Altura graons com a màxim 18,5 cm. Estesa graons com a mínim de 27 cm. (escales en girs, es mesurarà a 40cm de la línia interior del passamà)",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops, que no siguin escalables d'una alçada mínima de 0,95 m, i si la barana està composta per brèndoles, no podrà haver-hi entre elles una separació major de 0,12 m"
+          ]
+        },
+        "habitatge_general": {
+          "name": "Habitatge en general",
+          "checklist": [
+            "Habitatge reduït (disposa, com a mínim, d'una sala, cambra higiènica, permet la instal·lació directa d'un equip de cuina i d'un equip de rentat de roba), amb una superfície útil ≥ 20 m2",
+            "Habitatge complet (disposa, com a mínim, d'una sala, cambra higiènica, una o més habitacions, una d'elles amb superfície ≥ 10 m2 , i permet la instal·lació directa d'un equip de cuina i d'un equip de rentat de roba), amb una superfície útil ≥ 32 m2",
+            "Altura lliure valor mitjà ≥ 2,50m en sala i habitacions",
+            "Altura lliure valor mitja ≥ 2,10m. en Cuina, Cambra higiènica, distribuïdor i rebedor",
+            "Ample de pas dels espais interior de l'habitatge ≥ 0,90 m",
+            "Perímetre de façana, P ≥ S/8. S= superfície útil de l'habitatge (m2) P=perímetre de façana (m)",
+            "Peces (número i disposició), n ≤ S/10. n= nombre màxim de peces de superfície útil≥6 m2 S= superfície útil de l'habitatge (m2). Si les peces d'un habitatge estan situades en un local discontinu, la comunicació entre elles s'ha de fer a través d'un espai d'ús exclusiu del mateix habitatge",
+            "Instal·lació d'aigua freda i calenta corrent esta en bon estat, connecta amb tot l'equip que la requereix (lavabo, pica de la cuina, dutxa o banyera...)",
+            "Disposa d'un dipòsit de reserva d'aigua de, almenys, 150 litres per habitació (200 litres per habitatge no especificat en Decret 274 ni 314),si té subministrament per captació pròpia o aforament",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut",
+            "Disposa de lavabo en una o diverses peces i wàter amb dutxa o banyera en cambra higiènica",
+            "Disposa d'una clau de pas general, i d'una clau específica per cada cambra higiènica i cuina o dependència on hi hagi serveis",
+            "El sistema d'evacuació d'aigües residuals està connectat a la xarxa de clavegueres o es depura prèviament",
+            "Disposa d'una instal·lació de telefonia amb una presa com a mínim, i una instal·lació d'antena de televisió i ràdio, amb una presa com a mínim",
+            "Si existeix la possibilitat d'estendre la roba, serà a un espai exterior protegit de vistes del carrer o espai públic",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops, que no siguin escalables d'una alçada mínima de 0,95 m, i si la barana està composta per brèndoles, no podrà haver-hi entre elles una separació major de 0,12 m"
+          ]
+        },
+        "sala": {
+          "name": "Sala",
+          "checklist": [
+            "Té una superfície útil interior ≥ 12 m2 + 2 m2 per habitació",
+            "Superfície útil ≥ 16 m2, si disposa d'equip de cuina a la mateixa sala + 2 m2 per habitació",
+            "Permet inscriure un quadrat de 2,40 x 2,40 m",
+            "Sense estrangulaments en planta < 1,40m",
+            "Amplada accés sala ≥ 0,80 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Ventilació ≥ 0,80 m2 directa a l'exterior, pati d'illa o a traves d'una galeria, entre 0,80 i 1,80 m d'altura",
+            "No es fa a través seu l'obertura a l'exterior o la ventilació obligatòria de cap altra peça",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Sense equip de cuina, disposa, com a mínim, de 2 endolls",
+            "Amb equip de cuina, disposa, com a mínim, de 5 endolls",
+            "Sense accés directe a cap cambra higiènica que contingui vàter o una dutxa",
+            "Compleix l'obligació de no contenir cap aparell higiènic"
+          ]
+        },
+        "habitacio_doble": {
+          "name": "Habitació (Doble)",
+          "checklist": [
+            "Superfície útil ≥ 10 m2",
+            "Amplada accés habitació ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90x1,90 m en planta",
+            "Ventilació ≥ 0,40 m2 a espai exterior, pati de parcel·la, pati d'illa, directa o a través d'una galeria, entre 0,80 i 1,80 m d'altura",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i dos endolls",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Pot independitzar-se"
+          ]
+        },
+        "habitacio_individual": {
+          "name": "Habitació (Individual)",
+          "checklist": [
+            "Superfície útil ≥ 6 m2",
+            "Amplada accés habitació ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90x1,90 m en planta",
+            "Ventilació ≥ 0,40 m2 directa a l'exterior o a traves d'una galeria, a espai públic, pati d'illa o pati de parcel·la entre 0,80 i 1,80 m d'altura",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i dos endolls",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Pot independitzar-se"
+          ]
+        },
+        "cuina": {
+          "name": "Cuina",
+          "checklist": [
+            "Superfície útil ≥ 5 m2 (com a peça independent)",
+            "Té un equip de cuina format, com a mínim, per una pica i un aparell de cocció situats en una mateixa peça i sense aparells higiènics, excepte safareig",
+            "Amplada accés cuina ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,10 m",
+            "Té instal·lació d'aigua freda i calenta en bon estat, que serveix, com a mínim, a la pica de cuina",
+            "(No especificat en Decret) Amb ventilació a l'aire lliure directa o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "Sobre l'emplaçament de l'aparell de cocció hi hagi o s'admeti directament la instal·lació d'una campana que evacuï els fums a través d'un conducte horitzontal amb extracció mecànica. Pot ser estàtica, si el conducte és vertical",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Disposa de 3 endolls o 4 si l'equip de cocció és elèctric",
+            "No te accés directe a cap cambra higiènica que contingui un vàter o una dutxa"
+          ]
+        },
+        "cambra_higienica": {
+          "name": "Cambra higiènica i equip higiènic",
+          "checklist": [
+            "El wàter i la dutxa o banyera estan en una cambra higiènica que disposa de ventilació directa a l'aire lliure o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "A més del WC i dutxa o banyera en una cambra higiènica, disposa de rentamans, en bon estat, encara que no estigui en una cambra higiènica",
+            "Amplada accés ≥ 0,70 m",
+            "Altura lliure valor mitjà ≥ 2,10 m",
+            "Té instal·lació d'aigua freda i calenta en bon estat i serveix, com a mínim, un rentamans i dutxa o banyera, encara que no estiguin en una cambra higiènica",
+            "La dutxa o banyera té impermeabilitzat el sòl i els paraments fins a una alçada de 1,90 m",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut en dutxa o banyera",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Pot independitzar-se"
+          ]
+        },
+        "galeria": {
+          "name": "Galeria",
+          "checklist": [
+            "Té un finestral que dóna directament a l'aire lliure amb una superfície en alçada no inferior a la superfície en planta de la mateixa galeria"
+          ]
+        },
+        "equip_rentat": {
+          "name": "Equip de rentat de roba",
+          "checklist": [
+            "L'espai disposa de ventilació directa a l'aire lliure o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "(No especificat en Decret 274 ni 314) Disposa de presa d'aigua freda",
+            "(No especificat en Decret 274 ni 314) Disposa de desguàs",
+            "(No especificat en Decret 274 ni 314) Disposa de presa de corrent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "d28_1999_apartat1_2",
+      "name": "Decret 28/1999 (Apartat 1 i 2)",
+      "description": "Requisits mínims establerts al decret per habitatges nous o resultants d'una gran rehabilitació",
+      "date_range": {
+        "start": "1999-02-17",
+        "end": "2003-12-29"
+      },
+      "room_types": {
+        "construccio": {
+          "name": "Construcció",
+          "checklist": [
+            "(No especificat en apartat 1 i 2 Decret 28/1999) És sòlida",
+            "(No especificat en apartat 1 i 2 Decret 28/1999) No traspua humitat",
+            "És estanca a les aigües pluvials",
+            "S'evita la inundació de l'habitatge",
+            "El sòl trepitjable de tot l'habitatge està pavimentat, es resistent al desgastament per l'ús normal, (a més no és polsegós i no implica perill, aquestes característiques no especificades en Decret 28/1999)",
+            "Pot suportar amb seguretat unes sobrecàrregues d'ús de 200 Kg/m2",
+            "Esta protegida contra les humitats del terreny",
+            "Esta aïllada tèrmicament, acústicament, esta protegida en cas d'incendi i es accessible als serveis de bombers"
+          ]
+        },
+        "espais_acces": {
+          "name": "Espais d'accés a l'habitatge",
+          "checklist": [
+            "Disposa de sistema elèctric d'il·luminació",
+            "El sòl trepitjable està pavimentat, es resistent al desgastament per l'ús normal, (a més no és polsegós i no implica perill, aquestes característiques no especificades en Decret 28/1999)",
+            "L'accés s'ha de fer a través d'un espai públic, d'un espai comú o d'un annex al mateix habitatge al qual es tingui accés de la mateixa manera",
+            "L'accès es exclusiu del mateix habitatge o comunitari",
+            "Desnivell entre el carrer i qualsevol habitatge es ≥ 12,00m, o 3 o més plantes o quan en una caixa d'escala d'un edifici hi hagi més de 12 habitatges per sobre o sota de la planta d'accés, cal que disposi d'un ascensor",
+            "Desnivell entre el carrer i qualsevol habitatge es ≥ 6 plantes o més i que en la mateixa caixa d'escala hi hagi 24 habitatges o més per sobre o sota de la planta d'accés, cal que disposi de dos ascensors",
+            "Portes de l'espai d'accés a l'habitatge amplada mínima 0,80m",
+            "Permet el pas d'un rectangle que, en posició horitzontal, mesuri 1,90 x 0,50 metres i amplada ≥ 1,00m",
+            "L'accés esta ventilat de manera que, si es desenvolupen en més d'una planta, la planta baixa i l'última tinguin tenen una obertura de ventilació ≥ 1 m2",
+            "L'obertura de la planta superior permet la ventilació permanent",
+            "La superfície dels paraments dels accessos es resistent al cops i te una altura ≥1,5m",
+            "Si te escales: Cada tram, el màxim desnivell a salvar serà de 3,20 metres. Altura graons com a màxim 18,5 cm. Estesa graons com a mínim de 28 cm. (la línia de pas, es mesurarà a 50cm de la línia interior del passamà)",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops, que no siguin escalables d'una alçada mínima de 0,95 m, i si la barana està composta per brèndoles, no podrà haver-hi entre elles una separació major de 0,12 m"
+          ]
+        },
+        "habitatge_general": {
+          "name": "Habitatge en general",
+          "checklist": [
+            "Habitatge reduït (disposa, com a mínim, d'una sala, cambra higiènica, permet la instal·lació directa d'un equip de cuina i d'un equip de rentat de roba), amb una superfície útil ≥ 20 m2",
+            "Habitatge complet (disposa, com a mínim, d'una sala, cambra higiènica, una o més habitacions, una d'elles amb superfície ≥ 10 m2 , i permet la instal·lació directa d'un equip de cuina i d'un equip de rentat de roba), amb una superfície útil ≥ 32 m2",
+            "Altura lliure valor mitjà ≥ 2,50m en sala i habitacions",
+            "Altura lliure valor mitja ≥ 2,10m. en Cuina, Cambra higiènica, distribuïdor i rebedor",
+            "Ample de pas dels espais interior de l'habitatge ≥ 0,90 m",
+            "Perímetre de façana, P ≥ S/8. S= superfície útil de l'habitatge (m2) P=perímetre de façana (m)",
+            "Peces (número i disposició), n ≤ S/10. n= nombre màxim de peces de superfície útil≥6 m2 S= superfície útil de l'habitatge (m2). Si les peces d'un habitatge estan situades en un local discontinu, la comunicació entre elles s'ha de fer a través d'un espai d'ús exclusiu del mateix habitatge",
+            "Instal·lació d'aigua freda i calenta corrent esta en bon estat, connecta amb tot l'equip que la requereix (lavabo, pica de la cuina i dutxa o banyera)",
+            "Disposa d'un dipòsit de reserva d'aigua de, almenys, 150 litres per habitació (200 litres per habitatge,no especificat en Decret 28/1999),si té subministrament per captació pròpia o aforament",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut",
+            "Disposa de lavabo en una o diverses peces i wàter amb dutxa o banyera en cambra higiènica",
+            "Disposa d'una clau de pas general, i d'una clau específica per cada cambra higiènica i cuina o dependència on hi hagi serveis",
+            "El sistema d'evacuació d'aigües residuals està connectat a la xarxa de clavegueres o es depura prèviament",
+            "Disposa d'una instal·lació de telefonia amb una presa com a mínim, i una instal·lació d'antena de televisió i ràdio, amb una presa com a mínim",
+            "Si existeix la possibilitat d'estendre la roba, serà a un espai exterior protegit de vistes del carrer o espai públic",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops, que no siguin escalables d'una alçada mínima de 0,95 m, i si la barana està composta per brèndoles, no podrà haver-hi entre elles una separació major de 0,12 m"
+          ]
+        },
+        "sala": {
+          "name": "Sala",
+          "checklist": [
+            "Té una superfície útil interior ≥ 12 m2 + 2 m2 per habitació",
+            "Superfície útil ≥ 16 m2, si disposa d'equip de cuina a la mateixa sala + 2 m2 per habitació",
+            "Permet inscriure un quadrat de 2,40 x 2,40 m",
+            "Sense estrangulaments en planta < 1,40m",
+            "Amplada accés sala ≥ 0,80 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Ventilació ≥ 0,80 m2 directa a l'exterior, pati d'illa pati de parcel·la o a traves d'una galeria, entre 0,80 i 1,80 m d'altura",
+            "No es fa a través seu l'obertura a l'exterior o la ventilació obligatòria de cap altra peça",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Sense equip de cuina, disposa, com a mínim, de 2 endolls",
+            "Amb equip de cuina, disposa, com a mínim, de 5 endolls",
+            "Sense accés directe a cap cambra higiènica que contingui vàter o una dutxa",
+            "Compleix l'obligació de no contenir cap aparell higiènic"
+          ]
+        },
+        "habitacio_doble": {
+          "name": "Habitació (Doble)",
+          "checklist": [
+            "Superfície útil ≥ 10 m2",
+            "Amplada accés habitació ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90 x 1,90 m en planta",
+            "Ventilació ≥ 0,40 m2 a espai exterior, pati de parcel·la, pati d'illa, directa o a través d'una galeria, entre 0,80 i 1,80 m d'altura",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i dos endolls",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Pot independitzar-se"
+          ]
+        },
+        "habitacio_individual": {
+          "name": "Habitació (Individual)",
+          "checklist": [
+            "Superfície útil ≥ 6 m2",
+            "Amplada accés habitació ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90 x 1,90 m en planta",
+            "Ventilació ≥ 0,40 m2 a espai exterior, pati de parcel·la, pati d'illa, directa o a través d'una galeria, entre 0,80 i 1,80 m d'altura",
+            "Es garanteix una visió directa",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i dos endolls",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Pot independitzar-se"
+          ]
+        },
+        "cuina": {
+          "name": "Cuina",
+          "checklist": [
+            "Superfície útil ≥ 5 m2 (com a peça independent)",
+            "Té un equip de cuina format, com a mínim, per una pica i un aparell de cocció situats en una mateixa peça i sense aparells higiènics, excepte safareig",
+            "Amplada accés cuina ≥ 0,70 m",
+            "Altura lliure valor mitjà≥ 2,10 m",
+            "Té instal·lació d'aigua freda i calenta en bon estat, que serveix, com a mínim, a la pica de cuina",
+            "(No especificat en Decret) Amb ventilació a l'aire lliure directa o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "Sobre l'emplaçament de l'aparell de cocció hi hagi o s'admeti directament la instal·lació d'una campana que evacuï els fums a través d'un conducte horitzontal amb extracció mecànica. Pot ser estàtica, si el conducte és vertical",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Disposa de 3 endolls o 4 si l'equip de cocció és elèctric",
+            "No te accés directe a cap cambra higiènica que contingui un vàter o una dutxa"
+          ]
+        },
+        "cambra_higienica": {
+          "name": "Cambra higiènica i equip higiènic",
+          "checklist": [
+            "El wàter i la dutxa o banyera estan en una cambra higiènica que disposa de ventilació directa a l'aire lliure o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "A més del WC i dutxa o banyera en una cambra higiènica, disposa de rentamans, en bon estat, encara que no estigui en una cambra higiènica",
+            "Amplada accés ≥ 0,70 m",
+            "Altura lliure valor mitjà ≥ 2,10 m",
+            "Té instal·lació d'aigua freda i calenta en bon estat i serveix, com a mínim, un rentamans i dutxa o banyera, encara que no estiguin en una cambra higiènica",
+            "La dutxa o banyera té impermeabilitzat el sòl i els paraments fins a una alçada de 1,90 m",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut en dutxa o banyera",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica no implica perill ni pertorbacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Pot independitzar-se"
+          ]
+        },
+        "galeria": {
+          "name": "Galeria",
+          "checklist": [
+            "Té un finestral que dóna directament a l'aire lliure amb una superfície en alçada no inferior a la superfície en planta de la mateixa galeria"
+          ]
+        },
+        "equip_rentat": {
+          "name": "Equip de rentat de roba",
+          "checklist": [
+            "L'espai disposa de ventilació directa a l'aire lliure o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "(No especificat en Decret 28/1999) Disposa de presa d'aigua freda",
+            "(No especificat en Decret 28/1999) Disposa de desguàs",
+            "(No especificat en Decret 28/1999) Disposa de presa de corrent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "d28_1999",
+      "name": "Decret 28/1999 (Apartat 1 i 2)",
+      "description": "Habitatges entre 17/02/1999 i 29/12/2003",
+      "date_range": {
+        "start": "1999-02-17",
+        "end": "2003-12-29"
+      },
+      "categories": {
+        "note": "Updated requirements with improved accessibility"
+      }
+    },
+    {
+      "id": "d259_2003",
+      "name": "Decret 259/2003 (Annex 1.1 i 1.2)",
+      "description": "Habitatges entre 30/12/2003 i 08/10/2009",
+      "date_range": {
+        "start": "2003-12-30",
+        "end": "2009-10-08"
+      },
+      "categories": {
+        "note": "Enhanced requirements for accessibility and energy efficiency"
+      }
+    },
+    {
+      "id": "d55_2009",
+      "name": "Decret 55/2009 (Annex 1)",
+      "description": "Habitatges entre 09/10/2009 i 02/11/2012",
+      "date_range": {
+        "start": "2009-10-09",
+        "end": "2012-11-02"
+      },
+      "categories": {
+        "note": "Further improvements in accessibility and sustainability"
+      }
+    },
+    {
+      "id": "d141_2012",
+      "name": "Decret 141/2012 (Annex 1)",
+      "description": "Habitatges a partir del 03/11/2012",
+      "date_range": {
+        "start": "2012-11-03",
+        "end": "2099-12-31"
+      },
+      "categories": {
+        "note": "Current requirements with full accessibility standards"
+      }
+    },
+    {
+      "id": "d259_2003_annex1",
+      "name": "Decret 259/2003 (Annex 1.1 i 1.2)",
+      "description": "Requisits mínims establerts al decret per habitatges nous o resultants d'una gran rehabilitació",
+      "date_range": {
+        "start": "2003-12-30",
+        "end": "2009-04-14"
+      },
+      "room_types": {
+        "construccio": {
+          "name": "Construcció",
+          "checklist": [
+            "(No especificat en Decret 259/2003 Annex I) És sòlida",
+            "(No especificat en Decret 259/2003 Annex I) No traspua humitat",
+            "És estanca a les aigües pluvials",
+            "S'evita la inundació de l'habitatge",
+            "El sòl trepitjable de tot l'habitatge està pavimentat, es resistent al desgastament per l'ús normal, (a més no és polsegós i no implica perill, aquestes característiques no especificades en Decret 259/2003 Annex I)",
+            "Pot suportar amb seguretat unes sobrecàrregues d'ús de 200 Kg/m2",
+            "Esta protegida contra les humitats",
+            "Esta aïllada tèrmicament, acústicament, esta protegida en cas d'incendi i es accessible als serveis de bombers, segons normativa aplicable en el seu moment"
+          ]
+        },
+        "espais_acces": {
+          "name": "Espais d'accés a l'habitatge",
+          "checklist": [
+            "Disposa d'un porter electrònic o sistema similar que faciliti, si s'escau, l'entrada i permeti la comunicació interactiva des de l'accés a l'edifici amb qualsevol habitatge (no obligatori per habitatges unifamiliars)",
+            "Disposa de sistema elèctric d'il·luminació",
+            "El sòl trepitjable està pavimentat, es resistent al desgastament per l'ús normal, (a més no és polsegós i no implica perill, aquestes característiques no especificades en Decret 259/2003 Annex I)",
+            "L'accés de l'habitatge es la porta que comunica l'habitatge amb el seu exterior i el seu accés es exclusiu del mateix habitatge o comunitari",
+            "L'accés s'ha de fer a través d'un espai públic, d'un espai comú o d'un annex al mateix habitatge al qual es tingui accés de la mateixa manera",
+            "Desnivell entre el carrer i qualsevol habitatge plurifamiliar es ≥ 12,00m, o 3 plantes o més o quan en una caixa d'escala d'un edifici hi hagi més de 12 habitatges per sobre o sota de la planta d'accés, cal que disposi d'un ascensor",
+            "Desnivell entre el carrer i qualsevol habitatge plurifamiliars es ≥ 6 plantes o més i que en la mateixa caixa d'escala hi hagi 24 habitatges o més per sobre o sota de la planta d'accés, cal que disposi de dos ascensors",
+            "Alçada lliure de pas en recorregut d'accés a l'habitatge ≥ 2,10m i en escales ≥ 2,00 m sempre mesurada en el punt més desfavorable del graó",
+            "Portes de l'espai d'accés a l'habitatge amplada mínima 0,80m i alçada 2,00 m",
+            "Permet el pas d'un rectangle que, en posició horitzontal, mesuri 1,90 x 0,50 metres i amplada ≥ 1,00m",
+            "L'accés esta ventilat de manera que, si es desenvolupen en més d'una planta, la planta baixa i l'última tinguin tenen una obertura de ventilació ≥ 1 m2",
+            "Si te escales: Cada tram, el màxim desnivell a salvar serà de 3,20 metres. Altura graons com a màxim 18,5 cm. Estesa graons com a mínim de 28 cm. (la línia de pas de 0,28m, es mesurarà a 50 cm de la línia interior del passamà)",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops, que no siguin escalables d'una alçada mínima de 0,95 m, i si la barana està composta per brèndoles, no podrà haver-hi entre elles una separació major de 0,12 m"
+          ]
+        },
+        "habitatge_general": {
+          "name": "Habitatge en general",
+          "checklist": [
+            "Disposa com a mínim una sala, una cambra higiènica, un equip de cuina i permet la instal·lació directa d'un equip de rentat de roba, amb una superfície útil mínima ≥ 30 m2",
+            "Quan el programa funcional de l'habitatge sigui com a màxim per a dues persones, s'admet un únic espai destinat a sala-habitació, sempre que la superfície resultant permeti la compartimentació d'una peça de, com a mínim, 8 m2 que compleixi tots el requisits d'una habitació, sense que la sala perdi la seva condició",
+            "Altura lliure valor mitjà ≥ 2,50 m en sala i habitacions",
+            "Altura lliure valor mitja ≥ 2,10m. en Cuina, Cambra higiènica, distribuïdor i rebedor",
+            "Ample de pas dels espais interior de l'habitatge ≥ 0,90 m i alçada lliure de pas en recorregut ≥ 2,10m i en escales ≥ 2,00 m sempre mesurada en el punt més desfavorable del graó",
+            "Perímetre de façana, P ≥ S/8, amb longitud mínima de 4,00m. S= superfície útil de l'habitatge (m2) P=perímetre de façana (m)",
+            "Peces (número i disposició), n ≤ S/10. n= nombre màxim de peces de superfície útil≥6 m2 S= superfície útil de l'habitatge (m2). Si les peces d'un habitatge estan situades en un local discontinu, la comunicació entre elles s'ha de fer a través d'un espai d'ús exclusiu del mateix habitatge",
+            "Instal·lació d'aigua freda i calenta corrent esta en bon estat, connecta amb tot l'equip que la requereix (lavabos, pica de la cuina i dutxa o banyera i equip de rentat de roba)",
+            "Disposa d'un dipòsit de reserva d'aigua de, almenys, 200 litres per habitatge, que s'incrementarà a partir de la segona habitació en 150 litres per habitació,si té subministrament per captació pròpia o aforament",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 12 l/ minut",
+            "Disposa de lavabo en una o diverses peces i vàter amb dutxa o banyera en cambra higiènica",
+            "Disposa d'una clau de pas general, i d'una clau específica per cada cambra higiènica i cuina o dependència on hi hagi serveis",
+            "El sistema d'evacuació d'aigües residuals està connectat a la xarxa de clavegueres o es depura prèviament",
+            "Disposa d'una instal·lació de telefonia bàsica, i una instal·lació d'antena de televisió i ràdio, segons normativa aplicable",
+            "Si disposa d'un espai destinat específicament a estendre la roba, ha d'estar protegit de vistes del carrer o espai públic",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops, que no siguin escalables d'una alçada mínima de 0,95 m, i si la barana està composta per brèndoles, no podrà haver-hi entre elles una separació major de 0,12 m"
+          ]
+        },
+        "sala": {
+          "name": "Sala",
+          "checklist": [
+            "Superfície útil interior ≥ 14 m2 + 2 m2 a partir de la segona habitació",
+            "Superfície útil interior ≥ 16 m2, si disposa d'equip de cuina a la mateixa sala + 2 m2 a partir de la segona habitació",
+            "Permet inscriure un quadrat de 2,70 x 2,70 m",
+            "Sense estrangulaments en planta < 1,40m",
+            "Accés sala amplada ≥ 0,80 m i alçada 2,00 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Ventilació ≥ 1,40 m2 directa en façana a espai públic o pati d'illa, directa o a través d'una galeria, entre 0,80 i 2,00 m d'altura",
+            "No es fa a través seu l'obertura a l'exterior o la ventilació obligatòria de cap altra peça",
+            "Es garanteix una visió directa d'un segment de 3 metres a tres metres de distància",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent, no implica perill ni pertorbacions (veure ITC-BT-25)",
+            "Sense accés directe a cap cambra higiènica que contingui vàter",
+            "En cas d'habitatges en què el programa funcional tingui un únic espai destinat a sala cuina dormitori, s'admet l'accés directe sempre que aquest sigui des de l'espai que es pot compartimentar com a habitació",
+            "Compleix l'obligació de no contenir cap aparell higiènic"
+          ]
+        },
+        "habitacio_doble": {
+          "name": "Habitació doble",
+          "checklist": [
+            "Superfície útil ≥ 8 m2",
+            "Accés habitació amplada ≥ 0,70 m i alçada 2,00 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90 x 1,90 m en planta",
+            "Ventilació ≥ 0,60 m2 en façana a espai públic, directa o a través d'una galeria, entre 0,80 m i 2,00 m d'altura",
+            "Ventilació ≥ 0,60 m2 en pati d'illa o pati de parcel·la, directa o a través d'una galeria (permet l' inscripció d'un cercle de Ø ≥ 1/6 de l'alçada del pati, amb un mínim de 3,00m), situada entre 0,80 m i 2,00 m d'altura. La ventilació d'aquest patis no pot servir per ventilar aparcaments ni locals amb activitats industrials",
+            "Superfície mínima del pati: Fins a 3 plantes, 9m2 . Fins a 4 plantes, 11m2.Fins a 5 plantes, 12m2 Fins a 6 plantes, 14m2. Fins a 7 plantes, 16m2 . Més de 7 plantes,18m2",
+            "Es garanteix una visió directa d'un segment de 3 metres a 3 metres de distància",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent, no implica perill ni pertorbacions (veure ITC-BT-25)",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Sense equip obligatori de rentat de roba",
+            "Pot independitzar-se"
+          ]
+        },
+        "habitacio_individual_1": {
+          "name": "Habitació individual",
+          "checklist": [
+            "Superfície útil ≥ 6 m2",
+            "Accés habitació amplada ≥ 0,70 m i alçada 2,00 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90 x 1,90 m en planta",
+            "Ventilació ≥ 0,60 m2 en façana a espai públic, directa o a través d'una galeria, entre 0,80 m i 2,00 m d'altura",
+            "Ventilació ≥ 0,60 m2 en pati d'illa o pati de parcel·la, directa o a través d'una galeria (permet l' inscripció d'un cercle de Ø ≥ 1/6 de l'alçada del pati, amb un mínim de 3,00m), situada entre 0,80 m i 2,00 m d'altura. La ventilació d'aquest patis no pot servir per ventilar aparcaments ni locals amb activitats industrials",
+            "Superfície mínima del pati: Fins a 3 plantes, 9m2 . Fins a 4 plantes, 11m2.Fins a 5 plantes, 12m2 Fins a 6 plantes, 14m2. Fins a 7 plantes, 16m2 . Més de 7 plantes,18m2",
+            "Es garanteix una visió directa d'un segment de 3 metres a 3 metres de distància",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent, no implica perill ni pertorbacions (veure ITC-BT-25)",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Sense equip obligatori de rentat de roba",
+            "Pot independitzar-se"
+          ]
+        },
+        "habitacio_individual_2": {
+          "name": "Habitació individual",
+          "checklist": [
+            "Superfície útil ≥ 6 m2",
+            "Accés habitació amplada ≥ 0,70 m i alçada 2,00 m",
+            "Altura lliure valor mitjà≥ 2,50 m",
+            "Admet la inscripció d'un quadrat d' 1,90 x 1,90 m en planta",
+            "Ventilació ≥ 0,60 m2 en façana a espai públic, directa o a través d'una galeria, entre 0,80 m i 2,00 m d'altura",
+            "Ventilació ≥ 0,60 m2 en pati d'illa o pati de parcel·la, directa o a través d'una galeria (permet l' inscripció d'un cercle de Ø ≥ 1/6 de l'alçada del pati, amb un mínim de 3,00m), situada entre 0,80 m i 2,00 m d'altura. La ventilació d'aquest patis no pot servir per ventilar aparcaments ni locals amb activitats industrials",
+            "Superfície mínima del pati: Fins a 3 plantes, 9m2 . Fins a 4 plantes, 11m2.Fins a 5 plantes, 12m2 Fins a 6 plantes, 14m2. Fins a 7 plantes, 16m2 . Més de 7 plantes,18m2",
+            "Es garanteix una visió directa d'un segment de 3 metres a 3 metres de distància",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent, no implica perill ni pertorbacions (veure ITC-BT-25)",
+            "Sense wàter, safareig o abocador",
+            "Sense equip obligatori de cuina",
+            "Sense equip obligatori de rentat de roba",
+            "Pot independitzar-se"
+          ]
+        },
+        "cuina": {
+          "name": "Cuina (si es peça independent)",
+          "checklist": [
+            "Superfície útil ≥ 5 m2 (com a peça independent)",
+            "Té un equip de cuina format, com a mínim, per una pica i un aparell de cocció situats en una mateixa peça i sense aparells higiènics, excepte safareig",
+            "Accés cuina, amplada ≥ 0,70 m i alçada 2,00 m",
+            "Altura lliure valor mitjà≥ 2,10 m",
+            "Té instal·lació d'aigua freda i calenta en bon estat, que serveix, com a mínim, a la pica de cuina",
+            "Ventilació ≥ 0,40 m2 a façana, a pati d'illa, a pati de parcel·la",
+            "Ventilació ≥ 0,40 m2 a patis de ventilació, permet d'inscripció d'un cercle de Ø ≥ 1/7 de l'alçada del pati, amb un mínim de 2,00m. Sense cap ventilació d'aparcaments ni locals amb activitats industrials",
+            "Superfície mínima del pati de ventilació: Fins a 3 plantes, 4m2.Fins a 4 plantes, 5m2.Fins a 5 plantes, 6m2 Fins a 6 plantes, 8m2.Fins a 7 plantes, 10m2. Més de 7 plantes,12m2",
+            "Sobre l'emplaçament de l'aparell de cocció hi hagi o s'admeti directament la instal·lació d'una campana que evacuï els fums fins a la coberta de l'edifici a través d'un conducte individual en el qual s'activi mecànicament l'extracció",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent, no implica perill ni pertorbacions (veure ITC-BT-25)",
+            "No te accés directe a cap cambra higiènica que contingui un vàter"
+          ]
+        },
+        "cambra_higienica": {
+          "name": "Cambra higiènica i equip higiènic",
+          "checklist": [
+            "El wàter i la dutxa o banyera estan en una cambra higiènica que disposa de ventilació directa en façana a espai públic, pati d'illa, pati de parcel·la o pati de ventilació o bé a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "Ventilació a patis de ventilació, permet d'inscripció d'un cercle de Ø ≥ 1/7 de l'alçada del pati, amb un mínim de 2,00m. Sense cap ventilació d'aparcaments ni locals amb activitats industrials",
+            "Superfície mínima del pati de ventilació: Fins a 3 plantes, 4m2.Fins a 4 plantes, 5m2.Fins a 5 plantes, 6m2 Fins a 6 plantes, 8m2.Fins a 7 plantes, 10m2. Més de 7 plantes,12m2",
+            "Accés cambra higiènica, amplada ≥ 0,70 m i alçada 2,00 m",
+            "Altura lliure valor mitjà ≥ 2,10 m",
+            "A més del WC i dutxa o banyera en una cambra higiènica, disposa de rentamans, en bon estat, encara que no estigui en una cambra higiènica",
+            "Té instal·lació d'aigua freda i calenta en bon estat i serveix, com a mínim, un rentamans i dutxa o banyera, encara que no estiguin en una cambra higiènica",
+            "La dutxa o banyera té impermeabilitzat el sòl i els paraments fins a una alçada de 2,10 m",
+            "Permet un consum seguit de 50 litres d'aigua a 40ºC i 12 l/ minut en dutxa o banyera",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent, no implica perill ni pertorbacions (veure ITC-BT-25)",
+            "Pot independitzar-se"
+          ]
+        },
+        "galeria": {
+          "name": "Galeria",
+          "checklist": [
+            "Té un finestral que dóna directament a l'aire lliure amb una superfície en alçada no inferior a la superfície en planta de la mateixa galeria"
+          ]
+        },
+        "equip_rentat": {
+          "name": "Equip de rentat de roba (l'espai on s'ubiqui haurà de complir)",
+          "checklist": [
+            "L'espai disposa de ventilació directa a l'espai exterior directa o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "Disposa de presa d'aigua freda i calenta",
+            "Disposa de desguàs",
+            "Disposa de presa de corrent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "d55_2009_annex1",
+      "name": "Decret 55/2009 (Annex 1)",
+      "description": "Requisits mínims establerts al decret per habitatges nous o resultants d'una gran rehabilitació",
+      "date_range": {
+        "start": "2009-04-15",
+        "end": "2012-10-30"
+      },
+      "room_types": {
+        "espais_acces": {
+          "name": "Espais d'accés a l'habitatge, zones comunitàries",
+          "checklist": [
+            "Disposa d'un porter electrònic o sistema similar que faciliti, l'entrada i permeti la comunicació interactiva des de l'accés a l'edifici amb qualsevol habitatge (no obligatori per habitatges unifamiliars)",
+            "Disposa de sistema elèctric d'il·luminació (aquestes característica no especificada en Decret 55/2009), però cal complir el CTE DB SUA-4",
+            "El sòl trepitjable està pavimentat, es resistent al desgasament per l'ús normal, a més no és polsegós i no implica perill, (aquestes característiques no especificada en Decret 55/2009), però cal complir el CTE DB SUA-1",
+            "Disposa d'un itinerari practicable per accedir a cadascun dels habitatges",
+            "L'accés s'ha de fer a través d'un espai públic, d'un espai comú o d'un annex al mateix habitatge al qual es tingui accés de la mateixa manera",
+            "Cap espai de l'habitatge no pot servir d'accés obligat a qualsevol local que no sigui d'ús exclusiu del mateix habitatge",
+            "Els espais comuns situats davant de la porta de l'ascensor han de permetre la inscripció d'un cercle de Ø 1,50 m",
+            "L'edifici disposa d'ascensor (aquest serà necessari si no hi ha itinerari practicable des de l'exterior de l'edifici a l'accés a cadascun dels habitatges)",
+            "Si l'edifici es PB+PP, situat en solars entre mitgeres i amb un màxim de 4 habitatges a la planta superior, s'admet plataforma elevadora",
+            "Desnivell entre el carrer i qualsevol habitatge plurifamiliars es ≥ 6 plantes o més o que es superi més de 32 habitatges per sobre o sota de la planta d'accés, cal que disposi de dos ascensors",
+            "Alçada lliure de pas en recorregut d'accés a l'habitatge ≥ 2,20m (CTE DB SUA-2)",
+            "Portes de l'espai d'accés a l'habitatge amplada ≥ 0,80m i alçada ≥ 2,00 m",
+            "Si te escales: (CTE DB SUA-1, CTE DB SI-3) Cada tram, el màxim desnivell a salvar serà de 3,20 metres. Altura graons com a màxim 18,5 cm. Estesa graons com a mínim de 28 cm. (la línia de pas de 0,28m, es mesurarà a 50 cm del costat interior. La part més ampla no pot fer mes de 44 cm). Amplada útil de l'escala ≥ 1,00m, sense computar l'estesa que sigui inferior a 17cm",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops. Les baranes no son escalables i compleixen amb les especificacions del CTE DB SUA-1"
+          ]
+        },
+        "dotacio_comunitaria": {
+          "name": "Dotació comunitària (si l'edifici te més de 8 habitatges)",
+          "checklist": [
+            "Disposa d'un espai per a ús de la comunitat accessible des de l'exterior o zones comunes, amb sup. mínima de 3 m² + 0,20 m² per cada nou habitatge que excedeixi de 8",
+            "Alçada mínima ≥ 2,20m",
+            "Disposa de desguàs",
+            "Disposa de punt de llum",
+            "Disposa de presa d'aigua"
+          ]
+        },
+        "habitatge_general": {
+          "name": "Habitatge en general",
+          "checklist": [
+            "Disposa com a mínim d'una estança, una cambra higiènica, un equip de cuina, permet la instal·lació directa d'un equip de rentat de roba i preveu una solució per a l'assecat natural de la roba, amb una superfície útil interior ≥ 40 m2",
+            "L'habitatge es apte per a l'ocupació de dues persones",
+            "Porta d'accés a l'habitatge, amplada de pas ≥ 0,80 m i alçada lliure ≥ 2,00 m",
+            "Es garanteix una ventilació natural transversal (façanes i patis de ventilació), per habitatges amb superfície útil interior ≥ 50 m2",
+            "No cal complir amb la ventilació natural transversal si: -Habitatges subjectes a planejament aprovat abans de l'entrada en vigor del Decret (9/10/2009), llevat que hi hagin modificacions posteriors. -Habitatges situats en sòls urbans consolidats. -Habitatges amb superfície útil interior < 50 m2 . Però, hauran de disposar de sistemes de ventilació forçada natural o mecànica destinats específicament a la renovació interior de l'aire, o disposar d'un pati en el qual es pot inscriure un cercle de Ø 1,80 m",
+            "Compartimentació lliure de l'habitatge però manté la dotació obligatòria de caràcter fix segons el projecte tècnic original: equip de cuina i les cambres higièniques, elements amb funció estructural o siguin elements comuns a l'edifici, elements que conformen el tancament amb l'exterior",
+            "L'habitatge compleix els paràmetres de practicable",
+            "Habitatge amb una habitació, aquesta es practicable",
+            "Habitatge amb més d'una habitació, com a mínim dues practicables",
+            "Si l'habitatge es desenvolupa en diferents nivells, han de ser practicables, com a mínim, l'accés, una cambra higiènica, la cuina, un espai d'ús comú o una habitació",
+            "Altura entre paviment i sostre ≥ 2,50 m en estances i habitacions",
+            "Altura entre paviment i sostre ≥ 2,20m. en Cuina, Cambra higiènica i espais de circulació",
+            "Altura valor mitjà en cobertes inclinades ≥ 2,50m",
+            "Ample de pas dels espais de circulació de l'habitatge ≥ 1,00 m i alçada lliure de pas ≥ 2,20m",
+            "Davant de les portes d'accés als espais practicables (cuina, cambra higiènica, espai d'ús comú o una habitació), permet la inscripció d'un cercle de Ø 1,20 m",
+            "Portes d'accés als espais interns de l'habitatge que siguin practicables, amplada de pas ≥ 0,80 m i alçada lliure ≥ 2,00 m",
+            "Portes d'accés als espais interns de l'habitatge que no siguin practicables, amplada de pas ≥ 0,70 m i alçada lliure ≥ 2,00 m",
+            "Escales interiors, ample de pas ≥ 0,90 m i alçada lliure ≥ 2,20 m (sempre mesurada en el punt més desfavorable del graó), d'acord amb CTE DB SUA-1",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops. Les baranes no son escalables, amb alçada ≥ 0,90 m i compleixen amb les especificacions del CTE DB SUA-1",
+            "Perímetre de façana, L ≥ S/9, S= superfície útil de l'habitatge (m2) L=perímetre de façana (m)",
+            "Disposa d'una instal·lació d'aigua freda i calenta corrent d'acord amb la normativa existent (CTE DB HS-4 i HE-4)",
+            "Té un sistema d'evacuació d'aigües residuals, d'acord amb la normativa vigent (CTE DB HS-5)",
+            "El sistema d'evacuació d'aigües residuals està connectat a la xarxa de clavegueres o es depura prèviament (no especificat en Decret 55/2009)",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent (veure ITC-BT-25)",
+            "Disposa d'una infraestructura comuna de telecomunicacions, de conformitat amb la normativa vigent en matèria de telecomunicacions",
+            "Disposa d'un espai destinat específicament per l'assecament natural la roba, protegit de vistes del carrer o espai públic"
+          ]
+        },
+        "espais_us_comu": {
+          "name": "Espais d'ús comú (Sala d'estar – Menjador Cuina) (EMC)",
+          "checklist": [
+            "Superfície útil interior segons nombre d'habitacions: 1 hab.=20 m2 , 2 hab.=24 m2 , 3 hab.=26 m2 , 4 o més hab.=30 m2",
+            "Superfície útil interior segons nombre d'hab. (amb equip de rentat de roba) 1 hab.=21 m2 , 2 hab.=25 m2 , 3 hab.=27 m2 , 4 o més hab.=31 m2",
+            "S'admet una reducció del 10% de la sup. útil, si es compensa en un increment de sup. igual en la resta de les habitacions",
+            "Cuina integrada en la zona del menjador (M) o de la sala d'estar-menjador (EM), la superfície vertical oberta que relacioni aquests espais serà ≥ 3,50 m²"
+          ]
+        },
+        "sala_estar_menjador": {
+          "name": "Sala d'estar - Menjador (EM)",
+          "checklist": [
+            "Superfície útil interior depèn del nombre d'habitacions (amb cuina segregada) 1 hab.=15 m2 , 2 hab.=18 m2 , 3 hab.=20 m2 , 4 o més hab.=24 m2",
+            "S'admet una reducció del 10% de la sup. útil, si es compensa en un increment de sup. igual en la resta de les habitacions",
+            "Davant de la porta d'accés, permet la inscripció d'un cercle de Ø 1,20 m",
+            "Accés sala d'estar –menjador amplada ≥ 0,80 m i alçada 2,00 m",
+            "Permet la inscripció d'un cercle de Ø 3,00 m",
+            "Sense estrangulaments en planta < 1,50m",
+            "Altura lliure entre paviment i sostre ≥ 2,50 m",
+            "Contacte amb façana, amplada ≥ 2,00 m",
+            "Ventilació i il·luminació natural directa des de l'exterior, amb una sup. d'obertura ≥ 1/8 de la seva sup. útil, entre 0,00 i 2,00 m d'altura respecte el paviment. (espais intermedis tenen consideració d'espai exterior)",
+            "Es garanteixen llums directes",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent (veure ITC-BT-25)",
+            "Compleix l'obligació de no contenir cap aparell higiènic"
+          ]
+        },
+        "habitacio": {
+          "name": "Habitació (H)",
+          "checklist": [
+            "Habitatge d'una habitació, superfície útil ≥ 10 m2",
+            "Habitatge de dues habitacions o més, superfície útil ≥ 10 m2 en la primera habitació i ≥ 8 m2 les següents",
+            "S'admet una reducció del 10% de la sup. útil, si es compensa en un increment de sup. igual en la resta de les habitacions",
+            "Habitacions practicables: Habitatges ≤ 2 habitacions, les dues ho són Habitatges > 2 habitacions, com a mínim 2 ho són",
+            "Davant de la porta d'accés, permet la inscripció d'un cercle de Ø 1,20 m. si es practicable",
+            "Accés habitació practicable amplada ≥ 0,80 m i alçada 2,00 m",
+            "Accés habitació no practicable amplada ≥ 0,70 m i alçada 2,00 m",
+            "Altura lliure entre paviment i sostre ≥ 2,50 m",
+            "Permet la inscripció d'un cercle de ≥ Ø 2,60 m. si sup. habitació es ≥ 9 m2",
+            "Permet la inscripció d'un cercle de ≥ Ø 2,00 m. en la resta d'habitacions",
+            "Ventilació i il·luminació natural directa des de l'exterior, amb una sup. d'obertura ≥ 1/8 de la seva sup. útil, entre 0,00 i 2,00 m d'altura respecte el paviment. (espais intermedis tenen consideració d'espai exterior)",
+            "Disposa de ventilació d'acord amb el CTE DB HS-3. Els patis de ventilació o relacionats amb l'ús de l'habitatge no podran utilitzar-se per a la ventilació directa d'aparcaments col·lectius ni de locals amb activitats industrials o sorolloses",
+            "Es garanteixen llums directes",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent (veure ITC-BT-25)",
+            "Compleix l'obligació de no contenir cap aparell higiènic",
+            "Pot independitzar-se"
+          ]
+        },
+        "cuina": {
+          "name": "Cuina (C)",
+          "checklist": [
+            "Superfície útil ≥ 5 m2 si només té 1 habitació i ≥ 6 m2 si en te més",
+            "Si conte la rentadora, la superfície útil s'incrementa en 1m2",
+            "Té un equip de cuina format, com a mínim, per una aigüera i un aparell de cocció (no conte aparells higiènics, excepte safareig, no especificat en Decret 55/2009)",
+            "Accés cuina, amplada ≥ 0,80 m i alçada ≥ 2,00 m",
+            "Davant de la porta d'accés, permet la inscripció d'un cercle de Ø 1,20 m",
+            "Permet la inscripció d'un cercle de Ø 1,20 m lliure de l'afectació del gir de les portes, entre els paraments i/o l'equipament fix de la cuina",
+            "Espai lliure entre el taulell de treball i la resta d'equipament o paraments, amplada mínima ≥ 1,20 m",
+            "Altura lliure entre paviment i sostre ≥ 2,20 m",
+            "Ventilació i il·luminació natural directa des de l'exterior, amb una sup. d'obertura ≥ 1/8 de la seva sup. útil, entre 0,00 i 2,00 m d'altura respecte el paviment. (espais intermedis tenen consideració d'espai exterior)",
+            "Disposa de ventilació d'acord amb el CTE DB HS-3. Els patis de ventilació o relacionats amb l'ús de l'habitatge no podran utilitzar-se per a la ventilació directa d'aparcaments col·lectius ni de locals amb activitats industrials o sorolloses",
+            "Es garanteixen llums directes",
+            "Disposa d'un sistema específic d'extracció mecànica sobre l'aparell de cocció connectat que permeti l'extracció de bafs i fums fins a la coberta",
+            "Disposa d'una instal·lació d'aigua freda i calenta corrent d'acord amb la normativa existent (CTE DB HS-4 i HE-4) i serveix com a mínim a l'aigüera",
+            "Té un sistema d'evacuació d'aigües residuals, d'acord amb la normativa vigent (CTE DB HS-5)",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent (veure ITC-BT-25)"
+          ]
+        },
+        "cambra_higienica": {
+          "name": "Cambra higiènica i equip higiènic (CH)",
+          "checklist": [
+            "No pot servir de pas obligat a una altra peça",
+            "Accés cambra higiènica, amplada ≥ 0,80 m i alçada ≥ 2,00 m",
+            "Altura lliure de paviment i sostre ≥ 2,20 m",
+            "Davant de la porta d'accés, permet la inscripció d'un cercle de Ø 1,20 m",
+            "Disposa de la dotació mínima higiènica (dutxa/banyera, vàter i rentamans), es situaran en les cambres higièniques i la seva agrupació és lliure",
+            "Si habitatge te 4 habitacions o més: 2 rentamans 2 vàters 1 dutxa/banyera",
+            "Compleix l'accés als aparells que integrin la dotació mínima higiènica, de manera que es permet la inscripció, entre 0 i 0,70 m d'alçada, d'un cercle de Ø 1,20 m., lliure de l'afectació del gir de les portes",
+            "Si la rentadora de roba està integrada en la cambra higiènica, te la consideració de dotació fixa a efectes del compliment de les condicions d'accessibilitat per a persones amb mobilitat reduïda.(condició anterior)",
+            "Disposa de ventilació d'acord amb el CTE DB HS-3. Els patis de ventilació o relacionats amb l'ús de l'habitatge no podran utilitzar-se per a la ventilació directa d'aparcaments col·lectius ni de locals amb activitats industrials o sorolloses",
+            "Disposa d'una instal·lació d'aigua freda i calenta corrent d'acord amb la normativa existent (CTE DB HS-4 i HE-4)",
+            "Té un sistema d'evacuació d'aigües residuals, d'acord amb la normativa vigent (CTE DB HS-5)",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent, (veure ITC-BT-25)",
+            "Pot independitzar-se"
+          ]
+        },
+        "espai_emmagatzematge": {
+          "name": "Espai d'emmagatzematge",
+          "checklist": [
+            "Disposa d'una superfície destinada a l'emmagatzematge personal i general",
+            "Emmagatzematge personal .Superfície en funció del nombre d'habitacions: Núm. habitacions 1, emmagatzematge personal, 1m2 Núm. habitacions 2, emmagatzematge personal, 2 m2 Núm. habitacions ≥ 3, emmagatzematge personal, 3 m2 Per tal que una superfície tingui la condició d'espai destinat a l'emmagatzematge personal, disposa d'unes dimensions no inferiors a 0,55 m de fons, una amplada de 0,50 m, i una alçada d'1,50 m",
+            "Emmagatzematge general .Superfície en funció del nombre d'habitacions: Núm. habitacions 1, emmagatzematge general, 0,70 m2 Núm. habitacions 2, emmagatzematge general, 0,70 m2 Núm. habitacions ≥ 3, emmagatzematge general, 0,70 m2 Perquè una superfície tingui la condició d'espai destinat a l'emmagatzematge general disposa d'unes dimensions no inferiors a 0,30 m de fons, una amplada de 0,40 m i una alçada d'1,50 m",
+            "Es poden situar fora de les habitacions. Les seves superfícies es comptabilitzaran amb independència de les superfícies dels espais on s'ubiquin.(no computen com superfície obligatòria de l'estança , però si com superfície general de l'habitatge)"
+          ]
+        },
+        "espais_intermedis": {
+          "name": "Espais intermedis amb l'exterior (galeries, porxos, tribunes i terrasses cobertes)",
+          "checklist": [
+            "Si els espais intermedis amb l'exterior són tancats, han de disposar d'una superfície vidrada no inferior al 60% de la seva superfície de façana",
+            "La superfície d'il·luminació i ventilació no ha de ser inferior a la suma de les superfícies d'il·luminació i ventilació de les estances que s'obrin a l'exterior"
+          ]
+        },
+        "espai_rentar_roba": {
+          "name": "Espai per rentar la roba",
+          "checklist": [
+            "Obligatori en habitatges de ≥2habitacions",
+            "Superfície ≥ 1,40 m2",
+            "La superfície útil de la cuina s'incrementa en 1m2 si conte la rentadora",
+            "L'espai disposa de ventilació directa a l'espai exterior directa o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "(No especificat en decret 55/2009) Disposa de presa d'aigua freda i calenta",
+            "(No especificat en decret 55/2009) Disposa de desguàs",
+            "(No especificat en decret 55/2009) Disposa de presa de corrent"
+          ]
+        },
+        "estenedor": {
+          "name": "Estenedor",
+          "checklist": [
+            "Disposa d'un espai destinat específicament per l'assecament natural la roba",
+            "L' espai disposa d'un sistema permanent de ventilació i està protegit de vistes del carrer o espai públic. Pot ser indivudual o col·lectiu Pot ser cobert o descobert",
+            "No pot tapar cap obertura necessària per a la il·luminació o ventilació exigides als espais d'ús comú o habitacions",
+            "Es pot ubicar en patis que permeten inscriure un cercle ≥ de Ø 1,80 m En aquests, no ventilaran aparcaments ni locals amb activitats industrials o sorolloses"
+          ]
+        }
+      }
+    },
+    {
+      "id": "d141_2012_annex1",
+      "name": "Decret 141/2012 (Annex 1)",
+      "description": "Requisits mínims establerts al Decret per habitatges nous o resultants d'una gran rehabilitació",
+      "date_range": {
+        "start": "2012-10-31",
+        "end": null
+      },
+      "room_types": {
+        "espais_acces": {
+          "name": "Espais d'accés a l'habitatge, zones comunitàries",
+          "checklist": [
+            "Disposa d'un porter electrònic o sistema similar que faciliti l'entrada i permeti la comunicació interactiva des de l'accés a l'edifici amb qualsevol habitatge (no obligatori per habitatges unifamiliars). En edificis plurifamiliars ≥ 6 habitatges, cal videoporter accessible (annex 5a, Decret 209/2023)",
+            "Disposa de sistema elèctric d'il·luminació (característica no especificada en Decret 141/2012), però cal complir el CTE DB SUA-4 i annex 3c, Decret 209/2023",
+            "El sòl trepitjable està pavimentat, es resistent al lliscament i al desgast per l'ús normal, a més no és polsegós i no implica perill, (característiques no especificades en annex 1 Decret 141/2012), però cal complir el CTE DB SUA-1 i annex 3c, Decret 209/2023",
+            "Disposa d'un itinerari accessible per accedir a cadascun dels habitatges (CTE DB SUA-9 i annex 3c Decret 209/2023)",
+            "Excepcions d'itinerari accessible en edificis plurifamiliars: (casos d'impossibilitat tècnica i que l'entorn existent no ho permeti) Es garantirà l'itinerari practicable (annex 3f, Decret 209/2023) o Es preveurà espais suficients per poder instal·lar en el futur els productes de suport necessaris per disposar d'aquests itineraris",
+            "L'accés es fa a través d'un espai públic, d'un espai comú o d'un annex al mateix habitatge al qual es tingui accés de la mateixa manera",
+            "Cap espai de l'habitatge no pot servir d'accés obligat a qualsevol local que no sigui d'ús exclusiu del mateix habitatge",
+            "Els espais comuns situats davant de la porta de l'ascensor han de permetre la inscripció d'un cercle de Ø 1,50 m",
+            "Sense habitatges accessibles En edificis ≤ PB+2 s'admet que els espais comuns situats davant de la porta de l'ascensor permeten la inscripció d'un cercle de Ø 1,20 m",
+            "L'edifici plurifamiliar disposa d'ascensor (veure excepcions), si els habitatges no són directament accessibles per a les persones amb mobilitat reduïda. (Per determinar la condició d'edifici plurif. no computen els habitatges de la planta d'accés)",
+            "Excepcions de disposar d'ascensor en edificis plurifamiliars * (supòsits d'impossibilitat tècnica o econòmica), sense cap habitatge accessible. Edificis amb una alçària ≤ PB+2 (≤ 8 m) i ≤ 4 habitatges. S'admet una plataforma elevadora vertical (apartat 6, annex 3f). Edificis amb ≤ PB+2 i ≤ 2 habitatges.(s'admet també previsió d'espai per una PEV o PEI) Edificis amb ≤ PB+1 i ≤ 4 habitatges. S'admet substituir l'ascensor per una previsió d'espai, de dimensions mínimes 1,60 x 1,60 m (embarcament simple o doble a 180º) o 1,90 x 1,60 m (embarcament doble a 90º) i preveure la connexió amb les zones comunes i els habitatges d'acord amb el codi d'accessibilitat vigent. Edificis amb ≤ 2 habitatges en plantes diferents de la d'accés a l'immoble. Edificis amb ≤ PB+2 , en solars amb longitud de façana < 6,5 m, i ≤ 4 habitatges. S'admet fer una previsió d'espai per plataforma elevadora vertical (PEV) (dimensions mínimes 1,50 × 1,50 m, fossar 0,10 m, alçària >2,40 m per sobre del terra del nivell més elevat i espai lliure d'accés que permeti la inscripció d'un cercle de Ø 1,20 m) o una escala d'amplada mínima 1,20 m en tot el recorregut per admetre una plataforma elevadora inclinada (PEI) (apartat 7.1.2, annex 3c Decret 2029/2023). (*) No es computen els habitatges en la planta d'accés",
+            "Es disposaran de dos ascensors quan: Fins a PB+3 amb més de 32 habitatges per sobre PB. PB+4 amb més de 28 habitatges per sobre PB. PB+5 amb més de 26 habitatges per sobre PB. PB+6 amb més de 24 habitatges per sobre PB. PB+7 amb més de 21 habitatges per sobre PB. PB+8 amb més de 16 habitatges per sobre PB. PB+9 o superior amb independència nombre habitatges. Un dels ascensors serà accessible (cabina 1,10 x 1,40 m o amb portes a 90º 1,40 x 1,40 m) i l'altre com a mínim practicable (cabina 1,00 x 1,25 m o amb portes a 90º 1,40 x 1,40 m). Si l'edifici disposa de pàrquing soterrat, almenys l'ascensor accessible hi ha de comunicar",
+            "Alçada lliure de pas en recorregut d'accés a l'habitatge ≥ 2,20m (CTE DB SUA-2 i annex 3c, Decret 2029/2023)",
+            "Portes de l'espai d'accés a l'habitatge amplada ≥ 0,80m i alçada ≥ 2,00 m",
+            "Si te escales: (CTE DB SUA-1, CTE DB SI-3 i annex 3c Decret 209/2023) Cada tram, el màxim desnivell a salvar serà de 3,20 metres. Altura graons com a màxim 18,5 cm. Estesa graons com a mínim de 28 cm. (en trams corbs la línia de pas de 0,28m, es mesurarà a 50 cm del costat interior. La part més ampla no pot fer mes de 44 cm). Amplada útil de l'escala ≥ 1,00m, sense computar l'estesa que sigui inferior a 17cm",
+            "Els desnivells superiors a 0,55 cm estan protegits per elements protectors o baranes resistents als cops. Les baranes no son escalables (CTE DB SUA-1 i annex 3c Decret 209/2023)"
+          ]
+        },
+        "dotacio_comunitaria": {
+          "name": "Dotació comunitària (si l'edifici te més de 8 habitatges)",
+          "checklist": [
+            "Disposa d'un espai,per edifici o escala, per a ús de la comunitat accessible des de l'exterior o zones comunes, amb dimensions 1,20 m x 0,80 m. A partir de 12 habitatges s'incrementarà + 0,05 m² per cada nou habitatge",
+            "Si l'amplada > 1,20 m es pot utilitzar com a cambra (pot donar servei a altres usos, magatzem contenidors, etc.)",
+            "Alçada mínima ≥ 2,20m",
+            "Disposa de desguàs, punt de llum i presa d'aigua"
+          ]
+        },
+        "habitatge_general": {
+          "name": "Habitatge en general",
+          "checklist": [
+            "Disposa com a mínim d'una estança o sala d'estar menjador, una cambra higiènica, un equip de cuina, permet la instal·lació directa d'un equip de rentat de roba i preveu una solució per a l'assecat natural de la roba, amb una superfície útil interior ≥ 36 m2. Quan l'estança sigui un únic espai haurà de permetre la compartimentació d'una habitació de 8 m², sense que la sala d'estar ni l'habitació perdin els seus requisits obligatoris",
+            "Porta d'accés a l'habitatge, amplada de pas ≥ 0,80 m i alçada lliure ≥ 2,00 m",
+            "Patis amb mes de 2 plantes d'altura hauran de disposar d'una presa d'aire des de l'exterior, situada entre la part inferior del pati i el primer forjat immediatament superior, amb una superfície ≥ superfície pati/100",
+            "Els patis, si són coberts per una claraboia, han de tenir una sortida d'aire en el coronament amb una superfície no inferior a 2/3 de la seva superfície en planta",
+            "Els patis de ventilació o relacionats amb l'ús de l'habitatge no es podran utilitzar per a la ventilació directa d'aparcaments col·lectius ni de locals amb activitats industrials o sorolloses, llevat que aquesta es faci a través de conductes fins a la coberta. Aquest conductes han d'estar coberts per evitar fuites o males olors",
+            "Compartimentació lliure excepte: espais destinats a les habitacions es puguin independitzar i cambres higièniques siguin recintes independents",
+            "Compartimentació amb criteris de flexibilitat de l'habitatge però manté la dotació obligatòria de caràcter fix segons el projecte tècnic original: equip de cuina i les cambres higièniques, elements amb funció estructural o siguin elements comuns a l'edifici, elements que conformen el tancament amb l'exterior",
+            "L'habitatge compleix els paràmetres de practicable",
+            "Si l'habitatge es desenvolupa en un únic nivell, seran practicables, com a mínim, l'accés, una cambra higiènica, la cuina, un espai d'ús comú i una habitació",
+            "Si l'habitatge es desenvolupa en diferents nivells, seran practicables, com a mínim, l'accés, una cambra higiènica, la cuina, un espai d'ús comú o una habitació",
+            "Altura entre paviment i sostre ≥ 2,50 m en estances i habitacions. Al menjador, sala d'estar i habitacions s'admetrà, excepcionalment, 2,30 m d'alçada per al pas tècnic d'instal·lacions i per a elements estructurals que no afectin més del 20% de la superfície de la peça",
+            "Altura entre paviment i sostre ≥ 2,20m. en Cuina, Cambra higiènica i espais de circulació",
+            "Altura valor mitjà en cobertes inclinades ≥ 2,50m sobre la sup. habitable",
+            "Els espais interiors destinats a la circulació que connectin l'accés a l'habitatge i els espais practicables es resoldran mitjançant un itinerari practicable. Han de tenir una amplada mínima d'un metre (1 m) i permetre la inscripció d'un cercle de Ø 1,20 m en el canvis de direcció. Davant les portes d'accés als espais practicables (cuina, cambra higiènica, espai d'ús comú i/o una habitació), s'admet que el cercle de Ø 1,20 m s'inscrigui amb les portes obertes. No pot contenir cap escala ni graó aïllat, ni tampoc cap ressalt diferent del gravat del paviment mateix. Els desnivells s'han de salvar mitjançant rampes practicables, ascensors practicables, plataformes elevadores (verticals o inclinades). Els espais destinats a la circulació que donin accés als espais no practicables de l'habitatge, tindran una amplada mínima ≥ 0,90 m i una alçada lliure ≥ 2,20m",
+            "Portes d'accés als espais interns de l'habitatge que siguin practicables, amplada de pas ≥ 0,80 m i alçada lliure ≥ 2,00 m",
+            "Portes d'accés als espais interns de l'habitatge que no siguin practicables, amplada de pas ≥ 0,70 m i alçada lliure ≥ 2,00 m",
+            "Escales interiors, ample de pas ≥ 0,90 m i alçada lliure ≥ 2,20 m (sempre mesurada en el punt més desfavorable del graó), d'acord amb CTE DB SUA-1 i annex 3c, Decret 209/2023. Quan l'habitatge es desenvolupi en més d'una planta, encara que hi hagi mitjans de circulació mecànica, aquests s'hauran de comunicar sempre per una escala interior",
+            "Si l'habitatge es desenvolupa en diferents plantes, s'admet que la connexió entre plantes es resolgui mitjançant una previsió d'espai que permeti la instal·lació d'una plataforma elevadora.(veure apartat 7.1, annex 3c): Plataforma Elevadora Vertical: Dimensions del buit (amplada x fons) 1,50 x 1,50 m accessos perpendiculars i 1,30 x 1,50 m únic accés o accessos oposats. Fossar mínim 10 cm i alçària > 2,40 m en terra última planta A cada parada, davant de l'accés, s'ha de permetre la inscripció d'un cercle de Ø 1,20 m lliure d'obstacles. Plataforma Elevadora Inclinada: Escala traçat recte, 1,00 m amplada. Escala amb girs, o més de dos trams, 1,10 m amplada. Espai plataforma 0,70 x 0,80 m.(amplada x fons). Separació a primer graó 0,40 m. Espai de maniobra d'accés a la plataforma, cercle de Ø 1,20 m, el qual es pot superposar 0,20 m amb la rampa desplegada",
+            "Els desnivells superiors a 55 cm estan protegits per elements protectors o baranes resistents als cops. Les baranes no son escalables, amb alçada ≥ 0,90 m i compleixen amb les especificacions del CTE DB SUA-1 i annex 3c Decret 209/2023",
+            "Perímetre de façana, L ≥ S/9, S= superfície útil de l'habitatge (m2). L=perímetre de façana (m)",
+            "Disposa d'una instal·lació d'aigua freda i calenta corrent d'acord amb la normativa existent (CTE DB HS-4 i HE-4) connectada a xarxa",
+            "Té un sistema d'evacuació d'aigües residuals, d'acord amb la normativa vigent (CTE DB HS-5) connectada a xarxa",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de Baixa Tensió vigent (veure ITC-BT-25) i esta connectada a xarxa",
+            "Disposa d'una infraestructura comuna de telecomunicacions, de conformitat amb la normativa vigent en matèria de telecomunicacions",
+            "Disposa d'un espai destinat específicament per l'assecament natural la roba, protegit de vistes del carrer o espai públic"
+          ]
+        },
+        "espais_us_comu": {
+          "name": "Espais d'ús comú (Sala d'estar – Menjador Cuina) (EMC)",
+          "checklist": [
+            "La superfície mínima del conjunt d'espais que integren la zona d'ús comú, sala d'estar (E), menjador (M), cuina (C), no pot ser inferior a 4m2 per persona, segons el llindar d'ocupació que estableix l'article 4, amb un mínim de 20 m²",
+            "Permet la inscripció, entre 0 i 0,70 m d'alçada, d'un cercle de Ø 1,20 m, lliure de l'afectació del gir de les portes i dels equipaments fixos, amb recorregut interior d'amplada ≥ 0,80m i un espai de Ø 1,20 m en el canvis de direcció, lliure d'interferències amb mobiliari fix",
+            "Cuina integrada en la zona del menjador (M) o de la sala d'estar-menjador (EM), la superfície vertical oberta que relacioni aquests espais serà ≥ 3,50 m²"
+          ]
+        },
+        "sala_estar_menjador": {
+          "name": "Sala d'estar - Menjador (EM)",
+          "checklist": [
+            "Accés sala d'estar –menjador amplada ≥ 0,80 m i alçada 2,00 m",
+            "Davant de la porta d'accés, permet la inscripció d'un cercle de Ø 1,20 m",
+            "Permet la inscripció entre 0 i 0,70 m d'alçada, d'un cercle de Ø 1,20 m, lliure de l'afectació del gir de les portes i dels equipaments fixos, amb recorregut interiors d'amplada ≥ 0,80m i un espai de Ø 1,20 m en el canvis de direcció, lliure d'interferències amb mobiliari fix",
+            "Permet la inscripció entre paraments d'un cercle de Ø 2,80 m",
+            "Sense estrangulaments en planta < 1,60m",
+            "Altura lliure entre paviment i sostre ≥ 2,50 m S'admet, excepcionalment, 2,30 m d'alçada per al pas tècnic d'instal·lacions i per a elements estructurals que no afectin més del 20% de la superfície de la peça",
+            "Contacte amb façana, amplada ≥ 2,20 m",
+            "Ventilació i il·luminació natural directa des de l'exterior, amb una sup. d'obertura ≥ 1/8 de la seva sup. útil, entre 0,00 i 2,50 m d'altura respecte el paviment. (espais intermedis tenen consideració d'espai exterior)",
+            "Es garanteixen llums directes",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de BT vigent (veure ITC-BT-25)",
+            "Compleix l'obligació de no contenir cap aparell higiènic"
+          ]
+        },
+        "habitacio": {
+          "name": "Habitació (H)",
+          "checklist": [
+            "Superfície útil ≥ 6 m2",
+            "Habitació practicable (una com a mínim), permet la inscripció en l'interior, entre 0 i 0,70 m d'alçada, d'un cercle de Ø 1,20 m, lliure de l'afectació del gir de les portes i dels equipaments fixos, amb recorregut interior d'amplada ≥ 0,80m i un espai de Ø 1,20 m en el canvis de direcció, lliure d'interferències amb mobiliari fix",
+            "Davant de la porta d'accés, permet la inscripció d'un cercle de Ø 1,20 m. si es practicable",
+            "Accés habitació practicable amplada ≥ 0,80 m i alçada 2,00 m",
+            "Accés habitació no practicable amplada ≥ 0,70 m i alçada 2,00 m",
+            "Altura lliure entre paviment i sostre ≥ 2,50 m S'admet, excepcionalment, 2,30 m d'alçada per al pas tècnic d'instal·lacions i per a elements estructurals que no afectin més del 20% de la superfície de la peça",
+            "Permet la inscripció d'un quadrat de 2,00 m de costat si habitatge ≤ 2 habitacions. (El quadrat no pot ser envaït per sup. d'emmagatzematge ni pel batent de les portes)",
+            "Permet la inscripció d'un quadrat de 2,60 m de costat almenys en una si habitatge ≥ 3 habitacions . (El quadrat no pot ser envaït per sup. d'emmagatzematge ni pel batent de les portes)",
+            "Ventilació i il·luminació natural directa des de l'exterior, amb una sup. d'obertura ≥ 1/8 de la seva sup. útil, entre 0,00 i 2,50 m d'altura respecte el paviment. (espais intermedis tenen consideració d'espai exterior)",
+            "Ventilació a pati ≤ 3 Plantes Permet l'inscripció d'un cercle de Ø ≥ 3m amb superfície mínima de 9 m2. (a partir de > 3 plantes la superficíe minima augmentarà 1,80 m2 per cada planta que s'afegeixi)",
+            "Disposa de ventilació d'acord amb el CTE DB HS-3. Els patis de ventilació o relacionats amb l'ús de l'habitatge no podran utilitzar-se per a la ventilació directa d'aparcaments col·lectius ni de locals amb activitats industrials o sorolloses",
+            "Es garanteixen llums directes",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de BT vigent (veure ITC-BT-25)",
+            "Compleix l'obligació de no contenir cap aparell higiènic",
+            "Pot independitzar-se"
+          ]
+        },
+        "cuina": {
+          "name": "Cuina (C)",
+          "checklist": [
+            "Té un equip de cuina format, com a mínim, per una aigüera i un aparell de cocció (no conte aparells higiènics, excepte safareig, no especificat en annex 1 del Decret 141/2012)",
+            "Accés cuina, amplada ≥ 0,80 m i alçada ≥ 2,00 m",
+            "Davant de la porta d'accés, permet la inscripció d'un cercle de Ø 1,20 m",
+            "Permet la inscripció entre 0 i 0,70 m d'alçada lliure ,d'un cercle de Ø 1,20 m, lliure de l'afectació del gir de les portes, entre els paraments i/o l'equipament fix de la cuina, amb recorregut interior d'amplada ≥ 0,80m i un espai de Ø 1,20 m en el canvis de direcció, lliure d'interferències amb mobiliari fix",
+            "Espai lliure entre el taulell de treball i la resta d'equipament o paraments, amplada mínima ≥ 1,00 m",
+            "Altura lliure entre paviment i sostre ≥ 2,20 m",
+            "Ventilació i il·luminació natural directa des de l'exterior, amb una sup. d'obertura ≥ 1/8 de la seva sup. útil, entre 0,00 i 2,50 m d'altura respecte el paviment. (espais intermedis tenen consideració d'espai exterior)",
+            "Disposa de ventilació d'acord amb el CTE DB HS-3",
+            "Pati alçada ≤ 3 Plantes Si ventila a un pati on hi ventilen habitacions, permet l'inscripció d'un cercle de Ø ≥ 3m amb superfície mínima de 9 m2. (a partir de > 3 plantes la superficíe minima augmentarà 1,80 m2 per cada planta que s'afegeixi)",
+            "Pati alçada ≤ 3 Plantes Si ventila a un pati on hi ventilen també cuines, CH i/ o escales, permet l'inscripció d'un cercle de Ø ≥ 2,5m amb superfície mínima de 6 m2. (a partir de > 3 plantes la superficíe minima augmentarà 0,90 m2 per cada planta que s'afegeixi)",
+            "Els patis de ventilació o relacionats amb l'ús de l'habitatge no podran utilitzar-se per a la ventilació directa d'aparcaments col·lectius ni de locals amb activitats industrials o sorolloses",
+            "Es garanteixen llums directes",
+            "Disposa d'un sistema específic d'extracció mecànica sobre l'aparell de cocció connectat que permeti l'extracció de bafs i fums fins a la coberta",
+            "Disposa d'una instal·lació d'aigua freda i calenta corrent d'acord amb la normativa existent (CTE DB HS-4 i HE-4)",
+            "Té un sistema d'evacuació d'aigües residuals, d'acord amb la normativa (CTE DB HS-5)",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de BT (veure ITC-BT-25)"
+          ]
+        },
+        "cambra_higienica": {
+          "name": "Cambra higiènica i equip higiènic (CH)",
+          "checklist": [
+            "No pot servir de pas obligat a una altra peça",
+            "Accés cambra higiènica, amplada ≥ 0,80 m i alçada ≥ 2,00 m",
+            "Altura lliure de paviment i sostre ≥ 2,20 m",
+            "Davant de la porta d'accés, permet la inscripció d'un cercle de Ø 1,20 m",
+            "Disposa de la dotació mínima higiènica (dutxa/banyera, vàter i rentamans), es situaran en les cambres higièniques i la seva agrupació és lliure, llevat del rentamans que es pot situar en un espai de circulació",
+            "Si habitatge te 4 habitacions o més: 2 rentamans ,2 vàters, 1 dutxa/banyera",
+            "Compleix l'accés als aparells que integrin la dotació mínima higiènica, de manera que es permet la inscripció, entre 0 i 0,70 m d'alçada, d'un cercle de Ø 1,20 m., lliure de l'afectació del gir de les portes i dels equipaments fixos, amb recorregut interior d'amplada ≥ 0,80m",
+            "Si la rentadora de roba està integrada en la cambra higiènica, te la consideració de dotació fixa a efectes del compliment de les condicions d'accessibilitat per a persones amb mobilitat reduïda.(condició anterior)",
+            "Si disposa d'una dutxa enrasada amb el terra, la seva superfície computarà a l'efecte de permetre el cercle de maniobra Ø 1,20 m",
+            "Disposa de ventilació d'acord amb el CTE DB HS-3. (Hibrida o mecànica)",
+            "Pati alçada ≤ 3 Plantes Si ventila a un pati on hi ventilen habitacions, permet l'inscripció d'un cercle de Ø ≥ 3m amb superfície mínima de 9 m2. (a partir de > 3 plantes la superficíe minima augmentarà 1,80 m2 per cada planta que s'afegeixi)",
+            "Pati alçada ≤ 3 Plantes Si ventila a un pati on hi ventilen també cuines i/o escales, permet l'inscripció d'un cercle de Ø ≥ 2,5m amb superfície mínima de 6 m2. (a partir de > 3 plantes la superficíe minima augmentarà 0,90 m2 per cada planta que s'afegeixi)",
+            "Pati alçada ≤ 3 Plantes Si ventila a un pati on hi ventilen sols CH i/o escales, permet l'inscripció d'un cercle de Ø ≥ 1,80m. (a partir de > 3 plantes el Ø minim augmentarà 0,10m per cada planta que s'afegeixi)",
+            "Els patis de ventilació o relacionats amb l'ús de l'habitatge no es podran utilitzar per a la ventilació directa d'aparcaments col·lectius ni de locals amb activitats industrials o sorolloses, llevat que aquesta es faci a través de conductes fins a la coberta",
+            "els conductes estan protegits per evitar que es produeixi cap mena de fuita o de mala olor que pugui afectar el pati de ventilació",
+            "Disposa d'una instal·lació d'aigua freda i calenta corrent d'acord amb la normativa existent (CTE DB HS-4 i HE-4)",
+            "Té un sistema d'evacuació d'aigües residuals, d'acord amb la normativa (CTE DB HS-5)",
+            "La instal·lació elèctrica compleix el Reglament Electrotècnic de BT vigent, (veure ITC-BT-25)",
+            "Pot independitzar-se"
+          ]
+        },
+        "espai_emmagatzematge": {
+          "name": "Espai d'emmagatzematge",
+          "checklist": [
+            "Cada habitació ha de preveure un espai individual d'emmagatzematge que estarà dibuixat en el plànol per fer-ne la comprovació. L'espai que ocupi computarà als efectes de superfície mínima en el cas de situar-se a l'interior de l'habitació",
+            "Dimensions mínimes (fons x amplada x alçada) Habitació ≥ 6 m² , 0,60 m x 1,00 m x 2,20 m Habitació ≥ 8 m² , 0,60 m x 1,50 m x 2,20 m",
+            "En cas d'armaris encastats computa com a superfície útil l'espai de portes i marcs dins dels 0,6 m de fons",
+            "S'admeten els espais fraccionats sempre amb amplada mínima de 0,30 m",
+            "S'admet alçades inferiors a les establertes, amb un mínim d'1,50 m, sempre que s'augmenti l'amplada fins a obtenir el volum equivalent establert",
+            "Es poden situar fora de les habitacions"
+          ]
+        },
+        "espais_intermedis": {
+          "name": "Espais intermedis amb l'exterior (galeries, porxos, tribunes i terrasses cobertes)",
+          "checklist": [
+            "Si els espais intermedis amb l'exterior són tancats, han de disposar d'una superfície vidrada no inferior al 60% de la seva superfície de façana",
+            "La superfície d'il·luminació i ventilació no ha de ser inferior a la suma de les superfícies d'il·luminació i ventilació de les estances que s'obrin a l'exterior"
+          ]
+        },
+        "espai_rentar_roba": {
+          "name": "Espai per rentar la roba",
+          "checklist": [
+            "Si la rentadora de roba s'integra en una cambra higiènica, tindrà la consideració de dotació fixa als efectes del compliment de les condicions d'accessibilitat per a persones amb mobilitat reduïda",
+            "(No especificat en annex 1 del Decret 141/2012) Disposa de presa d'aigua freda i calenta",
+            "(No especificat en annex 1 del Decret 141/2012) Disposa de desguàs",
+            "(No especificat en annex 1 del Decret 141/2012) Disposa de presa de corrent"
+          ]
+        },
+        "estenedor": {
+          "name": "Estenedor (espai d'assecament natural de la roba)",
+          "checklist": [
+            "Disposa d'un espai destinat específicament per l'assecament natural la roba",
+            "L' espai disposa d'un sistema permanent de ventilació i està protegit de vistes del carrer o espai. Pot ser indivudual o col·lectiu Pot ser cobert o descobert",
+            "No pot tapar cap obertura necessària per a la il·luminació o ventilació exigides als espais d'ús comú o habitacions",
+            "Es pot ubicar en patis per eixugar la roba que permeten inscriure un cercle ≥ de Ø 1,80 m Si ventila a un pati on hi ventilen CH i/o escales, permet l'inscripció d'un cercle de Ø ≥ 1,80m. (a partir de > 3 plantes el Ø minim augmentarà 0,10m per cada planta que s'afegeixi)",
+            "Si son col·lectius i donen servei a un habitatge accessible, cal garantir l'accessibilitat",
+            "Si l'espai comú d'eixugada està a la coberta de l'edifici, no serà necessari fer pujar l'ascensor o plataforma elevadora fins a aquesta, si es preveu un altre sistema a l'interior de l'habitatge o a les zones comunes de l'edifici (eixugada mecànica, sala d'eixugada, etc.)"
+          ]
+        }
+      }
+    },
+    {
+      "id": "d141_2012_annex2",
+      "name": "Decret 141/2012 (Annex 2)",
+      "description": "Condicions mínimes d'habitabilitat dels habitatges preexistents o usats, construïts amb anterioritat a l'11 d'agost de 1984",
+      "date_range": {
+        "start": null,
+        "end": "1984-08-10"
+      },
+      "room_types": {
+        "construccio": {
+          "name": "Construcció",
+          "checklist": [
+            "És sòlida",
+            "No traspua humitat",
+            "És estanca a les aigües pluvials",
+            "S'evita la inundació de l'habitatge",
+            "El sòl trepitjable de tot l'habitatge està pavimentat, no és polsegós i no implica perill"
+          ]
+        },
+        "accessos": {
+          "name": "Accessos",
+          "checklist": [
+            "L'accés es fa mitjançant una porta que comunica l'habitatge amb l'exterior, a traves d'un espai públic, espai comú o un espai annex i serà exclusiu de l'habitatge. Aquest accés no es podrà utilitzar per qualsevol local que no sigui exclusiu de l'habitatge o comunitari",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops",
+            "El sòl trepitjable està pavimentat, no és polsegós i no implica perill",
+            "Disposa de sistema elèctric d'il·luminació"
+          ]
+        },
+        "habitatge_general": {
+          "name": "Habitatge en general",
+          "checklist": [
+            "Disposa, com a mínim, d'una sala, cambra higiènica, equip de cuina i permet la instal·lació directa d'un equip de rentar roba",
+            "Té una superfície útil interior mínima ≥ 20 m2",
+            "Altura lliure mínima ≥ 1,90 m",
+            "Disposa d'un dipòsit de reserva d'aigua de, almenys, 200 litres si té subministrament per captació pròpia o aforament",
+            "Te un equip que permet un consum seguit de 50 litres d'aigua a 40ºC i 10 l/ minut (escalfador per exemple)",
+            "El sistema d'evacuació d'aigües residuals està connectat a la xarxa de clavegueres o es depura prèviament",
+            "Disposa d'un lloc previst per a l'equip de rentar roba amb una presa d'aigua freda, desguàs i una presa de corrent",
+            "Disposa de lavabo i/o dutxa o banyera en una o diverses peces i vàter a la cambra higiènica",
+            "La instal·lació elèctrica general disposa d'un interruptor de control de potencia (ICP)",
+            "Els desnivells superiors a 60 cm estan protegits per elements protectors o baranes resistents als cops"
+          ]
+        },
+        "sala": {
+          "name": "Sala",
+          "checklist": [
+            "Té una superfície útil interior ≥ 10 m2",
+            "Permet inscriure un quadrat de 2,40 x 2,40 m",
+            "Superfície útil ≥ 14 m2, si disposa d'equip de cuina a la mateixa sala (superfície vertical que relacioni aquests espais ≥ 1,40 m2)",
+            "Sense estrangulaments, en planta, < 1,40 m (excepte entre el pas sala-cuina)",
+            "Ventilació directa o a través d'una galeria ≥ 0,80 m2, en façana o pati d'illa, entre 0,80 i 2,00 m d'altura",
+            "Ventilació directa o a través d'una galeria ≥ 0,80 m2, a pati de parcel·la (superfície en planta ≥ 4 m2 i permet d'inscripció d'un cercle de Ø 1,80m ) entre 0,80 i 2,00 m d'altura",
+            "No es permet a través de la sala, la ventilació obligatòria de cap altra peça",
+            "La instal·lació elèctrica no implica perill ni pertorbacions en el funcionament d'altres instal·lacions, i disposa, com a mínim, d'un punt de llum amb interruptor independent",
+            "Sense equip de cuina, disposa, com a mínim, de 2 endolls",
+            "Amb equip de cuina, disposa, com a mínim, de 4 endolls",
+            "Amb equip de cuina, disposa d'endolls de l'equip obligatori",
+            "Compleix l'obligació de no contenir cap aparell higiènic"
+          ]
+        },
+        "habitacio_1": {
+          "name": "Habitació 1",
+          "checklist": [
+            "Superfície útil ≥ 5 m2",
+            "Admet la inscripció d'un quadrat d' 1,80x1,80 m en planta",
+            "Ventilació directa o a través d'una galeria ≥ 0,40 m2 en façana, pati d'illa o pati de parcel·la, entre 0,80 i 2,00 m d'altura",
+            "La instal·lació elèctrica no implica perill ni pertorbacions en el funcionament d'altres instal·lacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Sense vàter, safareig o abocador",
+            "Sense equip obligatori de cuina ni equip de rentat de roba",
+            "Pot independitzar-se"
+          ]
+        },
+        "habitacio_2": {
+          "name": "Habitació 2",
+          "checklist": [
+            "Superfície útil ≥ 5 m2",
+            "Admet la inscripció d'un quadrat d' 1,80x1,80 m en planta",
+            "Ventilació directa o a través d'una galeria ≥ 0,40 m2 en façana, pati d'illa o pati de parcel·la, entre 0,80 i 2,00 m d'altura",
+            "La instal·lació elèctrica no implica perill ni pertorbacions en el funcionament d'altres instal·lacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Sense vàter, safareig o abocador",
+            "Sense equip obligatori de cuina ni equip de rentat de roba",
+            "Pot independitzar-se"
+          ]
+        },
+        "habitacio_3": {
+          "name": "Habitació 3",
+          "checklist": [
+            "Superfície útil ≥ 5 m2",
+            "Admet la inscripció d'un quadrat d' 1,80x1,80 m en planta",
+            "Ventilació directa o a través d'una galeria ≥ 0,40 m2 en façana, pati d'illa o pati de parcel·la, entre 0,80 i 2,00 m d'altura",
+            "La instal·lació elèctrica no implica perill ni pertorbacions en el funcionament d'altres instal·lacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Sense vàter, safareig o abocador",
+            "Sense equip obligatori de cuina ni equip de rentat de roba",
+            "Pot independitzar-se"
+          ]
+        },
+        "habitacio_4": {
+          "name": "Habitació 4",
+          "checklist": [
+            "Superfície útil ≥ 5 m2",
+            "Admet la inscripció d'un quadrat d' 1,80x1,80 m en planta",
+            "Ventilació directa o a través d'una galeria ≥ 0,40 m2 en façana, pati d'illa o pati de parcel·la, entre 0,80 i 2,00 m d'altura",
+            "La instal·lació elèctrica no implica perill ni pertorbacions en el funcionament d'altres instal·lacions i disposa, com a mínim, d'un punt de llum amb interruptor independent i un endoll",
+            "Sense vàter, safareig o abocador",
+            "Sense equip obligatori de cuina ni equip de rentat de roba",
+            "Pot independitzar-se"
+          ]
+        },
+        "cuina": {
+          "name": "Cuina",
+          "checklist": [
+            "Té un equip de cuina format, com a mínim, per una pica i un aparell de cocció situats en una mateixa peça i sense aparells higiènics, excepte safareig",
+            "Té instal·lació d'aigua freda i calenta en bon estat, que serveix, com a mínim, a la pica de cuina",
+            "La instal·lació elèctrica no implica perill ni pertorbacions en el funcionament d'altres instal·lacions i disposa, com a mínim, de 2 endolls o 3 si l'equip de cocció és elèctric",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "Amb ventilació a l'aire lliure directa o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical"
+          ]
+        },
+        "cambra_higienica": {
+          "name": "Cambra higiènica i equip higiènic",
+          "checklist": [
+            "El vàter està en una cambra higiènica que disposa de ventilació directa a la façana o a través d'un conducte horitzontal amb ventilació mecànica. Pot ser estàtica, si és vertical",
+            "A més del WC en una cambra higiènica, disposa de lavabo, dutxa o banyera, en bon estat, encara que no estiguin en una cambra higiènica",
+            "Té instal·lació d'aigua freda i calenta en bon estat i serveix, com a mínim, un lavabo i una dutxa o banyera, encara que no estiguin en una cambra higiènica",
+            "La dutxa té impermeabilitzat el sòl i els paraments fins a una alçada de 2,10 m (*)",
+            "Té un sistema d'evacuació d'aigües residuals, en bon estat, amb què es connecta tot l'equip que ho requereix, i amb dispositius de tipus sifònic",
+            "Pot independitzar-se",
+            "La instal·lació elèctrica no implica perill ni pertorbacions en el funcionament d'altres instal·lacions i disposa, com a mínim, d'un punt de llum amb interruptor independent"
+          ]
+        },
+        "galeria": {
+          "name": "Galeria",
+          "checklist": [
+            "Té un finestral que dóna directament a l'aire lliure amb una superfície vidrada no inferior al 60% de la seva superfície de façana",
+            "La superfície d'il·luminació i ventilació no ha de ser inferior a la suma de les superfícies d'il·luminació i ventilació de les estances que s'obrin a l'exterior"
+          ]
+        },
+        "equip_rentat": {
+          "name": "Equip de rentat de roba",
+          "checklist": [
+            "Disposa de presa d'aigua freda",
+            "Disposa de desguàs",
+            "Disposa de presa de corrent"
+          ]
+        }
+      }
+    }
+  ]
+}

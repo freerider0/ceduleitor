@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		728505122E6A1FE2009D0A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7285050D2E6A1FE2009D0A5E /* Assets.xcassets */; };
+		7285051E2E6A1FE2009D0A5E /* cedularecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285050E2E6A1FE2009D0A5E /* cedularecorderApp.swift */; };
+		7285051F2E6A1FE2009D0A5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285050F2E6A1FE2009D0A5E /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		728504422E6A14BB009D0A5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7285042C2E6A14B9009D0A5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 728504332E6A14B9009D0A5E;
+			remoteInfo = cedularecorder;
+		};
+		7285044C2E6A14BB009D0A5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7285042C2E6A14B9009D0A5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 728504332E6A14B9009D0A5E;
+			remoteInfo = cedularecorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		728504342E6A14B9009D0A5E /* cedularecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cedularecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		728504412E6A14BB009D0A5E /* cedularecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cedularecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7285044B2E6A14BB009D0A5E /* cedularecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cedularecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7285050D2E6A1FE2009D0A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7285050E2E6A1FE2009D0A5E /* cedularecorderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cedularecorderApp.swift; sourceTree = "<group>"; };
+		7285050F2E6A1FE2009D0A5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		728504442E6A14BB009D0A5E /* cedularecorderTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = cedularecorderTests;
+			sourceTree = "<group>";
+		};
+		7285044E2E6A14BB009D0A5E /* cedularecorderUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = cedularecorderUITests;
+			sourceTree = "<group>";
+		};
+		728505472E6A34E3009D0A5E /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		728505502E6A34F5009D0A5E /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7285055A2E6A34FC009D0A5E /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		728505602E6A3500009D0A5E /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		728504312E6A14B9009D0A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285043E2E6A14BB009D0A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		728504482E6A14BB009D0A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7285042B2E6A14B9009D0A5E = {
+			isa = PBXGroup;
+			children = (
+				728505102E6A1FE2009D0A5E /* cedularecorder */,
+				728504442E6A14BB009D0A5E /* cedularecorderTests */,
+				7285044E2E6A14BB009D0A5E /* cedularecorderUITests */,
+				728504352E6A14B9009D0A5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		728504352E6A14B9009D0A5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				728504342E6A14B9009D0A5E /* cedularecorder.app */,
+				728504412E6A14BB009D0A5E /* cedularecorderTests.xctest */,
+				7285044B2E6A14BB009D0A5E /* cedularecorderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		728505102E6A1FE2009D0A5E /* cedularecorder */ = {
+			isa = PBXGroup;
+			children = (
+				728505472E6A34E3009D0A5E /* Models */,
+				728505602E6A3500009D0A5E /* Resources */,
+				728505502E6A34F5009D0A5E /* Services */,
+				7285055A2E6A34FC009D0A5E /* Views */,
+				7285050D2E6A1FE2009D0A5E /* Assets.xcassets */,
+				7285050E2E6A1FE2009D0A5E /* cedularecorderApp.swift */,
+				7285050F2E6A1FE2009D0A5E /* ContentView.swift */,
+			);
+			path = cedularecorder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		728504332E6A14B9009D0A5E /* cedularecorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 728504552E6A14BB009D0A5E /* Build configuration list for PBXNativeTarget "cedularecorder" */;
+			buildPhases = (
+				728504302E6A14B9009D0A5E /* Sources */,
+				728504312E6A14B9009D0A5E /* Frameworks */,
+				728504322E6A14B9009D0A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				728505472E6A34E3009D0A5E /* Models */,
+				728505502E6A34F5009D0A5E /* Services */,
+				7285055A2E6A34FC009D0A5E /* Views */,
+				728505602E6A3500009D0A5E /* Resources */,
+			);
+			name = cedularecorder;
+			packageProductDependencies = (
+			);
+			productName = cedularecorder;
+			productReference = 728504342E6A14B9009D0A5E /* cedularecorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		728504402E6A14BB009D0A5E /* cedularecorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 728504582E6A14BB009D0A5E /* Build configuration list for PBXNativeTarget "cedularecorderTests" */;
+			buildPhases = (
+				7285043D2E6A14BB009D0A5E /* Sources */,
+				7285043E2E6A14BB009D0A5E /* Frameworks */,
+				7285043F2E6A14BB009D0A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				728504432E6A14BB009D0A5E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				728504442E6A14BB009D0A5E /* cedularecorderTests */,
+			);
+			name = cedularecorderTests;
+			packageProductDependencies = (
+			);
+			productName = cedularecorderTests;
+			productReference = 728504412E6A14BB009D0A5E /* cedularecorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7285044A2E6A14BB009D0A5E /* cedularecorderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7285045B2E6A14BB009D0A5E /* Build configuration list for PBXNativeTarget "cedularecorderUITests" */;
+			buildPhases = (
+				728504472E6A14BB009D0A5E /* Sources */,
+				728504482E6A14BB009D0A5E /* Frameworks */,
+				728504492E6A14BB009D0A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7285044D2E6A14BB009D0A5E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7285044E2E6A14BB009D0A5E /* cedularecorderUITests */,
+			);
+			name = cedularecorderUITests;
+			packageProductDependencies = (
+			);
+			productName = cedularecorderUITests;
+			productReference = 7285044B2E6A14BB009D0A5E /* cedularecorderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7285042C2E6A14B9009D0A5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					728504332E6A14B9009D0A5E = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					728504402E6A14BB009D0A5E = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 728504332E6A14B9009D0A5E;
+					};
+					7285044A2E6A14BB009D0A5E = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 728504332E6A14B9009D0A5E;
+					};
+				};
+			};
+			buildConfigurationList = 7285042F2E6A14B9009D0A5E /* Build configuration list for PBXProject "cedularecorder" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7285042B2E6A14B9009D0A5E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 728504352E6A14B9009D0A5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				728504332E6A14B9009D0A5E /* cedularecorder */,
+				728504402E6A14BB009D0A5E /* cedularecorderTests */,
+				7285044A2E6A14BB009D0A5E /* cedularecorderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		728504322E6A14B9009D0A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				728505122E6A1FE2009D0A5E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285043F2E6A14BB009D0A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		728504492E6A14BB009D0A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		728504302E6A14B9009D0A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7285051E2E6A1FE2009D0A5E /* cedularecorderApp.swift in Sources */,
+				7285051F2E6A1FE2009D0A5E /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285043D2E6A14BB009D0A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		728504472E6A14BB009D0A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		728504432E6A14BB009D0A5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 728504332E6A14B9009D0A5E /* cedularecorder */;
+			targetProxy = 728504422E6A14BB009D0A5E /* PBXContainerItemProxy */;
+		};
+		7285044D2E6A14BB009D0A5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 728504332E6A14B9009D0A5E /* cedularecorder */;
+			targetProxy = 7285044C2E6A14BB009D0A5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		728504532E6A14BB009D0A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = H7N98P2ZWL;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		728504542E6A14BB009D0A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H7N98P2ZWL;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		728504562E6A14BB009D0A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7N98P2ZWL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to record inspection videos";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to record the GPS position of each inspection";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access to record audio with inspection videos";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs photo library access to save inspection videos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs photo library access to save inspection videos";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crm.cedularecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		728504572E6A14BB009D0A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7N98P2ZWL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to record inspection videos";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to record the GPS position of each inspection";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access to record audio with inspection videos";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs photo library access to save inspection videos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs photo library access to save inspection videos";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crm.cedularecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		728504592E6A14BB009D0A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7N98P2ZWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crm.cedularecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cedularecorder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cedularecorder";
+			};
+			name = Debug;
+		};
+		7285045A2E6A14BB009D0A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7N98P2ZWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crm.cedularecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cedularecorder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cedularecorder";
+			};
+			name = Release;
+		};
+		7285045C2E6A14BB009D0A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7N98P2ZWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crm.cedularecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = cedularecorder;
+			};
+			name = Debug;
+		};
+		7285045D2E6A14BB009D0A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7N98P2ZWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crm.cedularecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = cedularecorder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7285042F2E6A14B9009D0A5E /* Build configuration list for PBXProject "cedularecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				728504532E6A14BB009D0A5E /* Debug */,
+				728504542E6A14BB009D0A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		728504552E6A14BB009D0A5E /* Build configuration list for PBXNativeTarget "cedularecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				728504562E6A14BB009D0A5E /* Debug */,
+				728504572E6A14BB009D0A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		728504582E6A14BB009D0A5E /* Build configuration list for PBXNativeTarget "cedularecorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				728504592E6A14BB009D0A5E /* Debug */,
+				7285045A2E6A14BB009D0A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7285045B2E6A14BB009D0A5E /* Build configuration list for PBXNativeTarget "cedularecorderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7285045C2E6A14BB009D0A5E /* Debug */,
+				7285045D2E6A14BB009D0A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7285042C2E6A14B9009D0A5E /* Project object */;
+}

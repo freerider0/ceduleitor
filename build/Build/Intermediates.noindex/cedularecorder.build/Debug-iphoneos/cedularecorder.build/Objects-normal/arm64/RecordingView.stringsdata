@@ -1,0 +1,120 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/RecordingView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld MB",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 121
+        }
+      },
+      {
+        "comment": "",
+        "key": "REC: %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 108
+        }
+      },
+      {
+        "comment": "",
+        "key": "GPS: %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 147
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 142
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add Room",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 225
+        }
+      },
+      {
+        "comment": "",
+        "key": "Switch",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 254
+        }
+      },
+      {
+        "comment": "",
+        "key": "Inspection Address",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 269
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enter property address",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 273
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start Inspection",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 277
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select Room Type",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 295
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 327
+        }
+      },
+      {
+        "comment": "",
+        "key": "Switch to Room",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 340
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 369
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ %@",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 355
+        }
+      }
+    ]
+  },
+  "version": 1
+}

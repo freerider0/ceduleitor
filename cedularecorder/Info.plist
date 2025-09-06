@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- App Basic Information -->
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	
+	<!-- iOS Version Requirements -->
+	<key>MinimumOSVersion</key>
+	<string>15.0</string>
+	
+	<!-- CRITICAL: Privacy Usage Descriptions for App Store Review -->
+	<!-- These are REQUIRED or Apple will reject your app -->
+	
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs camera access to record inspection videos. The camera is used solely to document property conditions during inspections.</string>
+	
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs microphone access to record audio commentary during inspection videos. Audio helps document important observations.</string>
+	
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs location access to record the GPS coordinates of each inspection for accurate property documentation.</string>
+	
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app saves inspection videos to your photo library so you can access them later and share them as needed.</string>
+	
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs photo library access to save and manage inspection videos.</string>
+	
+	<key>NSWorldSensingUsageDescription</key>
+	<string>This app uses ARKit to measure room dimensions and verify compliance with building regulations during property inspections.</string>
+	
+	<!-- App Transport Security - Required for iOS apps -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<!-- Allow arbitrary loads only if needed for your server -->
+		<!-- Remove this if using HTTPS -->
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSAllowsArbitraryLoadsForMedia</key>
+		<false/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<false/>
+	</dict>
+	
+	<!-- Scene Configuration -->
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
+	
+	<!-- Device Requirements -->
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+		<string>arm64</string>
+		<string>video-camera</string>
+		<string>microphone</string>
+		<string>location-services</string>
+		<string>gps</string>
+		<string>arkit</string>
+	</array>
+	
+	<!-- Supported Interface Orientations -->
+	<key>UISupportedInterfaceOrientations~iphone</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	
+	<!-- Launch Screen -->
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>AccentColor</string>
+		<key>UIImageName</key>
+		<string>LaunchImage</string>
+	</dict>
+	
+	<!-- Status Bar -->
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	
+	<!-- Background Modes (if needed for video processing) -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+	
+	<!-- File Sharing -->
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	
+	<!-- iTunes File Sharing -->
+	<key>UISupportsDocumentBrowser</key>
+	<false/>
+	
+	<!-- Export Compliance (required for App Store) -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+</dict>
+</plist>

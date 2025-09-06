@@ -1,0 +1,112 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/RoomCaptureView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Points: %lld",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mode",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "Corners",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "Walls",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 30
+        }
+      },
+      {
+        "comment": "",
+        "key": "Close",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Room",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 105
+        }
+      },
+      {
+        "comment": "",
+        "key": "View Coordinates",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "Room Coordinates",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 279
+        }
+      },
+      {
+        "comment": "",
+        "key": "Copy",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 265
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 271
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 283
+        }
+      },
+      {
+        "comment": "",
+        "key": "1",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 344
+        }
+      },
+      {
+        "comment": "",
+        "key": "?",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 352
+        }
+      }
+    ]
+  },
+  "version": 1
+}
