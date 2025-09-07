@@ -1,0 +1,32 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/ModeIndicatorView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Add %lld more",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 186
+        }
+      },
+      {
+        "comment": "",
+        "key": "Complete",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "Ready to close",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 182
+        }
+      }
+    ]
+  },
+  "version": 1
+}

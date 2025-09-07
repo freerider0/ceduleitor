@@ -1,0 +1,42 @@
+"/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/FloorPlanCADView.swift":
+  diagnostics: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.dia"
+  object: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.o"
+  swift-dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.swiftdeps"
+  dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.d"
+  const-values: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.swiftconstvalues"
+"/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Core/FloorPlanCoordinator.swift":
+  object: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.o"
+  const-values: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.swiftconstvalues"
+  dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.d"
+  swift-dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.swiftdeps"
+  diagnostics: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.dia"
+"/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Views/Canvas/FloorPlanCanvasView.swift":
+  dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.d"
+  object: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.o"
+  const-values: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.swiftconstvalues"
+  swift-dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.swiftdeps"
+  diagnostics: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.dia"
+"/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlan/FloorPlan2DScreen.swift":
+  dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.d"
+  swift-dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.swiftdeps"
+  diagnostics: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.dia"
+  object: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.o"
+  const-values: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.swiftconstvalues"
+"/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Tools/GridManager.swift":
+  const-values: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.swiftconstvalues"
+  object: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.o"
+  dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.d"
+  swift-dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.swiftdeps"
+  diagnostics: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.dia"
+"/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/VideoReplayScreen.swift":
+  const-values: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.swiftconstvalues"
+  swift-dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.swiftdeps"
+  diagnostics: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.dia"
+  object: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.o"
+  dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.d"
+"/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/SmartActionButton.swift":
+  const-values: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.swiftconstvalues"
+  object: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.o"
+  diagnostics: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.dia"
+  swift-dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.swiftdeps"
+  dependencies: "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.d"

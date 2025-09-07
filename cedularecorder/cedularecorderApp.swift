@@ -11,7 +11,7 @@ import SwiftUI
 struct cedularecorderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
         }
     }
 }

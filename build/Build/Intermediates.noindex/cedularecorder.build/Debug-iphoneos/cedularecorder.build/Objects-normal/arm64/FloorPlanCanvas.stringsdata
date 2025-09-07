@@ -1,0 +1,16 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlan/FloorPlanCanvas.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 149
+        }
+      }
+    ]
+  },
+  "version": 1
+}

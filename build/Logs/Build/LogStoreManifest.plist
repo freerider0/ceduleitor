@@ -6,7 +6,7 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>081F4674-C98D-468B-AC12-8CAC095DD042</key>
+		<key>E23D5C34-6836-44B8-B499-663B3606ACB9</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>081F4674-C98D-468B-AC12-8CAC095DD042.xcactivitylog</string>
+			<string>E23D5C34-6836-44B8-B499-663B3606ACB9.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -38,15 +38,57 @@
 			<key>schemeIdentifier-sharedScheme</key>
 			<integer>1</integer>
 			<key>signature</key>
-			<string>Cleaning project cedularecorder with scheme cedularecorder and configuration Debug</string>
+			<string>Cleaning project cedularecorder with scheme cedularecorder</string>
 			<key>timeStartedRecording</key>
-			<real>778708025.09497797</real>
+			<real>778944654.67521596</real>
 			<key>timeStoppedRecording</key>
-			<real>778708025.26364195</real>
+			<real>778944654.84006298</real>
 			<key>title</key>
-			<string>Cleaning project cedularecorder with scheme cedularecorder and configuration Debug</string>
+			<string>Cleaning project cedularecorder with scheme cedularecorder</string>
 			<key>uniqueIdentifier</key>
-			<string>081F4674-C98D-468B-AC12-8CAC095DD042</string>
+			<string>E23D5C34-6836-44B8-B499-663B3606ACB9</string>
+		</dict>
+		<key>FB866977-8068-4648-A12C-6051BA6BA4ED</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FB866977-8068-4648-A12C-6051BA6BA4ED.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>cedularecorder project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>cedularecorder</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning project cedularecorder with scheme cedularecorder</string>
+			<key>timeStartedRecording</key>
+			<real>778949930.70836401</real>
+			<key>timeStoppedRecording</key>
+			<real>778949930.91067898</real>
+			<key>title</key>
+			<string>Cleaning project cedularecorder with scheme cedularecorder</string>
+			<key>uniqueIdentifier</key>
+			<string>FB866977-8068-4648-A12C-6051BA6BA4ED</string>
 		</dict>
 	</dict>
 </dict>

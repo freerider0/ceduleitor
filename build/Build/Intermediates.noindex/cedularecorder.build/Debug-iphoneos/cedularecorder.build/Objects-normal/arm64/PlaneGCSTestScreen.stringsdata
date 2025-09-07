@@ -1,0 +1,232 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/PlaneGCSTestScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "PlaneGCS Test",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 160
+        }
+      },
+      {
+        "comment": "",
+        "key": "PlaneGCS Test",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "Constraint Solver Test",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "Room Constraint Tests",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "This demo creates two points and constrains the distance between them",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 30
+        }
+      },
+      {
+        "comment": "",
+        "key": "Point 1",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "X:",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "Y:",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 43
+        }
+      },
+      {
+        "comment": "",
+        "key": "X",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "Y",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "Point 2",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 53
+        }
+      },
+      {
+        "comment": "",
+        "key": "X:",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "Y:",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 60
+        }
+      },
+      {
+        "comment": "",
+        "key": "X",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 57
+        }
+      },
+      {
+        "comment": "",
+        "key": "Y",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 61
+        }
+      },
+      {
+        "comment": "",
+        "key": "Target Distance:",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "Distance",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "Run Constraint Solver",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 76
+        }
+      },
+      {
+        "comment": "",
+        "key": "Status:",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Iterations:",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 93
+        }
+      },
+      {
+        "comment": "",
+        "key": "Error:",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 97
+        }
+      },
+      {
+        "comment": "",
+        "key": "Degrees of Freedom:",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 103
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 105
+        }
+      },
+      {
+        "comment": "",
+        "key": "Actual Distance:",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 111
+        }
+      },
+      {
+        "comment": "",
+        "key": "Test Rectangle with Horizontal/Vertical",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "Test Square with Length Constraints",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 132
+        }
+      },
+      {
+        "comment": "",
+        "key": "Test L-Shape with Mixed Constraints",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 137
+        }
+      }
+    ]
+  },
+  "version": 1
+}

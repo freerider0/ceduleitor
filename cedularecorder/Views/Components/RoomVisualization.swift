@@ -33,7 +33,7 @@ final class RoomVisualization {
         
         // Add corner markers
         for (index, corner) in corners.enumerated() {
-            addCornerMarker(at: corner, index: index, arView: arView)
+            addCornerMarker(at: corner, index: index, totalCorners: corners.count, arView: arView)
         }
         
         // Add connecting lines
@@ -70,42 +70,67 @@ final class RoomVisualization {
     // ================================================================================
     
     /// Add a corner marker (flat circle with number)
-    private func addCornerMarker(at position: simd_float3, index: Int, arView: ARView) {
-        // Create flat circle
-        let radius: Float = 0.1
+    private func addCornerMarker(at position: simd_float3, index: Int, totalCorners: Int, arView: ARView) {
+        // Create larger, more visible flat circle
+        let radius: Float = 0.15  // Increased from 0.1
         let mesh = MeshResource.generatePlane(
             width: radius * 2,
             depth: radius * 2,
             cornerRadius: radius
         )
         
-        // Color: green for first, blue for others
-        let color = index == 0 ?
-            UIColor.green.withAlphaComponent(0.8) :
-            UIColor.blue.withAlphaComponent(0.8)
+        // Color: green for first, orange for latest, blue for others
+        let color: UIColor
+        if index == 0 {
+            color = UIColor.green.withAlphaComponent(0.9)
+        } else if index == totalCorners - 1 {
+            color = UIColor.orange.withAlphaComponent(0.9)  // Latest corner in orange
+        } else {
+            color = UIColor.blue.withAlphaComponent(0.9)
+        }
+        
         let material = SimpleMaterial(color: color, isMetallic: false)
         let circle = ModelEntity(mesh: mesh, materials: [material])
         
-        // Rotate to lay flat
+        // Rotate to lay flat on floor
         circle.transform.rotation = simd_quatf(angle: -.pi/2, axis: [1, 0, 0])
         
-        // Add number label
+        // Add larger, more visible number label
         let textMesh = MeshResource.generateText(
             "\(index + 1)",
-            extrusionDepth: 0.01,
-            font: .systemFont(ofSize: 0.15),
+            extrusionDepth: 0.02,
+            font: .systemFont(ofSize: 0.2, weight: .bold),  // Larger, bold font
             containerFrame: .zero,
             alignment: .center,
             lineBreakMode: .byClipping
         )
         let textMaterial = SimpleMaterial(color: .white, isMetallic: false)
         let textEntity = ModelEntity(mesh: textMesh, materials: [textMaterial])
-        textEntity.position = [0, 0.02, 0]
+        textEntity.position = [0, 0.03, 0]  // Slightly higher
         
-        // Create anchor
+        // Add a vertical pole to make corner more visible
+        let poleMesh = MeshResource.generateCylinder(height: 0.5, radius: 0.01)
+        let poleMaterial = SimpleMaterial(color: color.withAlphaComponent(0.5), isMetallic: false)
+        let poleEntity = ModelEntity(mesh: poleMesh, materials: [poleMaterial])
+        poleEntity.position = [0, 0.25, 0]  // Half height up
+        
+        // Create anchor at exact floor position
         let anchor = AnchorEntity(world: position)
         anchor.addChild(circle)
         anchor.addChild(textEntity)
+        anchor.addChild(poleEntity)
+        
+        // Add pop-in animation for new corners
+        if index == totalCorners - 1 {
+            circle.scale = [0.1, 0.1, 0.1]
+            poleEntity.scale = [1, 0.1, 1]
+            
+            // Animate scale
+            circle.move(to: Transform(scale: [1, 1, 1]), relativeTo: circle, duration: 0.3)
+            poleEntity.move(to: Transform(scale: [1, 1, 1]), relativeTo: poleEntity, duration: 0.3)
+        }
+        
+        print("🎯 Adding corner marker #\(index + 1) at position: \(position)")
         
         arView.scene.addAnchor(anchor)
         cornerMarkers.append(anchor)

@@ -1,24 +1,5 @@
 {
   "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/ContentView.swift",
-  "tables": {
-    "Localizable": [
-      {
-        "comment": "",
-        "key": "Record",
-        "location": {
-          "startingColumn": 27,
-          "startingLine": 17
-        }
-      },
-      {
-        "comment": "",
-        "key": "Inspections",
-        "location": {
-          "startingColumn": 27,
-          "startingLine": 23
-        }
-      }
-    ]
-  },
+  "tables": {},
   "version": 1
 }

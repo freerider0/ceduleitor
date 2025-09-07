@@ -49,7 +49,7 @@ struct RoomMiniMapView: View {
                 }
                 
                 // Center indicator
-                Circle()
+                SwiftUI.Circle()
                     .fill(Color.white.opacity(0.3))
                     .frame(width: 4, height: 4)
             }
@@ -219,7 +219,7 @@ struct RoomShapeOverlay: View {
             let color = index == 0 ? Color.green : Color.blue
             
             context.fill(
-                Circle().path(in: CGRect(
+                SwiftUI.Circle().path(in: CGRect(
                     x: point.x - 4,
                     y: point.y - 4,
                     width: 8,
@@ -245,7 +245,7 @@ struct RoomShapeOverlay: View {
     ) {
         // Pulsing ring around last corner
         context.stroke(
-            Circle().path(in: CGRect(
+            SwiftUI.Circle().path(in: CGRect(
                 x: point.x - 8,
                 y: point.y - 8,
                 width: 16,

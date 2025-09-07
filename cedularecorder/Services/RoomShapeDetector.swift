@@ -235,10 +235,13 @@ class RoomShapeDetector: ObservableObject {
             transform.columns.3.z
         )
         
-        // Update floor height from the point
+        // Update floor height from the point - use a more intelligent calculation
         if floorHeight == 0 {
-            floorHeight = planePoint.y - 1.5 // Assume wall point is ~1.5m above floor
+            // Estimate floor height based on typical wall capture height
+            // Most users capture walls at eye level (1.5-1.7m above floor)
+            floorHeight = planePoint.y - 1.6
             geometryBuilder.setFloorHeight(floorHeight)
+            print("🏠 Estimated floor height: \(floorHeight)m from wall point at \(planePoint.y)m")
         }
         
         // Create plane equation: ax + by + cz + d = 0
@@ -255,17 +258,22 @@ class RoomShapeDetector: ObservableObject {
         capturedWalls.append(wall)
         capturedWallsCount = capturedWalls.count  // Update published count
         
+        print("📐 Wall captured #\(capturedWalls.count), Normal: \(planeNormal)")
+        
         // Update state based on number of walls captured
         if capturedWalls.count == 1 {
             wallDetectionState = .firstWallStored
-            statusMessage = "First wall captured! Turn 90° to find perpendicular wall"
+            statusMessage = "Wall 1 captured! Turn 90° for wall 2"
         } else if capturedWalls.count >= 2 {
             // Try to calculate intersection immediately
             if let corner = tryCalculateWallIntersection() {
                 corners.append(corner)
                 geometryBuilder.addCorner(corner)
-                statusMessage = "Corner added! (\(corners.count) total)"
-                wallDetectionState = .searching  // Ready for next wall
+                
+                // Update status for consecutive wall flow
+                let wallNum = capturedWalls.count + 1  // Next wall number
+                statusMessage = "Corner \(corners.count) added! Capture wall \(wallNum) for next corner"
+                wallDetectionState = .firstWallStored  // We have 1 wall ready for next corner
                 updateStatus()
                 return true
             } else {
@@ -292,7 +300,7 @@ class RoomShapeDetector: ObservableObject {
         // Check if walls are perpendicular (not parallel)
         let dotProduct = abs(simd_dot(wall1.normal, wall2.normal))
         if dotProduct > 0.9 {  // Walls are nearly parallel
-            print("Walls are too parallel: dot product = \(dotProduct)")
+            print("🔴 Walls are too parallel: dot product = \(dotProduct)")
             return nil
         }
         
@@ -301,15 +309,19 @@ class RoomShapeDetector: ObservableObject {
             wall1: wall1.planeEquation,
             wall2: wall2.planeEquation
         ) else {
-            print("Failed to calculate intersection")
+            print("🔴 Failed to calculate intersection")
             return nil
         }
         
-        print("Successfully calculated corner at: \(intersection)")
+        print("✅ Successfully calculated corner #\(corners.count + 1) at: \(intersection)")
+        print("   Floor height: \(floorHeight), Corner Y: \(intersection.y)")
         
-        // Clear captured walls after successful intersection
-        capturedWalls.removeAll()
-        capturedWallsCount = 0  // Reset count
+        // For consecutive wall flow: keep the last wall for next corner calculation
+        // Remove only the first wall, keeping the second for the next corner
+        if capturedWalls.count >= 2 {
+            capturedWalls.removeFirst()  // Remove oldest wall
+            capturedWallsCount = capturedWalls.count  // Update count (should be 1)
+        }
         
         return intersection
     }

@@ -167,7 +167,7 @@ struct ProgressIndicator: View {
             // Point counter
             HStack(spacing: 4) {
                 ForEach(0..<max(3, pointCount), id: \.self) { index in
-                    Circle()
+                    SwiftUI.Circle()
                         .fill(index < pointCount ? Color.green : Color.gray.opacity(0.3))
                         .frame(width: 8, height: 8)
                 }

@@ -1,0 +1,88 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/HomeScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Version 1.0.0",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 135
+        }
+      },
+      {
+        "comment": "",
+        "key": "Room Recorder",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 30
+        }
+      },
+      {
+        "comment": "",
+        "key": "AR Room Capture & Measurement",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 34
+        }
+      },
+      {
+        "comment": "",
+        "key": "Room Capture",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Saved Rooms",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "2D Floor Plan",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 83
+        }
+      },
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 102
+        }
+      },
+      {
+        "comment": "",
+        "key": "PlaneGCS Test",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 119
+        }
+      },
+      {
+        "comment": "",
+        "key": "Saved Rooms",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 194
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 197
+        }
+      }
+    ]
+  },
+  "version": 1
+}

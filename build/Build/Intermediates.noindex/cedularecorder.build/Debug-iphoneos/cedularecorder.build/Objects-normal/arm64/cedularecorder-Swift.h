@@ -279,10 +279,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import AVFoundation;
+@import ARKit;
+@import CoreFoundation;
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
+@import ReplayKit;
+@import UIKit;
 #endif
 
 #endif
@@ -305,24 +308,113 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+/// Service that exposes ARKit data to SwiftUI views
+SWIFT_CLASS("_TtC14cedularecorder13ARDataService")
+@interface ARDataService : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class ARSession;
+@class ARFrame;
+@class ARAnchor;
+@class ARCamera;
+@interface ARDataService (SWIFT_EXTENSION(cedularecorder)) <ARSessionDelegate>
+- (void)session:(ARSession * _Nonnull)session didUpdateFrame:(ARFrame * _Nonnull)frame;
+- (void)session:(ARSession * _Nonnull)session didAddAnchors:(NSArray<ARAnchor *> * _Nonnull)anchors;
+- (void)session:(ARSession * _Nonnull)session didUpdateAnchors:(NSArray<ARAnchor *> * _Nonnull)anchors;
+- (void)session:(ARSession * _Nonnull)session cameraDidChangeTrackingState:(ARCamera * _Nonnull)camera;
+@end
+
+/// Service for recording AR sessions with overlays using ReplayKit
+SWIFT_CLASS("_TtC14cedularecorder18ARRecordingService")
+@interface ARRecordingService : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSCoder;
+SWIFT_CLASS("_TtC14cedularecorder13CADCanvasView")
+@interface CADCanvasView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawRect:(CGRect)rect;
+@end
+
+@class UIPanGestureRecognizer;
+@class UIPinchGestureRecognizer;
+@class UITapGestureRecognizer;
+SWIFT_CLASS("_TtC14cedularecorder17CADGestureHandler")
+@interface CADGestureHandler : NSObject
+- (void)handlePan:(UIPanGestureRecognizer * _Nonnull)gesture;
+- (void)handlePinch:(UIPinchGestureRecognizer * _Nonnull)gesture;
+- (void)handleTap:(UITapGestureRecognizer * _Nonnull)gesture;
+- (void)handleDoubleTap:(UITapGestureRecognizer * _Nonnull)gesture;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIGestureRecognizer;
+@interface CADGestureHandler (SWIFT_EXTENSION(cedularecorder)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
+/// Main canvas for rendering rooms and handling drawing
+SWIFT_CLASS("_TtC14cedularecorder19FloorPlanCanvasView")
+@interface FloorPlanCanvasView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawRect:(CGRect)rect;
+@end
+
+@class NSString;
+@class NSBundle;
+SWIFT_CLASS("_TtC14cedularecorder23FloorPlanViewController")
+@interface FloorPlanViewController : UIViewController
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITouch;
+@interface FloorPlanViewController (SWIFT_EXTENSION(cedularecorder)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class CLLocationManager;
 @class CLLocation;
-SWIFT_CLASS("_TtC14cedularecorder21SimpleLocationManager")
-@interface SimpleLocationManager : NSObject <CLLocationManagerDelegate>
+/// Manages GPS location tracking with proper error handling
+/// Ensures the app never crashes due to location issues
+SWIFT_CLASS("_TtC14cedularecorder15LocationService")
+@interface LocationService : NSObject <CLLocationManagerDelegate>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Handle authorization changes
+- (void)locationManagerDidChangeAuthorization:(CLLocationManager * _Nonnull)manager;
+/// Handle location updates
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+/// Handle location errors
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 @end
 
-SWIFT_CLASS("_TtC14cedularecorder21VideoRecordingService")
-@interface VideoRecordingService : NSObject
+SWIFT_CLASS("_TtC14cedularecorder18MeasurementOverlay")
+@interface MeasurementOverlay : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawRect:(CGRect)rect;
+@end
+
+SWIFT_CLASS("_TtC14cedularecorder14ScreenRecorder")
+@interface ScreenRecorder : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class AVCaptureFileOutput;
-@class NSURL;
-@class AVCaptureConnection;
-@interface VideoRecordingService (SWIFT_EXTENSION(cedularecorder)) <AVCaptureFileOutputRecordingDelegate>
-- (void)captureOutput:(AVCaptureFileOutput * _Nonnull)output didFinishRecordingToOutputFileAtURL:(NSURL * _Nonnull)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> * _Nonnull)connections error:(NSError * _Nullable)error;
+@class RPScreenRecorder;
+@class RPPreviewViewController;
+@interface ScreenRecorder (SWIFT_EXTENSION(cedularecorder)) <RPScreenRecorderDelegate>
+- (void)screenRecorder:(RPScreenRecorder * _Nonnull)screenRecorder didStopRecordingWithPreviewViewController:(RPPreviewViewController * _Nullable)previewViewController error:(NSError * _Nullable)error;
+- (void)screenRecorderDidChangeAvailability:(RPScreenRecorder * _Nonnull)screenRecorder;
 @end
 
 #endif

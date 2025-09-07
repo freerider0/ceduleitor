@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7270EB372E6DB731004843ED /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB222E6DB730004843ED /* Diagnostics.swift */; };
+		7270EB382E6DB731004843ED /* SubSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB232E6DB730004843ED /* SubSystem.swift */; };
+		7270EB392E6DB731004843ED /* BSpline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB262E6DB730004843ED /* BSpline.swift */; };
+		7270EB3A2E6DB731004843ED /* Parabola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB2C2E6DB730004843ED /* Parabola.swift */; };
+		7270EB3B2E6DB731004843ED /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB332E6DB730004843ED /* MathUtils.swift */; };
+		7270EB3C2E6DB731004843ED /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB272E6DB730004843ED /* Circle.swift */; };
+		7270EB3D2E6DB731004843ED /* DogLeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB302E6DB730004843ED /* DogLeg.swift */; };
+		7270EB3E2E6DB731004843ED /* AngleConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB1E2E6DB730004843ED /* AngleConstraints.swift */; };
+		7270EB3F2E6DB731004843ED /* BFGS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB2F2E6DB730004843ED /* BFGS.swift */; };
+		7270EB402E6DB731004843ED /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB282E6DB730004843ED /* Curve.swift */; };
+		7270EB412E6DB731004843ED /* Hyperbola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB2A2E6DB730004843ED /* Hyperbola.swift */; };
+		7270EB422E6DB731004843ED /* LevenbergMarquardt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB312E6DB730004843ED /* LevenbergMarquardt.swift */; };
+		7270EB432E6DB731004843ED /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB242E6DB730004843ED /* System.swift */; };
+		7270EB442E6DB731004843ED /* CurveConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB202E6DB730004843ED /* CurveConstraints.swift */; };
+		7270EB452E6DB731004843ED /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB2B2E6DB730004843ED /* Line.swift */; };
+		7270EB462E6DB731004843ED /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB2D2E6DB730004843ED /* Point.swift */; };
+		7270EB472E6DB731004843ED /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB292E6DB730004843ED /* Ellipse.swift */; };
+		7270EB482E6DB731004843ED /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB1F2E6DB730004843ED /* Constraint.swift */; };
 		728505122E6A1FE2009D0A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7285050D2E6A1FE2009D0A5E /* Assets.xcassets */; };
 		7285051E2E6A1FE2009D0A5E /* cedularecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285050E2E6A1FE2009D0A5E /* cedularecorderApp.swift */; };
 		7285051F2E6A1FE2009D0A5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285050F2E6A1FE2009D0A5E /* ContentView.swift */; };
@@ -30,6 +48,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7270EB1E2E6DB730004843ED /* AngleConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleConstraints.swift; sourceTree = "<group>"; };
+		7270EB1F2E6DB730004843ED /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		7270EB202E6DB730004843ED /* CurveConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveConstraints.swift; sourceTree = "<group>"; };
+		7270EB222E6DB730004843ED /* Diagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnostics.swift; sourceTree = "<group>"; };
+		7270EB232E6DB730004843ED /* SubSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubSystem.swift; sourceTree = "<group>"; };
+		7270EB242E6DB730004843ED /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		7270EB262E6DB730004843ED /* BSpline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSpline.swift; sourceTree = "<group>"; };
+		7270EB272E6DB730004843ED /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		7270EB282E6DB730004843ED /* Curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
+		7270EB292E6DB730004843ED /* Ellipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ellipse.swift; sourceTree = "<group>"; };
+		7270EB2A2E6DB730004843ED /* Hyperbola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyperbola.swift; sourceTree = "<group>"; };
+		7270EB2B2E6DB730004843ED /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		7270EB2C2E6DB730004843ED /* Parabola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parabola.swift; sourceTree = "<group>"; };
+		7270EB2D2E6DB730004843ED /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		7270EB2F2E6DB730004843ED /* BFGS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFGS.swift; sourceTree = "<group>"; };
+		7270EB302E6DB730004843ED /* DogLeg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogLeg.swift; sourceTree = "<group>"; };
+		7270EB312E6DB730004843ED /* LevenbergMarquardt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevenbergMarquardt.swift; sourceTree = "<group>"; };
+		7270EB332E6DB730004843ED /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		728504342E6A14B9009D0A5E /* cedularecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cedularecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728504412E6A14BB009D0A5E /* cedularecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cedularecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7285044B2E6A14BB009D0A5E /* cedularecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cedularecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +132,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7270EB212E6DB730004843ED /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				7270EB1E2E6DB730004843ED /* AngleConstraints.swift */,
+				7270EB1F2E6DB730004843ED /* Constraint.swift */,
+				7270EB202E6DB730004843ED /* CurveConstraints.swift */,
+			);
+			path = Constraints;
+			sourceTree = "<group>";
+		};
+		7270EB252E6DB730004843ED /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7270EB222E6DB730004843ED /* Diagnostics.swift */,
+				7270EB232E6DB730004843ED /* SubSystem.swift */,
+				7270EB242E6DB730004843ED /* System.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7270EB2E2E6DB730004843ED /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				7270EB262E6DB730004843ED /* BSpline.swift */,
+				7270EB272E6DB730004843ED /* Circle.swift */,
+				7270EB282E6DB730004843ED /* Curve.swift */,
+				7270EB292E6DB730004843ED /* Ellipse.swift */,
+				7270EB2A2E6DB730004843ED /* Hyperbola.swift */,
+				7270EB2B2E6DB730004843ED /* Line.swift */,
+				7270EB2C2E6DB730004843ED /* Parabola.swift */,
+				7270EB2D2E6DB730004843ED /* Point.swift */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		7270EB322E6DB730004843ED /* Solvers */ = {
+			isa = PBXGroup;
+			children = (
+				7270EB2F2E6DB730004843ED /* BFGS.swift */,
+				7270EB302E6DB730004843ED /* DogLeg.swift */,
+				7270EB312E6DB730004843ED /* LevenbergMarquardt.swift */,
+			);
+			path = Solvers;
+			sourceTree = "<group>";
+		};
+		7270EB342E6DB730004843ED /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7270EB332E6DB730004843ED /* MathUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7270EB352E6DB730004843ED /* PlaneGCS */ = {
+			isa = PBXGroup;
+			children = (
+				7270EB212E6DB730004843ED /* Constraints */,
+				7270EB252E6DB730004843ED /* Core */,
+				7270EB2E2E6DB730004843ED /* Geometry */,
+				7270EB322E6DB730004843ED /* Solvers */,
+				7270EB342E6DB730004843ED /* Utils */,
+			);
+			path = PlaneGCS;
+			sourceTree = "<group>";
+		};
+		7270EB362E6DB730004843ED /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7270EB352E6DB730004843ED /* PlaneGCS */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		7285042B2E6A14B9009D0A5E = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +228,7 @@
 		728505102E6A1FE2009D0A5E /* cedularecorder */ = {
 			isa = PBXGroup;
 			children = (
+				7270EB362E6DB730004843ED /* Utils */,
 				728505472E6A34E3009D0A5E /* Models */,
 				728505602E6A3500009D0A5E /* Resources */,
 				728505502E6A34F5009D0A5E /* Services */,
@@ -278,6 +388,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7270EB372E6DB731004843ED /* Diagnostics.swift in Sources */,
+				7270EB382E6DB731004843ED /* SubSystem.swift in Sources */,
+				7270EB392E6DB731004843ED /* BSpline.swift in Sources */,
+				7270EB3A2E6DB731004843ED /* Parabola.swift in Sources */,
+				7270EB3B2E6DB731004843ED /* MathUtils.swift in Sources */,
+				7270EB3C2E6DB731004843ED /* Circle.swift in Sources */,
+				7270EB3D2E6DB731004843ED /* DogLeg.swift in Sources */,
+				7270EB3E2E6DB731004843ED /* AngleConstraints.swift in Sources */,
+				7270EB3F2E6DB731004843ED /* BFGS.swift in Sources */,
+				7270EB402E6DB731004843ED /* Curve.swift in Sources */,
+				7270EB412E6DB731004843ED /* Hyperbola.swift in Sources */,
+				7270EB422E6DB731004843ED /* LevenbergMarquardt.swift in Sources */,
+				7270EB432E6DB731004843ED /* System.swift in Sources */,
+				7270EB442E6DB731004843ED /* CurveConstraints.swift in Sources */,
+				7270EB452E6DB731004843ED /* Line.swift in Sources */,
+				7270EB462E6DB731004843ED /* Point.swift in Sources */,
+				7270EB472E6DB731004843ED /* Ellipse.swift in Sources */,
+				7270EB482E6DB731004843ED /* Constraint.swift in Sources */,
 				7285051E2E6A1FE2009D0A5E /* cedularecorderApp.swift in Sources */,
 				7285051F2E6A1FE2009D0A5E /* ContentView.swift in Sources */,
 			);

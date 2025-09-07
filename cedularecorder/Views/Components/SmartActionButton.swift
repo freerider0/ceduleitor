@@ -192,7 +192,7 @@ struct ActionButton: View {
             }
             .frame(width: size.dimension, height: size.dimension)
             .background(
-                Circle()
+                SwiftUI.Circle()
                     .fill(color.opacity(0.8))
             )
         }
