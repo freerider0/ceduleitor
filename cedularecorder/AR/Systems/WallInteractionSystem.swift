@@ -110,6 +110,8 @@ class WallTapHandler: NSObject {
         WallInteractionSystem.colorCache[planeAnchor.identifier] = wallColor
         WallInteractionSystem.updateWallGeometryCache(for: planeAnchor)
         WallInteractionSystem.minimapDirty = true  // Mark minimap for update
+        PlaneIntersectionSystem.polygonDirty = true  // Mark polygon for recomputation
+        PlaneIntersectionSystem.intersectionsDirty = true  // Update intersections too
         
         // Store initial size to prevent unnecessary updates
         WallDetectionCoordinator.lastLoggedSizes[planeAnchor.identifier] = (planeAnchor.planeExtent.width, planeAnchor.planeExtent.height)
@@ -251,6 +253,11 @@ class WallInteractionSystem: RealityKit.System {
     static func clearAllTrackedWalls(in scene: RealityKit.Scene) {
         trackedWalls.removeAll()
         colorIndex = 0
+        
+        // Clear polygon when walls are cleared
+        PlaneIntersectionSystem.roomPolygon = []
+        PlaneIntersectionSystem.floorPolygonEntity?.removeFromParent()
+        PlaneIntersectionSystem.polygonDirty = false
         
         // Reset all walls to preview state
         for entity in scene.performQuery(allWallsQuery) {

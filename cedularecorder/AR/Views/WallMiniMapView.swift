@@ -14,6 +14,7 @@ struct WallMiniMapView: View {
     let walls: [WallModel]
     let userPosition: SIMD3<Float>
     let userDirection: Float
+    let roomPolygon: [SIMD3<Float>]  // Completed polygon vertices
     @State private var mapScale: CGFloat = 30.0
     
     var body: some View {
@@ -27,6 +28,16 @@ struct WallMiniMapView: View {
                     // Grid overlay
                     WallGridOverlay(userPosition: userPosition, scale: mapScale)
                         .stroke(Color.gray.opacity(0.3), lineWidth: 0.5)
+                    
+                    // Draw completed room polygon if available
+                    if !roomPolygon.isEmpty {
+                        RoomPolygonShape(vertices: roomPolygon, size: geometry.size, scale: mapScale)
+                            .fill(Color.green.opacity(0.2))
+                            .overlay(
+                                RoomPolygonShape(vertices: roomPolygon, size: geometry.size, scale: mapScale)
+                                    .stroke(Color.green, lineWidth: 2)
+                            )
+                    }
                     
                     // Draw walls - they should appear in front of the user
                     ForEach(walls) { wall in
@@ -216,5 +227,54 @@ struct NorthIndicator: View {
                 .fontWeight(.bold)
                 .foregroundColor(.red)
         }
+    }
+}
+
+// MARK: - Room Polygon Shape
+struct RoomPolygonShape: Shape {
+    let vertices: [SIMD3<Float>]
+    let size: CGSize
+    let scale: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        guard vertices.count >= 3 else { return path }
+        
+        let center = CGPoint(x: size.width / 2, y: size.height / 2)
+        
+        // Convert first vertex to screen coordinates
+        let firstPoint = CGPoint(
+            x: center.x + CGFloat(vertices[0].x) * scale,
+            y: center.y - CGFloat(vertices[0].z) * scale  // -Z (forward) becomes -Y (up)
+        )
+        path.move(to: firstPoint)
+        
+        // Draw lines to remaining vertices
+        for i in 1..<vertices.count {
+            let point = CGPoint(
+                x: center.x + CGFloat(vertices[i].x) * scale,
+                y: center.y - CGFloat(vertices[i].z) * scale
+            )
+            path.addLine(to: point)
+        }
+        
+        // Close the polygon
+        path.closeSubpath()
+        
+        // Add vertex dots
+        for vertex in vertices {
+            let point = CGPoint(
+                x: center.x + CGFloat(vertex.x) * scale,
+                y: center.y - CGFloat(vertex.z) * scale
+            )
+            path.addEllipse(in: CGRect(
+                x: point.x - 4,
+                y: point.y - 4,
+                width: 8,
+                height: 8
+            ))
+        }
+        
+        return path
     }
 }

@@ -16,6 +16,12 @@ class PlaneIntersectionSystem: RealityKit.System {
     static var trackedHorizontalPlanes: [UUID: ARPlaneAnchor] = [:]
     static var intersectionsDirty = false
     
+    // MARK: - Diamond Solid Polygon Completion
+    static var roomPolygon: [SIMD3<Float>] = []  // Completed polygon vertices
+    static var polygonDirty = false  // Only recompute when walls change
+    static var floorHeight: Float = 0  // Detected floor height
+    static var floorPolygonEntity: ModelEntity?  // Floor visualization
+    
     // MARK: - Initialization
     required init(scene: RealityKit.Scene) {
         print("[PlaneIntersectionSystem] Initialized")
@@ -29,7 +35,7 @@ class PlaneIntersectionSystem: RealityKit.System {
         frameCount += 1
         
         // PERFORMANCE: Only update when planes change or every 60 frames
-        guard Self.intersectionsDirty || frameCount % 60 == 0 else { return }
+        guard Self.intersectionsDirty || Self.polygonDirty || frameCount % 60 == 0 else { return }
         
         guard let arView = Self.sharedARView else { return }
         
@@ -52,6 +58,12 @@ class PlaneIntersectionSystem: RealityKit.System {
                 }
             }
             Self.intersectionsDirty = false
+        }
+        
+        // Compute room polygon when walls change
+        if Self.polygonDirty && !Self.trackedVerticalPlanes.isEmpty {
+            Self.computeRoomPolygon()
+            Self.polygonDirty = false
         }
         
         // Early exit if no intersections possible
@@ -227,5 +239,226 @@ class PlaneIntersectionSystem: RealityKit.System {
     static func setupSystem(arView: ARView) {
         sharedARView = arView
         print("[PlaneIntersectionSystem] Setup complete")
+    }
+    
+    // MARK: - Diamond Solid Polygon Completion Algorithm
+    
+    private struct WallFragment {
+        let id: UUID
+        let start: SIMD3<Float>
+        let end: SIMD3<Float>
+        
+        func directionVector() -> SIMD3<Float> {
+            return normalize(end - start)
+        }
+    }
+    
+    private struct Ray {
+        let fragmentId: UUID
+        let origin: SIMD3<Float>
+        let direction: SIMD3<Float>
+        let fromEnd: Bool
+        
+        func intersectWith(_ other: Ray, floorHeight: Float) -> SIMD3<Float>? {
+            // 2D intersection in XZ plane (ignoring Y for floor projection)
+            let o1x = origin.x
+            let o1z = origin.z
+            let d1x = direction.x
+            let d1z = direction.z
+            
+            let o2x = other.origin.x
+            let o2z = other.origin.z
+            let d2x = other.direction.x
+            let d2z = other.direction.z
+            
+            let denom = d1x * d2z - d1z * d2x
+            if abs(denom) < 1e-10 { return nil }  // Parallel rays
+            
+            let t1 = ((o2x - o1x) * d2z - (o2z - o1z) * d2x) / denom
+            let t2 = ((o2x - o1x) * d1z - (o2z - o1z) * d1x) / denom
+            
+            // Only accept forward intersections
+            if t1 >= 1e-10 && t2 >= 1e-10 {
+                return SIMD3<Float>(
+                    o1x + t1 * d1x,
+                    floorHeight,  // Use passed floor height
+                    o1z + t1 * d1z
+                )
+            }
+            
+            return nil
+        }
+    }
+    
+    static func computeRoomPolygon() {
+        print("[PlaneIntersection] Computing room polygon from \(trackedVerticalPlanes.count) walls")
+        
+        // Convert wall geometry to fragments
+        var fragments: [WallFragment] = []
+        for (wallID, _) in trackedVerticalPlanes {
+            if let geometry = WallInteractionSystem.wallGeometryCache[wallID] {
+                fragments.append(WallFragment(
+                    id: wallID,
+                    start: geometry.start,
+                    end: geometry.end
+                ))
+            }
+        }
+        
+        guard fragments.count >= 2 else {
+            roomPolygon = []
+            return
+        }
+        
+        // Detect floor height from horizontal planes
+        if let firstFloor = trackedHorizontalPlanes.values.first {
+            floorHeight = firstFloor.transform.columns.3.y + firstFloor.center.y
+        }
+        
+        // Generate rays from fragment endpoints
+        var rays: [Ray] = []
+        for fragment in fragments {
+            let direction = fragment.directionVector()
+            
+            // Ray from start going backward
+            rays.append(Ray(
+                fragmentId: fragment.id,
+                origin: fragment.start,
+                direction: SIMD3<Float>(-direction.x, 0, -direction.z),  // Project to XZ plane
+                fromEnd: false
+            ))
+            
+            // Ray from end going forward
+            rays.append(Ray(
+                fragmentId: fragment.id,
+                origin: fragment.end,
+                direction: SIMD3<Float>(direction.x, 0, direction.z),  // Project to XZ plane
+                fromEnd: true
+            ))
+        }
+        
+        // Pre-expansion phase: find mutual first intersections
+        var vertices: [SIMD3<Float>] = []
+        var usedRays = Set<Int>()
+        
+        for i in 0..<rays.count {
+            if usedRays.contains(i) { continue }
+            
+            for j in (i+1)..<rays.count {
+                if usedRays.contains(j) { continue }
+                if rays[i].fragmentId == rays[j].fragmentId { continue }  // Skip same fragment
+                
+                if let intersection = rays[i].intersectWith(rays[j], floorHeight: floorHeight) {
+                    // Check if this is mutual first intersection (simplified check)
+                    let dist1 = distance(rays[i].origin, intersection)
+                    let dist2 = distance(rays[j].origin, intersection)
+                    
+                    // Accept if reasonably close (within room bounds)
+                    if dist1 < 20.0 && dist2 < 20.0 {  // Max 20 meters
+                        vertices.append(intersection)
+                        usedRays.insert(i)
+                        usedRays.insert(j)
+                        break
+                    }
+                }
+            }
+        }
+        
+        // Handle remaining rays (deadlock resolution)
+        let remainingRays = rays.enumerated().compactMap { !usedRays.contains($0.offset) ? $0.element : nil }
+        if !remainingRays.isEmpty && vertices.count < fragments.count * 2 {
+            // Find closest pairs among remaining rays
+            for i in 0..<remainingRays.count {
+                for j in (i+1)..<remainingRays.count {
+                    if remainingRays[i].fragmentId == remainingRays[j].fragmentId { continue }
+                    
+                    if let intersection = remainingRays[i].intersectWith(remainingRays[j], floorHeight: floorHeight) {
+                        vertices.append(intersection)
+                        break
+                    }
+                }
+            }
+        }
+        
+        // Order vertices by angle from centroid to form polygon
+        if vertices.count >= 3 {
+            let centroid = vertices.reduce(SIMD3<Float>(0, 0, 0), +) / Float(vertices.count)
+            vertices.sort { v1, v2 in
+                let angle1 = atan2(v1.z - centroid.z, v1.x - centroid.x)
+                let angle2 = atan2(v2.z - centroid.z, v2.x - centroid.x)
+                return angle1 < angle2
+            }
+            
+            roomPolygon = vertices
+            print("[PlaneIntersection] Polygon completed with \(vertices.count) vertices")
+            
+            // Create floor visualization
+            createFloorPolygon()
+            
+            // Notify minimap to update
+            WallInteractionSystem.minimapDirty = true
+            WallInteractionSystem.coordinator?.wallUpdatePublisher.send()
+        } else {
+            roomPolygon = []
+            print("[PlaneIntersection] Not enough vertices for polygon")
+        }
+    }
+    
+    private static func createFloorPolygon() {
+        guard !roomPolygon.isEmpty, let arView = sharedARView else { return }
+        
+        // Remove existing floor polygon
+        floorPolygonEntity?.removeFromParent()
+        
+        // Create mesh from polygon vertices
+        var meshPositions: [SIMD3<Float>] = []
+        var meshIndices: [UInt32] = []
+        
+        // Add center vertex
+        let center = roomPolygon.reduce(SIMD3<Float>(0, 0, 0), +) / Float(roomPolygon.count)
+        meshPositions.append(center)
+        
+        // Add polygon vertices
+        meshPositions.append(contentsOf: roomPolygon)
+        
+        // Create triangles from center to each edge
+        for i in 0..<roomPolygon.count {
+            let next = (i + 1) % roomPolygon.count
+            meshIndices.append(contentsOf: [
+                0,  // Center
+                UInt32(i + 1),  // Current vertex
+                UInt32(next + 1)  // Next vertex
+            ])
+        }
+        
+        // Create mesh descriptor
+        var meshDescriptor = MeshDescriptor()
+        meshDescriptor.positions = MeshBuffer(meshPositions)
+        meshDescriptor.primitives = .triangles(meshIndices)
+        
+        // Create mesh and material
+        let mesh = try? MeshResource.generate(from: [meshDescriptor])
+        var material = UnlitMaterial()
+        material.color = .init(tint: UIColor.systemGreen.withAlphaComponent(0.3))
+        
+        if let mesh = mesh {
+            // Create floor entity
+            let floorEntity = ModelEntity(mesh: mesh, materials: [material])
+            floorEntity.name = "FloorPolygon"
+            floorEntity.position = SIMD3<Float>(0, 0, 0)
+            
+            // Add to scene at world origin
+            let anchor = AnchorEntity(world: .zero)
+            anchor.addChild(floorEntity)
+            arView.scene.addAnchor(anchor)
+            
+            floorPolygonEntity = floorEntity
+            print("[PlaneIntersection] Floor polygon created with \(roomPolygon.count) vertices")
+        }
+    }
+    
+    // Mark polygon dirty when walls change
+    static func markPolygonDirty() {
+        polygonDirty = true
     }
 }

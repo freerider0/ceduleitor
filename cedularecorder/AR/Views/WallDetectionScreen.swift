@@ -11,6 +11,7 @@ struct WallDetectionScreen: View {
     @State private var wallModels: [WallModel] = []
     @State private var userPosition = SIMD3<Float>(0, 0, 0)
     @State private var userDirection: Float = 0
+    @State private var roomPolygon: [SIMD3<Float>] = []  // Completed polygon
     @State private var updateCancellable: AnyCancellable?
     @State private var cameraUpdateTimer: AnyCancellable?
     
@@ -53,6 +54,9 @@ struct WallDetectionScreen: View {
             wallModels = newWallModels
             WallInteractionSystem.minimapDirty = false  // Clear dirty flag
         }
+        
+        // Update room polygon
+        roomPolygon = PlaneIntersectionSystem.roomPolygon
     }
     
     var body: some View {
@@ -102,7 +106,8 @@ struct WallDetectionScreen: View {
                         WallMiniMapView(
                             walls: wallModels,
                             userPosition: userPosition,
-                            userDirection: userDirection
+                            userDirection: userDirection,
+                            roomPolygon: roomPolygon
                         )
                         .frame(width: 200, height: 200)
                         .background(.ultraThinMaterial)
