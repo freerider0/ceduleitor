@@ -21,6 +21,12 @@ class WallDetectionCoordinator: NSObject, ObservableObject {
     static var sphereEntity: ModelEntity?
     static var sphereAnchor: AnchorEntity?
     
+    // PERFORMANCE: Event-driven updates
+    let wallUpdatePublisher = PassthroughSubject<Void, Never>()
+    
+    // PERFORMANCE: Cache anchors to avoid searching
+    private var anchorCache: [UUID: AnchorEntity] = [:]
+    
     // MARK: - Setup
     @MainActor
     func setupARView(_ arView: ARView) {
@@ -78,6 +84,7 @@ class WallDetectionCoordinator: NSObject, ObservableObject {
         // Setup systems with ARView (registration already done before ARView creation)
         WallClassificationSystem.setupSystem(arView: arView)
         WallInteractionSystem.setupSystem(arView: arView)
+        WallInteractionSystem.coordinator = self  // Connect coordinator for event publishing
         WallCircleIndicatorSystem.setupSystem(arView: arView)
         PlaneIntersectionSystem.setupSystem(arView: arView)
         
@@ -255,13 +262,10 @@ extension WallDetectionCoordinator: ARSessionDelegate {
         
         // Don't filter by size - let user decide what to track
         
-        // Check if wall already exists for this anchor
-        for anchor in arView.scene.anchors {
-            if let anchorEntity = anchor as? AnchorEntity,
-               anchorEntity.name.contains(planeAnchor.identifier.uuidString) {
-                print("[WallDetectionCoordinator] Anchor already exists for plane: \(planeAnchor.identifier)")
-                return
-            }
+        // PERFORMANCE: Check cache first
+        if anchorCache[planeAnchor.identifier] != nil {
+            print("[WallDetectionCoordinator] Anchor already exists for plane: \(planeAnchor.identifier)")
+            return
         }
         
         // Log classification - wall vs window
@@ -328,6 +332,9 @@ extension WallDetectionCoordinator: ARSessionDelegate {
         // Add to scene (no preview mesh - walls only visible when tracked)
         arView.scene.addAnchor(anchorEntity)
         
+        // PERFORMANCE: Cache the anchor
+        anchorCache[planeAnchor.identifier] = anchorEntity
+        
         print("[WallDetectionCoordinator] Invisible anchor created for plane: \(planeAnchor.identifier)")
         print("[WallDetectionCoordinator] Total planes detected: \(detectedPlanes.count)")
     }
@@ -365,10 +372,8 @@ extension WallDetectionCoordinator: ARSessionDelegate {
     private func convertToWorldAnchor(for planeAnchor: ARPlaneAnchor) {
         guard let arView = arView else { return }
         
-        // Find the existing anchor entity
-        for anchor in arView.scene.anchors {
-            if let anchorEntity = anchor as? AnchorEntity,
-               anchorEntity.name.contains(planeAnchor.identifier.uuidString) {
+        // PERFORMANCE: Use cache instead of searching
+        if let anchorEntity = anchorCache[planeAnchor.identifier] {
                 
                 // Get the current world transform
                 let worldTransform = anchorEntity.transform.matrix
@@ -388,9 +393,10 @@ extension WallDetectionCoordinator: ARSessionDelegate {
                 // Add the new world anchor to the scene
                 arView.scene.addAnchor(worldAnchor)
                 
+                // PERFORMANCE: Update cache with new anchor
+                anchorCache[planeAnchor.identifier] = worldAnchor
+                
                 print("[WallDetectionCoordinator] Converted plane anchor to world anchor for tracked wall: \(planeAnchor.identifier)")
-                break
-            }
         }
     }
     
@@ -398,16 +404,15 @@ extension WallDetectionCoordinator: ARSessionDelegate {
     private func removeWallAnchor(for planeAnchor: ARPlaneAnchor) {
         guard let arView = arView else { return }
         
-        // Find and remove the anchor entity
-        for anchor in arView.scene.anchors {
-            if let anchorEntity = anchor as? AnchorEntity,
-               anchorEntity.name.contains(planeAnchor.identifier.uuidString) {
-                
-                // Remove from scene
-                arView.scene.removeAnchor(anchorEntity)
-                print("[WallDetectionCoordinator] Removed anchor entity for plane: \(planeAnchor.identifier)")
-                break
-            }
+        // PERFORMANCE: Use cache instead of searching
+        if let anchorEntity = anchorCache[planeAnchor.identifier] {
+            // Remove from scene
+            arView.scene.removeAnchor(anchorEntity)
+            
+            // Remove from cache
+            anchorCache.removeValue(forKey: planeAnchor.identifier)
+            
+            print("[WallDetectionCoordinator] Removed anchor entity for plane: \(planeAnchor.identifier)")
         }
     }
     
@@ -426,55 +431,50 @@ extension WallDetectionCoordinator: ARSessionDelegate {
             return
         }
         
-        // Find existing anchor entity (could be regular or world anchor)
-        for anchor in arView.scene.anchors {
-            if let anchorEntity = anchor as? AnchorEntity,
-               (anchorEntity.name.contains(planeAnchor.identifier.uuidString) || 
-                anchorEntity.name.contains("WorldAnchor_\(planeAnchor.identifier.uuidString)")) {
+        // PERFORMANCE: Use cache instead of searching
+        if let anchorEntity = anchorCache[planeAnchor.identifier] {
+            // Skip world anchors - they don't get updated
+            if anchorEntity.name.starts(with: "WorldAnchor_") {
+                print("[WallDetectionCoordinator] Skipping update for world anchor (wall is persisted)")
+                return
+            }
+            
+            // Update collision shape for hit detection
+            if let collisionEntity = anchorEntity.children.first(where: { $0.name.starts(with: "Collision_") }) {
+                let shape = ShapeResource.generateBox(
+                    width: planeAnchor.planeExtent.width,
+                    height: planeAnchor.planeExtent.height,
+                    depth: 0.01
+                )
+                collisionEntity.components[CollisionComponent.self] = CollisionComponent(shapes: [shape])
+                // Update position to match plane center
+                collisionEntity.position = SIMD3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+            }
+            
+            // If tracked, only update if size or position changed significantly
+            if WallInteractionSystem.trackedWalls.contains(planeAnchor.identifier) {
+                let lastSize = Self.lastLoggedSizes[planeAnchor.identifier] ?? (0, 0)
                 
-                // Skip world anchors - they don't get updated
-                if anchorEntity.name.starts(with: "WorldAnchor_") {
-                    print("[WallDetectionCoordinator] Skipping update for world anchor (wall is persisted)")
-                    return
-                }
-                
-                // Update collision shape for hit detection
-                if let collisionEntity = anchorEntity.children.first(where: { $0.name.starts(with: "Collision_") }) {
-                    let shape = ShapeResource.generateBox(
-                        width: planeAnchor.planeExtent.width,
-                        height: planeAnchor.planeExtent.height,
-                        depth: 0.01
-                    )
-                    collisionEntity.components[CollisionComponent.self] = CollisionComponent(shapes: [shape])
-                    // Update position to match plane center
-                    collisionEntity.position = SIMD3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
-                }
-                
-                // If tracked, only update if size or position changed significantly
-                if WallInteractionSystem.trackedWalls.contains(planeAnchor.identifier) {
-                    let lastSize = Self.lastLoggedSizes[planeAnchor.identifier] ?? (0, 0)
+                // Only update if size changed more than 5cm (was 10cm)
+                if abs(lastSize.0 - planeAnchor.planeExtent.width) > 0.05 || 
+                   abs(lastSize.1 - planeAnchor.planeExtent.height) > 0.05 {
                     
-                    // Only update if size changed more than 5cm (was 10cm)
-                    if abs(lastSize.0 - planeAnchor.planeExtent.width) > 0.05 || 
-                       abs(lastSize.1 - planeAnchor.planeExtent.height) > 0.05 {
-                        
-                        // Update the mesh
-                        WallInteractionSystem.updateGeometryMesh(for: planeAnchor, in: anchorEntity)
-                        
-                        // Update stored size
-                        Self.lastLoggedSizes[planeAnchor.identifier] = (planeAnchor.planeExtent.width, planeAnchor.planeExtent.height)
-                        
-                        // Log only significant changes (>10cm)
-                        if abs(lastSize.0 - planeAnchor.planeExtent.width) > 0.1 || 
-                           abs(lastSize.1 - planeAnchor.planeExtent.height) > 0.1 {
-                            print("[WallDetectionCoordinator] Tracked wall \(planeAnchor.identifier) size changed: \(planeAnchor.planeExtent.width)x\(planeAnchor.planeExtent.height)")
-                        }
+                    // Update the mesh
+                    WallInteractionSystem.updateGeometryMesh(for: planeAnchor, in: anchorEntity)
+                    
+                    // Update stored size
+                    Self.lastLoggedSizes[planeAnchor.identifier] = (planeAnchor.planeExtent.width, planeAnchor.planeExtent.height)
+                    
+                    // PERFORMANCE: Publish update event
+                    wallUpdatePublisher.send()
+                    
+                    // Log only significant changes (>10cm)
+                    if abs(lastSize.0 - planeAnchor.planeExtent.width) > 0.1 || 
+                       abs(lastSize.1 - planeAnchor.planeExtent.height) > 0.1 {
+                        print("[WallDetectionCoordinator] Tracked wall \(planeAnchor.identifier) size changed: \(planeAnchor.planeExtent.width)x\(planeAnchor.planeExtent.height)")
                     }
                 }
-                
-                break
             }
         }
     }
-    
 }

@@ -27,9 +27,9 @@ struct WallDetectionScreen: View {
                 transform.columns.3.z
             )
             
-            // Calculate user direction (yaw) - negative to fix rotation direction
+            // Calculate user direction (yaw)
             let forward = -transform.columns.2
-            userDirection = -atan2(forward.x, forward.z)
+            userDirection = atan2(forward.x, forward.z)
         }
     }
     
@@ -310,6 +310,252 @@ struct ControlButtons: View {
 }
 
 // MARK: - Minimap components moved to WallMiniMapView.swift
+    @State private var mapOffset: CGPoint = .zero
+    @State private var initialUserPosition: SIMD3<Float>?
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                // Background
+                Color.black.opacity(0.8)
+                
+                // Rotating and panning map content
+                ZStack {
+                    // Grid with panning offset
+                    WallGridOverlay(userPosition: userPosition, scale: mapScale)
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 0.5)
+                    
+                    // Walls
+                    ForEach(walls) { wall in
+                        WallPath(wall: wall, userPosition: .zero, size: geometry.size, scale: mapScale)
+                            .stroke(wall.color, lineWidth: 3)
+                            .shadow(color: wall.color.opacity(0.5), radius: 2)
+                    }
+                    
+                    // User position indicator (moves with actual position)
+                    UserPositionIndicator()
+                        .position(
+                            x: geometry.size.width / 2 + CGFloat(userPosition.x) * mapScale,
+                            y: geometry.size.height / 2 - CGFloat(userPosition.z) * mapScale
+                        )
+                    
+                    // North indicator (moves with map)
+                    NorthIndicator()
+                        .position(
+                            x: geometry.size.width / 2 + CGFloat(userPosition.x) * mapScale,
+                            y: 15 - CGFloat(userPosition.z) * mapScale
+                        )
+                }
+                .offset(
+                    x: -CGFloat(userPosition.x) * mapScale,
+                    y: CGFloat(userPosition.z) * mapScale
+                )
+                .rotationEffect(Angle(radians: Double(userDirection)), anchor: .center)
+                .animation(.linear(duration: 0.033), value: userPosition)  // 30fps smooth animation
+                .animation(.linear(duration: 0.033), value: userDirection)
+                
+                // Fixed elements (don't rotate or move)
+                // Direction cone (always points up)
+                DirectionCone()
+                    .fill(Color.blue.opacity(0.3))
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                
+                // Scale indicator
+                VStack {
+                    Spacer()
+                    HStack {
+                        Text("1m")
+                            .font(.caption2)
+                            .foregroundColor(.white.opacity(0.7))
+                        Rectangle()
+                            .fill(Color.white.opacity(0.7))
+                            .frame(width: mapScale, height: 1)
+                    }
+                    .padding(8)
+                }
+            }
+            .cornerRadius(16)
+        }
+    }
+}
+
+// MARK: - Grid Overlay
+struct WallGridOverlay: Shape {
+    let userPosition: SIMD3<Float>
+    let scale: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let gridSize: CGFloat = 20
+        
+        // Calculate offset based on user position to create panning effect
+        let offsetX = CGFloat(userPosition.x) * scale
+        let offsetY = CGFloat(userPosition.z) * scale
+        
+        // Calculate grid offset to keep it continuous
+        let gridOffsetX = offsetX.truncatingRemainder(dividingBy: gridSize)
+        let gridOffsetY = offsetY.truncatingRemainder(dividingBy: gridSize)
+        
+        // Vertical lines with panning
+        for x in stride(from: -gridSize - gridOffsetX, through: rect.width + gridSize, by: gridSize) {
+            path.move(to: CGPoint(x: x, y: -gridSize))
+            path.addLine(to: CGPoint(x: x, y: rect.height + gridSize))
+        }
+        
+        // Horizontal lines with panning
+        for y in stride(from: -gridSize - gridOffsetY, through: rect.height + gridSize, by: gridSize) {
+            path.move(to: CGPoint(x: -gridSize, y: y))
+            path.addLine(to: CGPoint(x: rect.width + gridSize, y: y))
+        }
+        
+        return path
+    }
+}
+
+// MARK: - Wall Path
+struct WallPath: Shape {
+    let wall: WallModel
+    let userPosition: SIMD3<Float>
+    let size: CGSize
+    let scale: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        let center = CGPoint(x: size.width / 2, y: size.height / 2)
+        
+        // Wall positions in world space (not relative to user)
+        // Use the actual calculated endpoints from the wall model
+        let start = CGPoint(
+            x: center.x + CGFloat(wall.startPoint.x) * scale,
+            y: center.y + CGFloat(wall.startPoint.z) * scale  // Flipped sign for correct orientation
+        )
+        let end = CGPoint(
+            x: center.x + CGFloat(wall.endPoint.x) * scale,
+            y: center.y + CGFloat(wall.endPoint.z) * scale  // Flipped sign for correct orientation
+        )
+        
+        // Draw the main wall line with proper thickness
+        path.move(to: start)
+        path.addLine(to: end)
+        
+        // Add end caps for better visibility
+        let capRadius: CGFloat = 3
+        path.addEllipse(in: CGRect(x: start.x - capRadius, y: start.y - capRadius, 
+                                   width: capRadius * 2, height: capRadius * 2))
+        path.addEllipse(in: CGRect(x: end.x - capRadius, y: end.y - capRadius, 
+                                   width: capRadius * 2, height: capRadius * 2))
+        
+        // Add a small perpendicular line at the center to show wall orientation
+        let midPoint = CGPoint(
+            x: (start.x + end.x) / 2,
+            y: (start.y + end.y) / 2
+        )
+        
+        // Calculate perpendicular direction (normal to the wall)
+        let wallDir = CGPoint(x: end.x - start.x, y: end.y - start.y)
+        let length = sqrt(wallDir.x * wallDir.x + wallDir.y * wallDir.y)
+        if length > 0 {
+            let normalDir = CGPoint(x: -wallDir.y / length, y: wallDir.x / length)
+            let normalLength: CGFloat = 5
+            
+            path.move(to: midPoint)
+            path.addLine(to: CGPoint(
+                x: midPoint.x + normalDir.x * normalLength,
+                y: midPoint.y + normalDir.y * normalLength
+            ))
+        }
+        
+        return path
+    }
+}
+
+// MARK: - Direction Cone
+struct DirectionCone: Shape {
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        let center = CGPoint(x: rect.width / 2, y: rect.height / 2)
+        let coneLength: CGFloat = 50
+        let coneAngle: CGFloat = .pi / 6  // 30 degrees cone
+        
+        // Cone always points up
+        let tip = CGPoint(
+            x: center.x,
+            y: center.y - coneLength
+        )
+        
+        let leftBase = CGPoint(
+            x: center.x - 20 * sin(coneAngle),
+            y: center.y - 20 * cos(coneAngle)
+        )
+        
+        let rightBase = CGPoint(
+            x: center.x + 20 * sin(coneAngle),
+            y: center.y - 20 * cos(coneAngle)
+        )
+        
+        // Draw the cone
+        path.move(to: center)
+        path.addLine(to: leftBase)
+        path.addLine(to: tip)
+        path.addLine(to: rightBase)
+        path.closeSubpath()
+        
+        return path
+    }
+}
+
+// MARK: - User Position Indicator
+struct UserPositionIndicator: View {
+    @State private var isAnimating = false
+    
+    var body: some View {
+        ZStack {
+            // Pulsing circle
+            SwiftUI.Circle()
+                .fill(Color.blue.opacity(0.3))
+                .frame(width: 20, height: 20)
+                .scaleEffect(isAnimating ? 1.5 : 1.0)
+                .opacity(isAnimating ? 0.0 : 0.5)
+                .animation(
+                    Animation.easeInOut(duration: 1.5)
+                        .repeatForever(autoreverses: false),
+                    value: isAnimating
+                )
+            
+            // Center dot
+            SwiftUI.Circle()
+                .fill(Color.blue)
+                .frame(width: 10, height: 10)
+                .overlay(
+                    SwiftUI.Circle()
+                        .stroke(Color.white, lineWidth: 2)
+                )
+        }
+        .onAppear {
+            isAnimating = true
+        }
+    }
+}
+
+// MARK: - North Indicator
+struct NorthIndicator: View {
+    var body: some View {
+        VStack(spacing: 2) {
+            Image(systemName: "location.north.fill")
+                .foregroundColor(.white.opacity(0.8))
+                .font(.system(size: 14))
+            Text("N")
+                .font(.caption2)
+                .fontWeight(.bold)
+                .foregroundColor(.white.opacity(0.8))
+        }
+    }
+}
+
+// MARK: - Preview
 // MARK: - Tracking Indicator
 struct TrackingIndicator: View {
     let isReady: Bool

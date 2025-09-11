@@ -54,12 +54,21 @@ class WallTapHandler: NSObject {
                 return
             }
             
-            // Find the anchor entity for this plane
+            // PERFORMANCE: Check cache first
+            if let anchorEntity = WallInteractionSystem.anchorCache[planeAnchor.identifier] {
+                print("[WallInteraction] Tracking new wall (from cache)")
+                trackWall(anchorEntity: anchorEntity, planeAnchor: planeAnchor)
+                return
+            }
+            
+            // If not in cache, search (should rarely happen)
             for anchor in arView.scene.anchors {
                 if let anchorEntity = anchor as? AnchorEntity {
                     // Check if this anchor's UUID matches
                     if anchorEntity.name.contains(planeAnchor.identifier.uuidString) {
-                        print("[WallInteraction] Tracking new wall")
+                        print("[WallInteraction] Tracking new wall (found via search)")
+                        // Cache it for next time
+                        WallInteractionSystem.anchorCache[planeAnchor.identifier] = anchorEntity
                         trackWall(anchorEntity: anchorEntity, planeAnchor: planeAnchor)
                         return
                     }
@@ -85,6 +94,7 @@ class WallTapHandler: NSObject {
         
         // Add to tracked set
         WallInteractionSystem.trackedWalls.insert(planeAnchor.identifier)
+        let wallColor = WallInteractionSystem.wallColors[WallInteractionSystem.colorIndex % WallInteractionSystem.wallColors.count]
         WallInteractionSystem.colorIndex += 1
         
         // Store position for merge detection
@@ -94,6 +104,12 @@ class WallTapHandler: NSObject {
             planeAnchor.transform.columns.3.z
         )
         WallInteractionSystem.trackedWallPositions[planeAnchor.identifier] = worldPos
+        
+        // CACHE EVERYTHING for instant access!
+        WallInteractionSystem.anchorCache[planeAnchor.identifier] = anchorEntity
+        WallInteractionSystem.colorCache[planeAnchor.identifier] = wallColor
+        WallInteractionSystem.updateWallGeometryCache(for: planeAnchor)
+        WallInteractionSystem.minimapDirty = true  // Mark minimap for update
         
         // Store initial size to prevent unnecessary updates
         WallDetectionCoordinator.lastLoggedSizes[planeAnchor.identifier] = (planeAnchor.planeExtent.width, planeAnchor.planeExtent.height)
@@ -117,6 +133,9 @@ class WallTapHandler: NSObject {
         print("[WallInteraction] Tracked \(classificationString). Total: \(WallInteractionSystem.trackedWalls.count)")
         print("[WallInteraction] - ID: \(planeAnchor.identifier)")
         print("[WallInteraction] - Size: \(planeAnchor.planeExtent.width)x\(planeAnchor.planeExtent.height)m")
+        
+        // PERFORMANCE: Publish update event
+        WallInteractionSystem.coordinator?.wallUpdatePublisher.send()
     }
     
     private func addEdgeVisualization(to modelEntity: ModelEntity, color: UIColor) {
@@ -196,9 +215,17 @@ class WallInteractionSystem: RealityKit.System {
     static var wallColors: [UIColor] = [.systemBlue, .systemGreen, .systemOrange, .systemPurple, .systemRed, .systemYellow]
     static var colorIndex = 0
     private static var tapHandler: WallTapHandler?
+    static weak var coordinator: WallDetectionCoordinator?
     
     // Store wall positions to detect merged planes
     static var trackedWallPositions: [UUID: SIMD3<Float>] = [:]
+    
+    // PERFORMANCE CACHES - Instant lookups instead of searching!
+    static var anchorCache: [UUID: AnchorEntity] = [:]  // planeID -> AnchorEntity
+    static var colorCache: [UUID: UIColor] = [:]  // planeID -> Color
+    static var wallGeometryCache: [UUID: (center: SIMD3<Float>, start: SIMD3<Float>, end: SIMD3<Float>, width: Float)] = [:]
+    static var minimapModels: [WallModel] = []  // Pre-calculated minimap data
+    static var minimapDirty = false  // Only update when needed
     
     // MARK: - Queries
     private static let allWallsQuery = EntityQuery(where: .has(UserTrackedComponent.self))
@@ -241,6 +268,26 @@ class WallInteractionSystem: RealityKit.System {
         print("[WallInteraction] All walls cleared")
     }
     
+    // MARK: - Cache Management
+    static func updateWallGeometryCache(for planeAnchor: ARPlaneAnchor) {
+        let transform = planeAnchor.transform
+        let localCenter = planeAnchor.center
+        let worldCenter = transform * SIMD4<Float>(localCenter.x, localCenter.y, localCenter.z, 1.0)
+        let center = SIMD3<Float>(worldCenter.x, worldCenter.y, worldCenter.z)
+        
+        let wallRight = normalize(SIMD3<Float>(
+            transform.columns.0.x,
+            transform.columns.0.y,
+            transform.columns.0.z
+        ))
+        
+        let halfWidth = planeAnchor.planeExtent.width / 2
+        let start = center - wallRight * halfWidth
+        let end = center + wallRight * halfWidth
+        
+        wallGeometryCache[planeAnchor.identifier] = (center, start, end, planeAnchor.planeExtent.width)
+    }
+    
     // MARK: - Geometry Creation
     
     // Optimized update method - only updates mesh, not materials or components
@@ -262,6 +309,13 @@ class WallInteractionSystem: RealityKit.System {
         
         // Update position to match plane center
         existingWall.position = SIMD3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+        
+        // Update cache for minimap
+        updateWallGeometryCache(for: planeAnchor)
+        minimapDirty = true
+        
+        // PERFORMANCE: Publish update event
+        coordinator?.wallUpdatePublisher.send()
     }
     
     static func createFullGeometryMesh(for planeAnchor: ARPlaneAnchor, in anchorEntity: AnchorEntity) {

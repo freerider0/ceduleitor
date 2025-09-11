@@ -11,6 +11,11 @@ class PlaneIntersectionSystem: RealityKit.System {
     static var intersectionLines: [String: ModelEntity] = [:]  // Key: "planeID1_planeID2"
     private static weak var sharedARView: ARView?
     
+    // PERFORMANCE CACHES
+    static var trackedVerticalPlanes: [UUID: ARPlaneAnchor] = [:]
+    static var trackedHorizontalPlanes: [UUID: ARPlaneAnchor] = [:]
+    static var intersectionsDirty = false
+    
     // MARK: - Initialization
     required init(scene: RealityKit.Scene) {
         print("[PlaneIntersectionSystem] Initialized")
@@ -23,62 +28,47 @@ class PlaneIntersectionSystem: RealityKit.System {
     func update(context: SceneUpdateContext) {
         frameCount += 1
         
-        // Only update every 30 frames for performance
-        guard frameCount % 30 == 0 else { return }
+        // PERFORMANCE: Only update when planes change or every 60 frames
+        guard Self.intersectionsDirty || frameCount % 60 == 0 else { return }
         
-        // Update intersection lines between tracked planes
-        guard let arView = Self.sharedARView else { 
-            if frameCount % 120 == 0 {
-                print("[PlaneIntersection] No ARView set")
-            }
-            return 
-        }
+        guard let arView = Self.sharedARView else { return }
         
-        // Get all tracked walls
-        let trackedWallIDs = WallInteractionSystem.trackedWalls
-        
-        if frameCount % 120 == 0 && !trackedWallIDs.isEmpty {
-            print("[PlaneIntersection] Checking intersections for \(trackedWallIDs.count) tracked walls")
-        }
-        
-        // Find all plane anchors - check session anchors instead
-        var verticalPlanes: [(ARPlaneAnchor, AnchorEntity)] = []
-        var horizontalPlanes: [(ARPlaneAnchor, AnchorEntity)] = []
-        
-        // Get planes from AR session
-        if let anchors = arView.session.currentFrame?.anchors {
-            for anchor in anchors {
-                if let planeAnchor = anchor as? ARPlaneAnchor {
-                    // Find the corresponding entity
-                    for sceneAnchor in arView.scene.anchors {
-                        if let anchorEntity = sceneAnchor as? AnchorEntity,
-                           let entityAnchor = anchorEntity.anchor as? ARPlaneAnchor,
-                           entityAnchor.identifier == planeAnchor.identifier {
-                            
-                            if planeAnchor.alignment == .vertical && trackedWallIDs.contains(planeAnchor.identifier) {
-                                verticalPlanes.append((planeAnchor, anchorEntity))
-                            } else if planeAnchor.alignment == .horizontal {
-                                // Check if floor or ceiling is tracked
-                                if trackedWallIDs.contains(planeAnchor.identifier) {
-                                    horizontalPlanes.append((planeAnchor, anchorEntity))
-                                }
-                            }
-                            break
+        // OPTIMIZED: Use cached planes instead of searching
+        if Self.intersectionsDirty {
+            // Update plane caches from session
+            Self.trackedVerticalPlanes.removeAll()
+            Self.trackedHorizontalPlanes.removeAll()
+            
+            if let anchors = arView.session.currentFrame?.anchors {
+                for anchor in anchors {
+                    if let planeAnchor = anchor as? ARPlaneAnchor,
+                       WallInteractionSystem.trackedWalls.contains(planeAnchor.identifier) {
+                        if planeAnchor.alignment == .vertical {
+                            Self.trackedVerticalPlanes[planeAnchor.identifier] = planeAnchor
+                        } else if planeAnchor.alignment == .horizontal {
+                            Self.trackedHorizontalPlanes[planeAnchor.identifier] = planeAnchor
                         }
                     }
                 }
             }
+            Self.intersectionsDirty = false
         }
         
-        if frameCount % 120 == 0 && (!verticalPlanes.isEmpty || !horizontalPlanes.isEmpty) {
-            print("[PlaneIntersection] Found \(verticalPlanes.count) walls, \(horizontalPlanes.count) floors/ceilings")
+        // Early exit if no intersections possible
+        if Self.trackedVerticalPlanes.isEmpty || Self.trackedHorizontalPlanes.isEmpty {
+            return
         }
         
-        // Create/update intersection lines between walls and floors/ceilings
-        for (wall, wallEntity) in verticalPlanes {
-            for (horizontal, horizEntity) in horizontalPlanes {
-                updateIntersectionLine(wall: wall, wallEntity: wallEntity, 
-                                     horizontal: horizontal, horizEntity: horizEntity, 
+        // Update intersections using cached data
+        for (wallID, wall) in Self.trackedVerticalPlanes {
+            // Get cached anchor entity
+            guard let wallEntity = WallInteractionSystem.anchorCache[wallID] else { continue }
+            
+            for (horizID, horizontal) in Self.trackedHorizontalPlanes {
+                guard let horizEntity = WallInteractionSystem.anchorCache[horizID] else { continue }
+                
+                updateIntersectionLine(wall: wall, wallEntity: wallEntity,
+                                     horizontal: horizontal, horizEntity: horizEntity,
                                      in: arView)
             }
         }

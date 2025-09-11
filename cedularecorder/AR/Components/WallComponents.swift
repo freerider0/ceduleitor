@@ -9,14 +9,7 @@ struct UserTrackedComponent: Component {
     var trackingColor: UIColor = .white
 }
 
-// MARK: - Wall Model for UI
-/// Simple model for displaying walls in the minimap
-struct WallModel: Identifiable {
-    let id = UUID()
-    let startPoint: SIMD3<Float>
-    let endPoint: SIMD3<Float>
-    let color: Color
-}
+// MARK: - Wall Model moved to WallMiniMapView.swift
 
 // That's it! Everything else comes from ARKit/RealityKit:
 // - ARPlaneAnchor provides: classification, extent (width/height), identifier
