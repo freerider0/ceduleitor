@@ -4,18 +4,10 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Walls: %lld/%lld",
+        "key": "Walls: %lld",
         "location": {
           "startingColumn": 42,
-          "startingLine": 43
-        }
-      },
-      {
-        "comment": "",
-        "key": "Tap walls to track",
-        "location": {
-          "startingColumn": 42,
-          "startingLine": 45
+          "startingLine": 135
         }
       },
       {
@@ -23,7 +15,7 @@
         "key": "%lld",
         "location": {
           "startingColumn": 22,
-          "startingLine": 182
+          "startingLine": 278
         }
       },
       {
@@ -31,7 +23,7 @@
         "key": "Tap walls to track",
         "location": {
           "startingColumn": 44,
-          "startingLine": 187
+          "startingLine": 283
         }
       },
       {
@@ -39,7 +31,7 @@
         "key": "Initializing...",
         "location": {
           "startingColumn": 67,
-          "startingLine": 187
+          "startingLine": 283
         }
       },
       {
@@ -47,7 +39,7 @@
         "key": "Walls Tracked",
         "location": {
           "startingColumn": 26,
-          "startingLine": 177
+          "startingLine": 273
         }
       },
       {
@@ -55,7 +47,7 @@
         "key": "1m",
         "location": {
           "startingColumn": 30,
-          "startingLine": 296
+          "startingLine": 392
         }
       },
       {
@@ -63,7 +55,7 @@
         "key": "N",
         "location": {
           "startingColumn": 18,
-          "startingLine": 479
+          "startingLine": 575
         }
       }
     ]

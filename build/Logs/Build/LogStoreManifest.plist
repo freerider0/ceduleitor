@@ -48,48 +48,6 @@
 			<key>uniqueIdentifier</key>
 			<string>4AFE9624-26CA-4F1F-898A-E786911CF010</string>
 		</dict>
-		<key>BDD5FC8A-3F84-4D69-95CB-F89FD97D609A</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>BDD5FC8A-3F84-4D69-95CB-F89FD97D609A.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>cedularecorder project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>cedularecorder</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Cleaning project cedularecorder with scheme cedularecorder and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>779273422.77064002</real>
-			<key>timeStoppedRecording</key>
-			<real>779273422.96118402</real>
-			<key>title</key>
-			<string>Cleaning project cedularecorder with scheme cedularecorder and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>BDD5FC8A-3F84-4D69-95CB-F89FD97D609A</string>
-		</dict>
 	</dict>
 </dict>
 </plist>

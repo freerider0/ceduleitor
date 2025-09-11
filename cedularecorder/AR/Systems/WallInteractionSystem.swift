@@ -23,10 +23,10 @@ class WallTapHandler: NSObject {
         let screenCenter = CGPoint(x: arView.bounds.width / 2, y: arView.bounds.height / 2)
         print("[WallInteraction] Tap detected, using screen center: \(screenCenter)")
         
-        // Use ARKit raycast from CENTER OF SCREEN to find vertical planes
+        // Use ARKit raycast from CENTER OF SCREEN to find ALL planes
         let results = arView.raycast(from: screenCenter,
                                     allowing: .existingPlaneGeometry,
-                                    alignment: .vertical)
+                                    alignment: .any)  // Hit walls, floors, and ceilings
         
         print("[WallInteraction] ARKit raycast found \(results.count) vertical planes")
         

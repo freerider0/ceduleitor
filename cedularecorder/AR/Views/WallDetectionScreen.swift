@@ -7,18 +7,104 @@ struct WallDetectionScreen: View {
     @Environment(\.dismiss) private var dismiss
     @State private var trackedWallCount = 0
     @State private var detectedWallCount = 0
+    @State private var wallModels: [WallModel] = []
+    @State private var userPosition = SIMD3<Float>(0, 0, 0)
+    @State private var userDirection: Float = 0
     
-    
+    func updateMinimapData() {
+        // Get camera position and direction
+        if let arView = coordinator.arView,
+           let frame = arView.session.currentFrame {
+            let transform = frame.camera.transform
+            
+            // Update user position
+            userPosition = SIMD3<Float>(
+                transform.columns.3.x,
+                transform.columns.3.y,
+                transform.columns.3.z
+            )
+            
+            // Calculate user direction (yaw)
+            let forward = -transform.columns.2
+            userDirection = atan2(forward.x, forward.z)
+            
+            // Update wall models from tracked walls
+            var newWallModels: [WallModel] = []
+            
+            // Debug: Log tracked walls
+            if !WallInteractionSystem.trackedWalls.isEmpty && wallModels.isEmpty {
+                print("[Minimap] Looking for \(WallInteractionSystem.trackedWalls.count) tracked walls")
+            }
+            
+            // Get all tracked wall anchors - check AR session for actual plane data
+            if let sessionAnchors = arView.session.currentFrame?.anchors {
+                for sessionAnchor in sessionAnchors {
+                    if let planeAnchor = sessionAnchor as? ARPlaneAnchor,
+                       WallInteractionSystem.trackedWalls.contains(planeAnchor.identifier) {
+                        
+                        // Get wall transform
+                        let wallTransform = planeAnchor.transform
+                        
+                        // Transform the local center to world position
+                        let localCenter = planeAnchor.center
+                        let worldCenter = wallTransform * SIMD4<Float>(localCenter.x, localCenter.y, localCenter.z, 1.0)
+                        let wallCenter = SIMD3<Float>(worldCenter.x, worldCenter.y, worldCenter.z)
+                        
+                        // Get wall right vector for endpoints (X axis of transform)
+                        let wallRight = normalize(SIMD3<Float>(
+                            wallTransform.columns.0.x,
+                            wallTransform.columns.0.y,
+                            wallTransform.columns.0.z
+                        ))
+                        
+                        let halfWidth = planeAnchor.planeExtent.width / 2
+                        let startPoint = wallCenter - wallRight * halfWidth
+                        let endPoint = wallCenter + wallRight * halfWidth
+                        
+                        // Find color from scene anchor
+                        var wallColor = Color.green
+                        for sceneAnchor in arView.scene.anchors {
+                            if let anchorEntity = sceneAnchor as? AnchorEntity {
+                                // Check if this anchor corresponds to our plane
+                                if anchorEntity.name.contains(planeAnchor.identifier.uuidString) {
+                                    if let collisionEntity = anchorEntity.children.first(where: { $0.name.starts(with: "Collision_") }),
+                                       let trackingComponent = collisionEntity.components[UserTrackedComponent.self] {
+                                        wallColor = Color(trackingComponent.trackingColor)
+                                    }
+                                    break
+                                }
+                            }
+                        }
+                        
+                        newWallModels.append(WallModel(
+                            startPoint: startPoint,
+                            endPoint: endPoint,
+                            color: wallColor
+                        ))
+                        
+                        if wallModels.isEmpty {
+                            print("[Minimap] Added wall: \(planeAnchor.identifier) at \(wallCenter)")
+                        }
+                    }
+                }
+            }
+            
+            wallModels = newWallModels
+        }
+    }
     
     var body: some View {
         ZStack {
             // AR View
             WallDetectionARView(coordinator: coordinator)
                 .edgesIgnoringSafeArea(.all)
-                .onReceive(Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()) { _ in
+                .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
                     // Update counts from ECS systems
                     trackedWallCount = WallInteractionSystem.trackedWalls.count
                     detectedWallCount = WallClassificationSystem.detectedWallCount
+                    
+                    // Update minimap data
+                    updateMinimapData()
                 }
             
             // Crosshair in center of screen
@@ -33,21 +119,30 @@ struct WallDetectionScreen: View {
                 
                 // Bottom Controls
                 HStack(alignment: .bottom) {
-                    // Mini Map placeholder - will be implemented with ECS query
+                    // Mini Map showing tracked walls
                     if coordinator.isReady {
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(.ultraThinMaterial)
-                            .frame(width: 200, height: 200)
-                            .overlay(
-                                VStack {
-                                    Text("Walls: \(trackedWallCount)/\(detectedWallCount)")
+                        WallMiniMapView(
+                            walls: wallModels,
+                            userPosition: userPosition,
+                            userDirection: userDirection
+                        )
+                        .frame(width: 200, height: 200)
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(16)
+                        .overlay(
+                            VStack {
+                                HStack {
+                                    Text("Walls: \(trackedWallCount)")
                                         .font(.caption)
-                                    Text("Tap walls to track")
-                                        .font(.caption2)
+                                        .foregroundColor(.white)
+                                    Spacer()
                                 }
-                            )
-                            .padding()
-                            .transition(.scale.combined(with: .opacity))
+                                Spacer()
+                            }
+                            .padding(8)
+                        )
+                        .padding()
+                        .transition(.scale.combined(with: .opacity))
                     }
                     
                     Spacer()
@@ -130,6 +225,7 @@ struct WallDetectionARView: UIViewRepresentable {
         WallClassificationSystem.registerSystem()
         WallInteractionSystem.registerSystem()
         WallCircleIndicatorSystem.registerSystem()
+        PlaneIntersectionSystem.registerSystem()
         
         print("[AR] ✅ Systems registered with RealityKit - they will be instantiated for each scene")
     }

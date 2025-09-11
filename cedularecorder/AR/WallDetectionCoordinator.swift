@@ -13,7 +13,7 @@ class WallDetectionCoordinator: NSObject, ObservableObject {
     @Published var isReady = false
     
     // MARK: - Properties
-    private var arView: ARView?
+    var arView: ARView?  // Made accessible for minimap
     private var cancellables = Set<AnyCancellable>()
     private var lastLoggedState: ARCamera.TrackingState?
     private var detectedPlanes: Set<UUID> = []
@@ -33,9 +33,9 @@ class WallDetectionCoordinator: NSObject, ObservableObject {
         arView.environment.sceneUnderstanding.options.insert(.collision)      // Keep for tap detection ONLY
         // arView.environment.sceneUnderstanding.options.insert(.receivesLighting) // DISABLED - not needed
         
-        // MAXIMUM PERFORMANCE CONFIGURATION
+        // CONFIGURATION WITH FLOOR/CEILING DETECTION
         let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.vertical]  // Only detect vertical planes
+        config.planeDetection = [.vertical, .horizontal]  // Detect walls, floors, and ceilings
         // NO scene reconstruction - maximum performance!
         // NO environment texturing - save GPU/CPU
         // NO mesh generation - just plane detection
@@ -79,6 +79,7 @@ class WallDetectionCoordinator: NSObject, ObservableObject {
         WallClassificationSystem.setupSystem(arView: arView)
         WallInteractionSystem.setupSystem(arView: arView)
         WallCircleIndicatorSystem.setupSystem(arView: arView)
+        PlaneIntersectionSystem.setupSystem(arView: arView)
         
         print("[AR] ✅ All systems setup complete - ECS will handle everything")
     }
@@ -161,23 +162,26 @@ extension WallDetectionCoordinator: ARSessionDelegate {
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         for anchor in anchors {
             if let planeAnchor = anchor as? ARPlaneAnchor {
+                let alignmentString = planeAnchor.alignment == .vertical ? "WALL" : 
+                                     planeAnchor.classification == .floor ? "FLOOR" : "CEILING"
+                
+                print("[WallDetectionCoordinator] 🆕 New \(alignmentString) detected:")
+                print("  - ID: \(planeAnchor.identifier)")
+                print("  - Classification: \(planeAnchor.classification)")
+                print("  - Size: \(planeAnchor.planeExtent.width)x\(planeAnchor.planeExtent.height)")
+                
+                // Check if this might be a merged plane replacing a tracked wall
                 if planeAnchor.alignment == .vertical {
-                    print("[WallDetectionCoordinator] 🆕 New vertical plane detected:")
-                    print("  - ID: \(planeAnchor.identifier)")
-                    print("  - Classification: \(planeAnchor.classification)")
-                    print("  - Size: \(planeAnchor.planeExtent.width)x\(planeAnchor.planeExtent.height)")
-                    
-                    // Check if this might be a merged plane replacing a tracked wall
                     DispatchQueue.main.async { [weak self] in
                         self?.checkForMergedPlane(planeAnchor)
                     }
-                    
-                    detectedPlanes.insert(planeAnchor.identifier)
-                    
-                    // Create wall entity for vertical plane
-                    DispatchQueue.main.async { [weak self] in
-                        self?.createWallAnchor(for: planeAnchor)
-                    }
+                }
+                
+                detectedPlanes.insert(planeAnchor.identifier)
+                
+                // Create anchor entity for all planes
+                DispatchQueue.main.async { [weak self] in
+                    self?.createWallAnchor(for: planeAnchor)
                 }
             }
         }
@@ -217,21 +221,26 @@ extension WallDetectionCoordinator: ARSessionDelegate {
     }
     
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
-        // SKIP ALL UPDATES FOR TRACKED WALLS - they don't need updates
+        // ONLY update the wall at screen center for maximum performance
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
+            guard let self = self, let arView = self.arView else { return }
             
+            // Raycast from screen center to find which wall is being looked at
+            let screenCenter = CGPoint(x: arView.bounds.width / 2, y: arView.bounds.height / 2)
+            let results = arView.raycast(from: screenCenter,
+                                        allowing: .existingPlaneGeometry,
+                                        alignment: .any)
+            
+            // Get the plane anchor being looked at
+            let centerPlaneID = results.first?.anchor?.identifier
+            
+            // Only update the ONE plane in the center
             for anchor in anchors {
                 if let planeAnchor = anchor as? ARPlaneAnchor,
-                   planeAnchor.alignment == .vertical {
-                    
-                    // NEVER update tracked walls - they're frozen in place
-                    if WallInteractionSystem.trackedWalls.contains(planeAnchor.identifier) {
-                        continue  // Skip this wall completely
-                    }
-                    
-                    // Only update untracked walls
+                   planeAnchor.identifier == centerPlaneID {
+                    // Update ONLY this plane
                     self.updateWallAnchor(for: planeAnchor)
+                    break  // Stop after updating the center plane
                 }
             }
         }
@@ -241,10 +250,8 @@ extension WallDetectionCoordinator: ARSessionDelegate {
     private func createWallAnchor(for planeAnchor: ARPlaneAnchor) {
         guard let arView = arView else { return }
         
-        // Only create walls for vertical planes
-        guard planeAnchor.alignment == .vertical else {
-            return
-        }
+        // Create anchors for all planes (walls, floors, ceilings)
+        // We'll handle them all now
         
         // Don't filter by size - let user decide what to track
         
@@ -408,8 +415,14 @@ extension WallDetectionCoordinator: ARSessionDelegate {
     private func updateWallAnchor(for planeAnchor: ARPlaneAnchor) {
         guard let arView = arView else { return }
         
-        // NEVER update tracked walls - exit immediately
-        if WallInteractionSystem.trackedWalls.contains(planeAnchor.identifier) {
+        // PERFORMANCE: Double-check this is the wall in the center
+        let screenCenter = CGPoint(x: arView.bounds.width / 2, y: arView.bounds.height / 2)
+        let results = arView.raycast(from: screenCenter,
+                                    allowing: .existingPlaneGeometry,
+                                    alignment: .any)
+        
+        // Skip if this isn't the center wall
+        if results.first?.anchor?.identifier != planeAnchor.identifier {
             return
         }
         
