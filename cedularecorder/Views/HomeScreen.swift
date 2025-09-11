@@ -20,27 +20,43 @@ struct HomeScreen: View {
                 )
                 .ignoresSafeArea()
                 
-                VStack(spacing: 30) {
-                    // App title
-                    VStack(spacing: 8) {
-                        Image(systemName: "viewfinder.circle.fill")
-                            .font(.system(size: 60))
-                            .foregroundColor(.blue)
+                ScrollView {
+                    VStack(spacing: 30) {
+                        // App title
+                        VStack(spacing: 8) {
+                            Image(systemName: "viewfinder.circle.fill")
+                                .font(.system(size: 60))
+                                .foregroundColor(.blue)
+                            
+                            Text("Room Recorder")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                            
+                            Text("AR Room Capture & Measurement")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.top, 20)
                         
-                        Text("Room Recorder")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                        // Navigation buttons
+                        VStack(spacing: 20) {
+                        // ID Document Capture button
+                        NavigationLink(destination: ModernCameraWithOverlay()) {
+                            HStack {
+                                Image(systemName: "doc.text.viewfinder")
+                                    .font(.title2)
+                                Text("ID Document Scanner")
+                                    .font(.headline)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.indigo)
+                            )
+                            .foregroundColor(.white)
+                        }
                         
-                        Text("AR Room Capture & Measurement")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    .padding(.top, 50)
-                    
-                    Spacer()
-                    
-                    // Navigation buttons
-                    VStack(spacing: 20) {
                         // Room Capture button
                         NavigationLink(destination: RoomScannerScreen(), isActive: $showRoomCapture) {
                             HStack {
@@ -54,6 +70,23 @@ struct HomeScreen: View {
                             .background(
                                 RoundedRectangle(cornerRadius: 15)
                                     .fill(Color.blue)
+                            )
+                            .foregroundColor(.white)
+                        }
+                        
+                        // Saved Documents button
+                        NavigationLink(destination: SavedDocumentsView()) {
+                            HStack {
+                                Image(systemName: "folder.fill.badge.person.crop")
+                                    .font(.title2)
+                                Text("Saved ID Documents")
+                                    .font(.headline)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.purple)
                             )
                             .foregroundColor(.white)
                         }
@@ -88,6 +121,23 @@ struct HomeScreen: View {
                             .background(
                                 RoundedRectangle(cornerRadius: 15)
                                     .fill(Color.orange)
+                            )
+                            .foregroundColor(.white)
+                        }
+                        
+                        // Wall Detection button
+                        NavigationLink(destination: WallDetectionScreen()) {
+                            HStack {
+                                Image(systemName: "square.3.layers.3d")
+                                    .font(.title2)
+                                Text("Wall Detection")
+                                    .font(.headline)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.teal)
                             )
                             .foregroundColor(.white)
                         }
@@ -127,15 +177,15 @@ struct HomeScreen: View {
                             )
                             .foregroundColor(.white)
                         }
+                        }
+                        .padding(.horizontal, 30)
+                        
+                        // Version info
+                        Text("Version 1.0.0")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .padding(.vertical, 20)
                     }
-                    .padding(.horizontal, 30)                    
-                    Spacer()
-                    
-                    // Version info
-                    Text("Version 1.0.0")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                        .padding(.bottom, 20)
                 }
             }
             .navigationBarHidden(true)

@@ -28,7 +28,7 @@ struct ModeIndicatorView: View {
                 ModeButton(
                     title: "Walls",
                     icon: "rectangle.split.2x1",
-                    description: "Find corners from walls",
+                    description: "Tap walls to create corners",
                     isSelected: detector.mode == .wallIntersection,
                     color: .purple
                 ) {
@@ -111,13 +111,11 @@ struct InstructionBanner: View {
         case .wallIntersection:
             switch state {
             case .searching:
-                return "🔍 Look at a wall to detect it"
+                return "👆 Tap on any wall to capture it"
             case .wallDetected:
                 return "✅ Wall detected - tap to capture"
             case .firstWallStored:
-                return "1️⃣ First wall stored - find perpendicular wall"
-            case .intersectionReady:
-                return "🔀 Two walls ready - tap to add corner"
+                return "👆 Tap on next wall (corner will be added automatically)"
             }
         }
     }
@@ -134,8 +132,6 @@ struct InstructionBanner: View {
                 return .green
             case .firstWallStored:
                 return .purple
-            case .intersectionReady:
-                return .green
             }
         }
     }

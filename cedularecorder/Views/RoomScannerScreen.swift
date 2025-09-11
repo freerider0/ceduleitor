@@ -169,13 +169,11 @@ struct DetectionQualityIndicator: View {
     var qualityLevel: (text: String, color: Color, icon: String) {
         switch state {
         case .searching:
-            return ("Searching", .orange, "wifi.slash")
+            return ("Looking", .orange, "eye")
         case .wallDetected:
-            return ("Good", .green, "wifi")
+            return ("Wall Found", .green, "checkmark")
         case .firstWallStored:
-            return ("1 Wall", .blue, "wifi")
-        case .intersectionReady:
-            return ("Ready", .green, "checkmark.circle")
+            return ("1 Wall Saved", .blue, "square.split.1x2")
         }
     }
     
@@ -205,9 +203,9 @@ struct OnboardingTip: View {
     var tipText: String {
         switch mode {
         case .cornerPointing:
-            return "💡 Start by pointing at any corner where walls meet the floor"
+            return "💡 Point at corners where walls meet the floor"
         case .wallIntersection:
-            return "💡 Capture 2+ walls: Each pair of walls creates a corner. Wall 3 finds corner between walls 2-3"
+            return "💡 Tap walls sequentially - corners appear automatically"
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7265BB6E2E703822009A58A1 /* functions.js in Resources */ = {isa = PBXBuildFile; fileRef = 7265BB6D2E70381C009A58A1 /* functions.js */; };
 		7270EB372E6DB731004843ED /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB222E6DB730004843ED /* Diagnostics.swift */; };
 		7270EB382E6DB731004843ED /* SubSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB232E6DB730004843ED /* SubSystem.swift */; };
 		7270EB392E6DB731004843ED /* BSpline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB262E6DB730004843ED /* BSpline.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7265BB6D2E70381C009A58A1 /* functions.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = functions.js; sourceTree = "<group>"; };
 		7270EB1E2E6DB730004843ED /* AngleConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleConstraints.swift; sourceTree = "<group>"; };
 		7270EB1F2E6DB730004843ED /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		7270EB202E6DB730004843ED /* CurveConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveConstraints.swift; sourceTree = "<group>"; };
@@ -103,6 +105,11 @@
 		728505602E6A3500009D0A5E /* Resources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7292B17C2E72E47600287E64 /* AR */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AR;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -212,6 +219,7 @@
 				728504442E6A14BB009D0A5E /* cedularecorderTests */,
 				7285044E2E6A14BB009D0A5E /* cedularecorderUITests */,
 				728504352E6A14B9009D0A5E /* Products */,
+				7265BB6D2E70381C009A58A1 /* functions.js */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,6 +236,7 @@
 		728505102E6A1FE2009D0A5E /* cedularecorder */ = {
 			isa = PBXGroup;
 			children = (
+				7292B17C2E72E47600287E64 /* AR */,
 				7270EB362E6DB730004843ED /* Utils */,
 				728505472E6A34E3009D0A5E /* Models */,
 				728505602E6A3500009D0A5E /* Resources */,
@@ -260,6 +269,7 @@
 				728505502E6A34F5009D0A5E /* Services */,
 				7285055A2E6A34FC009D0A5E /* Views */,
 				728505602E6A3500009D0A5E /* Resources */,
+				7292B17C2E72E47600287E64 /* AR */,
 			);
 			name = cedularecorder;
 			packageProductDependencies = (
@@ -371,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7265BB6E2E703822009A58A1 /* functions.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

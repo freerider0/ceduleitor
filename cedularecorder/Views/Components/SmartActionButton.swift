@@ -75,19 +75,21 @@ struct PrimaryActionButton: View {
             return ("plus.viewfinder", "Add Corner", "Point at floor corner", .blue)
             
         case .wallIntersection:
+            if detector.floorHeight == 0 {
+                return ("arrow.down.circle", "Set Floor", "Tap on the floor", .orange)
+            }
+            
             switch detector.wallDetectionState {
             case .searching:
                 if detector.corners.isEmpty {
-                    return ("viewfinder", "Find First Wall", "Look at any wall", .orange)
+                    return ("hand.tap", "Tap First Wall", "Tap any wall to start", .blue)
                 } else {
-                    return ("viewfinder", "Find Next Wall", "Look for perpendicular wall", .orange)
+                    return ("hand.tap", "Tap Next Wall", "Continue adding walls", .blue)
                 }
             case .wallDetected:
-                return ("checkmark.circle", "Capture Wall", "Tap to record wall", .green)
+                return ("hand.tap", "Tap to Capture", "Capture this wall", .green)
             case .firstWallStored:
-                return ("rotate.right", "Turn 90°", "Find perpendicular wall", .purple)
-            case .intersectionReady:
-                return ("plus.circle", "Create Corner", "Tap to add corner", .green)
+                return ("hand.tap", "Tap Second Wall", "Corner will be added automatically", .purple)
             }
         }
     }
@@ -134,6 +136,17 @@ struct PrimaryActionButton: View {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             isPressed = false
+        }
+        
+        // Show helpful reminder in wall mode
+        if detector.mode == .wallIntersection {
+            if detector.floorHeight == 0 {
+                detector.statusMessage = "Tap on the floor to set floor level"
+            } else if detector.wallDetectionState == .searching {
+                detector.statusMessage = "Tap on any wall"
+            } else if detector.wallDetectionState == .firstWallStored {
+                detector.statusMessage = "Tap on the next wall"
+            }
         }
     }
 }

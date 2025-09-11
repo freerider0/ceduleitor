@@ -1,0 +1,24 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlan/FloorPlanToolbar.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Snap",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
+        "key": "Snap",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 111
+        }
+      }
+    ]
+  },
+  "version": 1
+}

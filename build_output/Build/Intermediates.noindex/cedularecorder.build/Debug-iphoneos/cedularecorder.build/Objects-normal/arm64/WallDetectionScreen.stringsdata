@@ -1,0 +1,72 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/AR/Views/WallDetectionScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Walls: %lld/%lld",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 43
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap walls to track",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 182
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap walls to track",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 187
+        }
+      },
+      {
+        "comment": "",
+        "key": "Initializing...",
+        "location": {
+          "startingColumn": 67,
+          "startingLine": 187
+        }
+      },
+      {
+        "comment": "",
+        "key": "Walls Tracked",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 177
+        }
+      },
+      {
+        "comment": "",
+        "key": "1m",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 296
+        }
+      },
+      {
+        "comment": "",
+        "key": "N",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 479
+        }
+      }
+    ]
+  },
+  "version": 1
+}

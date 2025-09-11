@@ -54,7 +54,6 @@ enum WallDetectionState {
     case searching        // Looking for wall
     case wallDetected     // Wall plane found
     case firstWallStored  // One wall captured, need second
-    case intersectionReady // Two walls ready to calculate corner
 }
 
 /// Represents a captured wall plane
@@ -92,7 +91,7 @@ class RoomShapeDetector: ObservableObject {
     // MARK: - Private Properties
     
     private var capturedWalls: [CapturedWall] = []
-    private var floorHeight: Float = 0.0
+    @Published var floorHeight: Float = 0.0
     private let closeThreshold: Float = 0.5  // Distance in meters to auto-suggest closing
     private let minPoints = 3  // Minimum corners for a valid shape
     private let geometryBuilder = RoomGeometryBuilder()  // Intelligent geometry builder
@@ -113,7 +112,7 @@ class RoomShapeDetector: ObservableObject {
         capturedWalls.removeAll()
         capturedWallsCount = 0
         floorHeight = 0.0
-        statusMessage = "Point at a corner to begin"
+        statusMessage = mode == .cornerPointing ? "Point at a corner to begin" : "Capture first wall"
         canClose = false
         isComplete = false
         currentShape = nil
@@ -156,6 +155,7 @@ class RoomShapeDetector: ObservableObject {
         if let planeAnchor = result.anchor as? ARPlaneAnchor,
            planeAnchor.alignment == .horizontal {
             floorHeight = hitPoint.y
+            geometryBuilder.setFloorHeight(floorHeight)
         }
         
         // For corner mode, show preview on floor
@@ -165,6 +165,29 @@ class RoomShapeDetector: ObservableObject {
         }
     }
     
+    /// Explicitly set floor height from a horizontal plane detection
+    func setFloorPlane(from raycastResult: ARRaycastResult) -> Bool {
+        // Check if this is a horizontal plane
+        guard let planeAnchor = raycastResult.anchor as? ARPlaneAnchor,
+              planeAnchor.alignment == .horizontal else {
+            print("⚠️ Not a horizontal plane")
+            return false
+        }
+        
+        let hitPoint = simd_float3(
+            raycastResult.worldTransform.columns.3.x,
+            raycastResult.worldTransform.columns.3.y,
+            raycastResult.worldTransform.columns.3.z
+        )
+        
+        floorHeight = hitPoint.y
+        geometryBuilder.setFloorHeight(floorHeight)
+        // Floor height set successfully
+        statusMessage = "Floor detected! Now capture walls"
+        
+        return true
+    }
+    
     /// Update wall detection state for visual feedback
     func updateWallDetection(wallDetected: Bool) {
         guard mode == .wallIntersection else { return }
@@ -172,7 +195,7 @@ class RoomShapeDetector: ObservableObject {
         if capturedWalls.isEmpty {
             wallDetectionState = wallDetected ? .wallDetected : .searching
         } else if capturedWalls.count == 1 {
-            wallDetectionState = wallDetected ? .intersectionReady : .firstWallStored
+            wallDetectionState = wallDetected ? .wallDetected : .firstWallStored
         }
     }
     
@@ -218,7 +241,13 @@ class RoomShapeDetector: ObservableObject {
         // Check if this is a vertical plane
         guard let planeAnchor = raycastResult.anchor as? ARPlaneAnchor,
               planeAnchor.alignment == .vertical else {
-            statusMessage = "Point at a wall"
+            statusMessage = "Tap on a wall"
+            return false
+        }
+        
+        // Check if floor height has been set
+        if floorHeight == 0 {
+            statusMessage = "Tap on the floor first"
             return false
         }
         
@@ -235,15 +264,6 @@ class RoomShapeDetector: ObservableObject {
             transform.columns.3.z
         )
         
-        // Update floor height from the point - use a more intelligent calculation
-        if floorHeight == 0 {
-            // Estimate floor height based on typical wall capture height
-            // Most users capture walls at eye level (1.5-1.7m above floor)
-            floorHeight = planePoint.y - 1.6
-            geometryBuilder.setFloorHeight(floorHeight)
-            print("🏠 Estimated floor height: \(floorHeight)m from wall point at \(planePoint.y)m")
-        }
-        
         // Create plane equation: ax + by + cz + d = 0
         let d = -simd_dot(planeNormal, planePoint)
         let planeEquation = simd_float4(planeNormal.x, planeNormal.y, planeNormal.z, d)
@@ -256,31 +276,38 @@ class RoomShapeDetector: ObservableObject {
             point: planePoint
         )
         capturedWalls.append(wall)
-        capturedWallsCount = capturedWalls.count  // Update published count
-        
-        print("📐 Wall captured #\(capturedWalls.count), Normal: \(planeNormal)")
+        capturedWallsCount = capturedWalls.count
         
         // Update state based on number of walls captured
         if capturedWalls.count == 1 {
             wallDetectionState = .firstWallStored
-            statusMessage = "Wall 1 captured! Turn 90° for wall 2"
+            statusMessage = "Wall 1 captured! Tap on second wall"
         } else if capturedWalls.count >= 2 {
-            // Try to calculate intersection immediately
+            // Automatically calculate and add corner
             if let corner = tryCalculateWallIntersection() {
                 corners.append(corner)
                 geometryBuilder.addCorner(corner)
                 
-                // Update status for consecutive wall flow
-                let wallNum = capturedWalls.count + 1  // Next wall number
-                statusMessage = "Corner \(corners.count) added! Capture wall \(wallNum) for next corner"
-                wallDetectionState = .firstWallStored  // We have 1 wall ready for next corner
+                // After successful corner, keep only last wall for next corner
+                let lastWall = capturedWalls.last!
+                capturedWalls = [lastWall]
+                capturedWallsCount = 1
+                
+                // Update message
+                let cornerNum = corners.count
+                if cornerNum < 3 {
+                    statusMessage = "Corner \(cornerNum) added! Tap next wall"
+                } else {
+                    statusMessage = "Corner \(cornerNum) added! Tap next wall or close shape"
+                }
+                wallDetectionState = .firstWallStored
                 updateStatus()
                 return true
             } else {
-                statusMessage = "Walls are parallel - find perpendicular wall"
-                // Remove the parallel wall
+                // Walls were parallel, remove the bad wall
+                statusMessage = "Walls too parallel - tap a different wall"
                 capturedWalls.removeLast()
-                capturedWallsCount = capturedWalls.count  // Update count
+                capturedWallsCount = capturedWalls.count
                 wallDetectionState = .firstWallStored
             }
         }
@@ -291,39 +318,25 @@ class RoomShapeDetector: ObservableObject {
     
     /// Try to calculate intersection from captured walls
     private func tryCalculateWallIntersection() -> simd_float3? {
-        // Take the last two walls (regardless of used status)
-        guard capturedWalls.count >= 2 else { return nil }
+        // Need exactly 2 walls
+        guard capturedWalls.count >= 2 else {
+            return nil
+        }
         
         let wall1 = capturedWalls[capturedWalls.count - 2]
         let wall2 = capturedWalls[capturedWalls.count - 1]
         
-        // Check if walls are perpendicular (not parallel)
+        // Check if walls are too parallel
         let dotProduct = abs(simd_dot(wall1.normal, wall2.normal))
-        if dotProduct > 0.9 {  // Walls are nearly parallel
-            print("🔴 Walls are too parallel: dot product = \(dotProduct)")
+        if dotProduct > 0.85 {  // More lenient threshold
             return nil
         }
         
-        // Use geometry builder for intelligent intersection
-        guard let intersection = geometryBuilder.findCornerFromWalls(
+        // Use geometry builder to find intersection
+        return geometryBuilder.findCornerFromWalls(
             wall1: wall1.planeEquation,
             wall2: wall2.planeEquation
-        ) else {
-            print("🔴 Failed to calculate intersection")
-            return nil
-        }
-        
-        print("✅ Successfully calculated corner #\(corners.count + 1) at: \(intersection)")
-        print("   Floor height: \(floorHeight), Corner Y: \(intersection.y)")
-        
-        // For consecutive wall flow: keep the last wall for next corner calculation
-        // Remove only the first wall, keeping the second for the next corner
-        if capturedWalls.count >= 2 {
-            capturedWalls.removeFirst()  // Remove oldest wall
-            capturedWallsCount = capturedWalls.count  // Update count (should be 1)
-        }
-        
-        return intersection
+        )
     }
     
     /// Calculate where two wall planes intersect at floor level
@@ -375,13 +388,19 @@ class RoomShapeDetector: ObservableObject {
         let pointCount = corners.count
         
         if pointCount == 0 {
-            statusMessage = mode == .cornerPointing ? 
-                "Point at a corner to begin" : 
-                "Point at a wall to begin"
+            if mode == .cornerPointing {
+                statusMessage = "Point at a corner to begin"
+            } else if mode == .wallIntersection {
+                statusMessage = floorHeight == 0 ? "Tap on the floor first" : "Tap on first wall"
+            }
             canClose = false
         } else if pointCount < minPoints {
             let remaining = minPoints - pointCount
-            statusMessage = "Add \(remaining) more point\(remaining == 1 ? "" : "s")"
+            if mode == .wallIntersection {
+                statusMessage = "Need \(remaining) more corner\(remaining == 1 ? "" : "s") - tap walls"
+            } else {
+                statusMessage = "Add \(remaining) more corner\(remaining == 1 ? "" : "s")"
+            }
             canClose = false
         } else {
             canClose = true
@@ -394,7 +413,7 @@ class RoomShapeDetector: ObservableObject {
                 } else {
                     statusMessage = mode == .cornerPointing ?
                         "Add corner or close shape" :
-                        "Add wall intersection or close shape"
+                        "Tap next wall or close shape"
                 }
             }
         }

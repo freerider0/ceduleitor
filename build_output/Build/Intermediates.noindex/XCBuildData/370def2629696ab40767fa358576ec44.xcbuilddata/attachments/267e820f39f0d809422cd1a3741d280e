@@ -1,0 +1,838 @@
+{
+  "" : {
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorder-master.dia",
+    "emit-module-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorder-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorder-master-emit-module.dia",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorder-master.swiftdeps"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/AR/Components/WallComponents.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallComponents.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallComponents.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallComponents.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallComponents.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallComponents.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallComponents.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallComponents.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallComponents~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/AR/Systems/WallCircleIndicatorSystem.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallCircleIndicatorSystem.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallCircleIndicatorSystem.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallCircleIndicatorSystem.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallCircleIndicatorSystem.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallCircleIndicatorSystem.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallCircleIndicatorSystem.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallCircleIndicatorSystem.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallCircleIndicatorSystem~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/AR/Systems/WallClassificationSystem.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallClassificationSystem.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallClassificationSystem.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallClassificationSystem.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallClassificationSystem.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallClassificationSystem.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallClassificationSystem.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallClassificationSystem.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallClassificationSystem~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/AR/Systems/WallInteractionSystem.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallInteractionSystem.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallInteractionSystem.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallInteractionSystem.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallInteractionSystem.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallInteractionSystem.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallInteractionSystem.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallInteractionSystem.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallInteractionSystem~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/AR/Views/WallDetectionScreen.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionScreen.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionScreen.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionScreen.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionScreen.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionScreen.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionScreen.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionScreen.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionScreen~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/AR/WallDetectionCoordinator.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionCoordinator.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionCoordinator.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionCoordinator.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionCoordinator.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionCoordinator.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionCoordinator.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionCoordinator.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/WallDetectionCoordinator~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/ContentView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Models/ChecklistItem.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ChecklistItem.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ChecklistItem.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ChecklistItem.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ChecklistItem.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ChecklistItem.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ChecklistItem.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ChecklistItem.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ChecklistItem~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Models/FloorPlanData.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanData.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanData.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanData.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanData.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanData.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanData.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanData.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanData~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Models/InspectionSession.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionSession.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionSession.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionSession.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionSession.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionSession.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionSession.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionSession.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionSession~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Models/Room.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Room.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Room.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Room.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Room.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Room.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Room.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Room.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Room~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/AR/ARMeasurementService.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARMeasurementService.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARMeasurementService.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARMeasurementService.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARMeasurementService.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARMeasurementService.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARMeasurementService.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARMeasurementService.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARMeasurementService~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/ARDataService.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARDataService.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARDataService.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARDataService.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARDataService.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARDataService.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARDataService.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARDataService.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARDataService~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/ARRecordingService.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingService.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingService.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingService.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingService.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingService.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingService.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingService.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingService~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/ConfigurationLoader.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ConfigurationLoader.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ConfigurationLoader.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ConfigurationLoader.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ConfigurationLoader.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ConfigurationLoader.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ConfigurationLoader.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ConfigurationLoader.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ConfigurationLoader~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/DocumentManager.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentManager.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentManager.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentManager.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentManager.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentManager.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentManager.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentManager.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentManager~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/DocumentStorageService.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentStorageService.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentStorageService.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentStorageService.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentStorageService.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentStorageService.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentStorageService.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentStorageService.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DocumentStorageService~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/InspectionLogger.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionLogger.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionLogger.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionLogger.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionLogger.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionLogger.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionLogger.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionLogger.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionLogger~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/LocationService.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LocationService.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LocationService.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LocationService.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LocationService.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LocationService.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LocationService.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LocationService.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LocationService~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/RoomGeometryBuilder.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometryBuilder.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometryBuilder.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometryBuilder.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometryBuilder.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometryBuilder.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometryBuilder.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometryBuilder.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometryBuilder~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/RoomShapeDetector.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShapeDetector.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShapeDetector.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShapeDetector.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShapeDetector.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShapeDetector.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShapeDetector.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShapeDetector.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShapeDetector~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/ScreenRecorder.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ScreenRecorder.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ScreenRecorder.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ScreenRecorder.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ScreenRecorder.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ScreenRecorder.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ScreenRecorder.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ScreenRecorder.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ScreenRecorder~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Services/UploadService.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/UploadService.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/UploadService.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/UploadService.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/UploadService.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/UploadService.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/UploadService.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/UploadService.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/UploadService~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Constraints/AngleConstraints.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/AngleConstraints.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/AngleConstraints.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/AngleConstraints.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/AngleConstraints.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/AngleConstraints.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/AngleConstraints.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/AngleConstraints.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/AngleConstraints~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Constraints/Constraint.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Constraint.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Constraint.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Constraint.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Constraint.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Constraint.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Constraint.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Constraint.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Constraint~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Constraints/CurveConstraints.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CurveConstraints.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CurveConstraints.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CurveConstraints.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CurveConstraints.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CurveConstraints.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CurveConstraints.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CurveConstraints.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CurveConstraints~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Core/Diagnostics.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Diagnostics.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Diagnostics.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Diagnostics.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Diagnostics.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Diagnostics.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Diagnostics.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Diagnostics.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Diagnostics~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Core/SubSystem.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SubSystem.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SubSystem.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SubSystem.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SubSystem.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SubSystem.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SubSystem.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SubSystem.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SubSystem~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Core/System.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/System.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/System.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/System.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/System.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/System.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/System.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/System.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/System~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Geometry/BSpline.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BSpline.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BSpline.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BSpline.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BSpline.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BSpline.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BSpline.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BSpline.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BSpline~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Geometry/Circle.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Circle.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Circle.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Circle.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Circle.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Circle.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Circle.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Circle.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Circle~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Geometry/Curve.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Curve.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Curve.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Curve.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Curve.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Curve.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Curve.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Curve.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Curve~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Geometry/Ellipse.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Ellipse.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Ellipse.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Ellipse.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Ellipse.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Ellipse.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Ellipse.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Ellipse.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Ellipse~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Geometry/Hyperbola.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Hyperbola.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Hyperbola.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Hyperbola.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Hyperbola.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Hyperbola.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Hyperbola.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Hyperbola.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Hyperbola~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Geometry/Line.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Line.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Line.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Line.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Line.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Line.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Line.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Line.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Line~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Geometry/Parabola.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Parabola.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Parabola.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Parabola.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Parabola.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Parabola.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Parabola.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Parabola.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Parabola~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Geometry/Point.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Point.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Point.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Point.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Point.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Point.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Point.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Point.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/Point~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Solvers/BFGS.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BFGS.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BFGS.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BFGS.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BFGS.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BFGS.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BFGS.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BFGS.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/BFGS~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Solvers/DogLeg.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DogLeg.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DogLeg.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DogLeg.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DogLeg.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DogLeg.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DogLeg.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DogLeg.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/DogLeg~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Solvers/LevenbergMarquardt.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LevenbergMarquardt.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LevenbergMarquardt.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LevenbergMarquardt.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LevenbergMarquardt.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LevenbergMarquardt.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LevenbergMarquardt.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LevenbergMarquardt.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/LevenbergMarquardt~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Utils/PlaneGCS/Utils/MathUtils.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MathUtils.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MathUtils.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MathUtils.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MathUtils.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MathUtils.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MathUtils.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MathUtils.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MathUtils~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/ARCameraComponent.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARCameraComponent.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARCameraComponent.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARCameraComponent.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARCameraComponent.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARCameraComponent.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARCameraComponent.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARCameraComponent.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARCameraComponent~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/ARRecordingScreen.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingScreen.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingScreen.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingScreen.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingScreen.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingScreen.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingScreen.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingScreen.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ARRecordingScreen~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/CoordinateDisplayView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CoordinateDisplayView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CoordinateDisplayView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CoordinateDisplayView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CoordinateDisplayView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CoordinateDisplayView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CoordinateDisplayView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CoordinateDisplayView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CoordinateDisplayView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/CrosshairView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CrosshairView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CrosshairView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CrosshairView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CrosshairView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CrosshairView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CrosshairView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CrosshairView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CrosshairView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/ModeIndicatorView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModeIndicatorView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModeIndicatorView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModeIndicatorView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModeIndicatorView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModeIndicatorView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModeIndicatorView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModeIndicatorView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModeIndicatorView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/PreviewIndicator.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PreviewIndicator.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PreviewIndicator.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PreviewIndicator.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PreviewIndicator.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PreviewIndicator.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PreviewIndicator.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PreviewIndicator.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PreviewIndicator~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/RingIndicator.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RingIndicator.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RingIndicator.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RingIndicator.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RingIndicator.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RingIndicator.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RingIndicator.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RingIndicator.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RingIndicator~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/RoomMiniMapView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomMiniMapView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomMiniMapView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomMiniMapView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomMiniMapView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomMiniMapView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomMiniMapView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomMiniMapView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomMiniMapView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/RoomVisualization.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomVisualization.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomVisualization.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomVisualization.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomVisualization.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomVisualization.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomVisualization.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomVisualization.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomVisualization~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/Components/SmartActionButton.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SmartActionButton~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlan/FloorPlan2DScreen.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan2DScreen~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlan/FloorPlanCanvas.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvas.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvas.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvas.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvas.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvas.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvas.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvas.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvas~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlan/FloorPlanEditorViewModel.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanEditorViewModel.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanEditorViewModel.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanEditorViewModel.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanEditorViewModel.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanEditorViewModel.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanEditorViewModel.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanEditorViewModel.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanEditorViewModel~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlan/FloorPlanToolbar.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanToolbar.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanToolbar.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanToolbar.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanToolbar.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanToolbar.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanToolbar.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanToolbar.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanToolbar~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Canvas/CADCanvasView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADCanvasView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADCanvasView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADCanvasView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADCanvasView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADCanvasView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADCanvasView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADCanvasView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADCanvasView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Core/FloorPlanCoordinator.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCoordinator~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Core/FloorPlanViewController.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewController.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewController.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewController.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewController.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewController.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewController.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewController.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewController~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/FloorPlanCADView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCADView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Gestures/CADGestureHandler.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADGestureHandler.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADGestureHandler.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADGestureHandler.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADGestureHandler.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADGestureHandler.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADGestureHandler.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADGestureHandler.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADGestureHandler~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Models/CADRoom.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADRoom.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADRoom.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADRoom.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADRoom.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADRoom.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADRoom.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADRoom.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/CADRoom~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Models/FloorPlan.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlan~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Models/MediaAttachment.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MediaAttachment.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MediaAttachment.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MediaAttachment.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MediaAttachment.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MediaAttachment.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MediaAttachment.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MediaAttachment.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MediaAttachment~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Models/RoomGeometry.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometry.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometry.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometry.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometry.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometry.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometry.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometry.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomGeometry~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Models/RoomShape.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShape.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShape.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShape.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShape.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShape.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShape.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShape.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomShape~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Tools/GridManager.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/GridManager~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Tools/MeasurementOverlay.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MeasurementOverlay.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MeasurementOverlay.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MeasurementOverlay.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MeasurementOverlay.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MeasurementOverlay.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MeasurementOverlay.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MeasurementOverlay.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/MeasurementOverlay~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Tools/PlaneGCSAdapter.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSAdapter.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSAdapter.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSAdapter.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSAdapter.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSAdapter.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSAdapter.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSAdapter.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSAdapter~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/ViewModels/FloorPlanViewModel.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewModel.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewModel.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewModel.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewModel.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewModel.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewModel.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewModel.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanViewModel~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/Views/Canvas/FloorPlanCanvasView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/FloorPlanCanvasView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/HomeScreen.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/HomeScreen.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/HomeScreen.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/HomeScreen.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/HomeScreen.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/HomeScreen.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/HomeScreen.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/HomeScreen.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/HomeScreen~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/IDDocumentCaptureView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/IDDocumentCaptureView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/IDDocumentCaptureView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/IDDocumentCaptureView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/IDDocumentCaptureView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/IDDocumentCaptureView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/IDDocumentCaptureView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/IDDocumentCaptureView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/IDDocumentCaptureView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/InspectionListScreen.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionListScreen.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionListScreen.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionListScreen.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionListScreen.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionListScreen.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionListScreen.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionListScreen.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/InspectionListScreen~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/ModernCameraWithOverlay.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModernCameraWithOverlay.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModernCameraWithOverlay.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModernCameraWithOverlay.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModernCameraWithOverlay.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModernCameraWithOverlay.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModernCameraWithOverlay.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModernCameraWithOverlay.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/ModernCameraWithOverlay~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/PlaneGCSTestScreen.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSTestScreen.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSTestScreen.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSTestScreen.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSTestScreen.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSTestScreen.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSTestScreen.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSTestScreen.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/PlaneGCSTestScreen~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/RoomARComponent.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomARComponent.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomARComponent.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomARComponent.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomARComponent.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomARComponent.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomARComponent.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomARComponent.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomARComponent~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/RoomScannerScreen.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomScannerScreen.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomScannerScreen.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomScannerScreen.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomScannerScreen.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomScannerScreen.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomScannerScreen.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomScannerScreen.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/RoomScannerScreen~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/SavedDocumentsView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SavedDocumentsView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SavedDocumentsView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SavedDocumentsView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SavedDocumentsView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SavedDocumentsView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SavedDocumentsView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SavedDocumentsView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SavedDocumentsView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/SimpleCameraView.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraView.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraView.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraView.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraView.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraView.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraView.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraView.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraView~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/SimpleCameraWithOverlay.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraWithOverlay.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraWithOverlay.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraWithOverlay.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraWithOverlay.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraWithOverlay.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraWithOverlay.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraWithOverlay.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/SimpleCameraWithOverlay~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/VideoReplayScreen.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/VideoReplayScreen~partial.swiftmodule"
+  },
+  "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/cedularecorderApp.swift" : {
+    "const-values" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorderApp.swiftconstvalues",
+    "dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorderApp.d",
+    "diagnostics" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorderApp.dia",
+    "index-unit-output-path" : "/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorderApp.o",
+    "llvm-bc" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorderApp.bc",
+    "object" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorderApp.o",
+    "swift-dependencies" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorderApp.swiftdeps",
+    "swiftmodule" : "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/build_output/Build/Intermediates.noindex/cedularecorder.build/Debug-iphoneos/cedularecorder.build/Objects-normal/arm64/cedularecorderApp~partial.swiftmodule"
+  }
+}

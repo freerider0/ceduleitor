@@ -6,7 +6,7 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>E23D5C34-6836-44B8-B499-663B3606ACB9</key>
+		<key>4AFE9624-26CA-4F1F-898A-E786911CF010</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>E23D5C34-6836-44B8-B499-663B3606ACB9.xcactivitylog</string>
+			<string>4AFE9624-26CA-4F1F-898A-E786911CF010.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -38,17 +38,17 @@
 			<key>schemeIdentifier-sharedScheme</key>
 			<integer>1</integer>
 			<key>signature</key>
-			<string>Cleaning project cedularecorder with scheme cedularecorder</string>
+			<string>Cleaning project cedularecorder with scheme cedularecorder and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>778944654.67521596</real>
+			<real>779309092.99314404</real>
 			<key>timeStoppedRecording</key>
-			<real>778944654.84006298</real>
+			<real>779309093.22748601</real>
 			<key>title</key>
-			<string>Cleaning project cedularecorder with scheme cedularecorder</string>
+			<string>Cleaning project cedularecorder with scheme cedularecorder and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>E23D5C34-6836-44B8-B499-663B3606ACB9</string>
+			<string>4AFE9624-26CA-4F1F-898A-E786911CF010</string>
 		</dict>
-		<key>FB866977-8068-4648-A12C-6051BA6BA4ED</key>
+		<key>BDD5FC8A-3F84-4D69-95CB-F89FD97D609A</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -57,7 +57,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>FB866977-8068-4648-A12C-6051BA6BA4ED.xcactivitylog</string>
+			<string>BDD5FC8A-3F84-4D69-95CB-F89FD97D609A.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -80,15 +80,15 @@
 			<key>schemeIdentifier-sharedScheme</key>
 			<integer>1</integer>
 			<key>signature</key>
-			<string>Cleaning project cedularecorder with scheme cedularecorder</string>
+			<string>Cleaning project cedularecorder with scheme cedularecorder and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>778949930.70836401</real>
+			<real>779273422.77064002</real>
 			<key>timeStoppedRecording</key>
-			<real>778949930.91067898</real>
+			<real>779273422.96118402</real>
 			<key>title</key>
-			<string>Cleaning project cedularecorder with scheme cedularecorder</string>
+			<string>Cleaning project cedularecorder with scheme cedularecorder and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>FB866977-8068-4648-A12C-6051BA6BA4ED</string>
+			<string>BDD5FC8A-3F84-4D69-95CB-F89FD97D609A</string>
 		</dict>
 	</dict>
 </dict>

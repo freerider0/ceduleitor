@@ -89,13 +89,23 @@ class RoomGeometryBuilder {
     
     /// Find corner from two wall planes
     func findCornerFromWalls(wall1: simd_float4, wall2: simd_float4) -> simd_float3? {
+        print("🔧 DEBUG: findCornerFromWalls - floor: \(floorHeight)")
+        
         // Check if we can use existing corners to constrain the intersection
         if let constrainedCorner = findConstrainedIntersection(wall1, wall2) {
+            // Found constrained corner
             return constrainedCorner
         }
         
+        // No constrained corner, trying pure geometric intersection
         // Otherwise calculate pure geometric intersection
-        return calculateWallIntersection(wall1, wall2)
+        let result = calculateWallIntersection(wall1, wall2)
+        if let corner = result {
+            print("✅ DEBUG: Calculated corner at (\(String(format: "%.2f", corner.x)), \(String(format: "%.2f", corner.z)))")
+        } else {
+            // Failed to calculate geometric intersection
+        }
+        return result
     }
     
     /// Find intersection constrained by existing geometry
@@ -124,32 +134,43 @@ class RoomGeometryBuilder {
     
     /// Calculate geometric intersection of two walls at floor level
     private func calculateWallIntersection(_ wall1: simd_float4, _ wall2: simd_float4) -> simd_float3? {
+        // calculateWallIntersection
         let n1 = simd_float3(wall1.x, wall1.y, wall1.z)
         let n2 = simd_float3(wall2.x, wall2.y, wall2.z)
         
         // Check if walls are parallel
         let crossProduct = simd_cross(n1, n2)
-        if simd_length_squared(crossProduct) < 0.0001 {
+        let crossLength = simd_length_squared(crossProduct)
+        // Check cross product
+        
+        if crossLength < 0.0001 {
+            // Walls are parallel
             return nil
         }
         
         // Find intersection at floor level
         let floorNormal = simd_float3(0, 1, 0)
         let det = simd_dot(n1, simd_cross(n2, floorNormal))
+        // Check determinant
         
         if abs(det) < 0.0001 {
+            // Determinant too small
             return nil
         }
         
         let d1 = -wall1.w
         let d2 = -wall2.w
         let d3 = -floorHeight
+        // Calculate d values
         
         let point = (d1 * simd_cross(n2, floorNormal) +
                      d2 * simd_cross(floorNormal, n1) +
                      d3 * simd_cross(n1, n2)) / det
         
-        return simd_float3(point.x, floorHeight, point.z)
+        let result = simd_float3(point.x, floorHeight, point.z)
+        // Calculated intersection point
+        
+        return result
     }
     
     /// Find a point on the intersection line of two planes at a given height

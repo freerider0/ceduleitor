@@ -67,7 +67,9 @@ struct RoomARComponent: UIViewRepresentable {
             // Subscribe to detector changes
             detector.$corners
                 .sink { [weak self] _ in
-                    self?.updateVisualization()
+                    Task { @MainActor in
+                        self?.updateVisualization()
+                    }
                 }
                 .store(in: &cancellables)
         }
@@ -120,13 +122,23 @@ struct RoomARComponent: UIViewRepresentable {
                 alignment: .vertical
             )
             
-            // Update based on what we hit
-            if let verticalResult = verticalResults.first {
-                handleVerticalSurface(verticalResult)
-            } else if let horizontalResult = horizontalResults.first {
-                handleHorizontalSurface(horizontalResult)
+            // In wall mode, prioritize floor detection if not yet set
+            if detector.mode == .wallIntersection && detector.floorHeight == 0 {
+                // Look for floor first
+                if let horizontalResult = horizontalResults.first {
+                    handleHorizontalSurface(horizontalResult)
+                } else {
+                    handleNoSurface()
+                }
             } else {
-                handleNoSurface()
+                // Normal priority: walls over floor
+                if let verticalResult = verticalResults.first {
+                    handleVerticalSurface(verticalResult)
+                } else if let horizontalResult = horizontalResults.first {
+                    handleHorizontalSurface(horizontalResult)
+                } else {
+                    handleNoSurface()
+                }
             }
         }
         
@@ -152,11 +164,23 @@ struct RoomARComponent: UIViewRepresentable {
             // Show blue ring on floor
             ringIndicator.update(with: result, isVertical: false)
             
-            // Update floor preview for corner mode
+            // Handle based on mode
             if detector.mode == .cornerPointing {
+                // Update floor preview for corner mode
                 previewIndicator.update(with: result)
                 previewIndicator.setVisible(true)
                 detector.updatePreview(from: result)
+            } else if detector.mode == .wallIntersection {
+                // In wall mode, update floor height continuously
+                detector.updatePreview(from: result)
+                
+                // Show preview indicator on floor if floor not set
+                if detector.floorHeight == 0 {
+                    previewIndicator.update(with: result)
+                    previewIndicator.setVisible(true)
+                } else {
+                    previewIndicator.setVisible(false)
+                }
             }
         }
         
@@ -181,8 +205,36 @@ struct RoomARComponent: UIViewRepresentable {
             
             if detector.mode == .cornerPointing {
                 handleCornerTap(at: centerPoint)
-            } else {
-                handleWallTap(at: centerPoint)
+            } else if detector.mode == .wallIntersection {
+                // In wall mode, check if we need to set floor first
+                if detector.floorHeight == 0 {
+                    handleFloorTap(at: centerPoint)
+                } else {
+                    // Simply try to capture any wall at the center point
+                    handleWallTap(at: centerPoint)
+                }
+            }
+        }
+        
+        private func handleFloorTap(at point: CGPoint) {
+            guard let arView = arView else { return }
+            
+            let results = arView.raycast(
+                from: point,
+                allowing: .existingPlaneGeometry,
+                alignment: .horizontal
+            )
+            
+            if let result = results.first {
+                if detector.setFloorPlane(from: result) {
+                    // Flash indicator to show floor captured
+                    previewIndicator.flash()
+                    ringIndicator.flash()
+                    
+                    // Haptic feedback
+                    let impactFeedback = UIImpactFeedbackGenerator(style: .light)
+                    impactFeedback.impactOccurred()
+                }
             }
         }
         
@@ -202,19 +254,42 @@ struct RoomARComponent: UIViewRepresentable {
         }
         
         private func handleWallTap(at point: CGPoint) {
-            // Use the stored wall result if available
-            guard let result = lastDetectedWallResult else { return }
+            guard let arView = arView else { return }
             
-            if detector.captureWall(from: result) {
-                // Flash indicator to show capture
-                ringIndicator.flash()
+            // Try to find any vertical wall at the tap point
+            let results = arView.raycast(
+                from: point,
+                allowing: .existingPlaneGeometry,
+                alignment: .vertical
+            )
+            
+            if let result = results.first {
+                // Capture wall and check if corner was created
+                let previousCornerCount = detector.corners.count
                 
-                // Haptic feedback
-                let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
-                impactFeedback.impactOccurred()
-                
-                // Force immediate visualization update to show new corners
-                updateVisualization()
+                if detector.captureWall(from: result) {
+                    // Flash indicator to show capture
+                    ringIndicator.flash()
+                    
+                    // Haptic feedback
+                    let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+                    impactFeedback.impactOccurred()
+                    
+                    // Check if a new corner was added (happens automatically after 2nd wall)
+                    if detector.corners.count > previousCornerCount {
+                        // Strong feedback for corner creation
+                        let strongFeedback = UIImpactFeedbackGenerator(style: .heavy)
+                        strongFeedback.impactOccurred()
+                        
+                        // Update visualization immediately
+                        Task { @MainActor in
+                            updateVisualization()
+                        }
+                    }
+                }
+            } else {
+                // No wall found at tap point
+                detector.statusMessage = "No wall detected - try again"
             }
         }
         
@@ -222,6 +297,7 @@ struct RoomARComponent: UIViewRepresentable {
         // MARK: - Visualization Updates
         // ================================================================================
         
+        @MainActor
         func updateVisualization() {
             roomVisualization.update(
                 corners: detector.corners,

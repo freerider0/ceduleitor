@@ -27,9 +27,12 @@ final class RoomVisualization {
     
     /// Update the complete room visualization
     func update(corners: [simd_float3], isComplete: Bool) {
+        
         clearVisualization()
         
-        guard let arView = arView else { return }
+        guard let arView = arView else { 
+            return 
+        }
         
         // Add corner markers
         for (index, corner) in corners.enumerated() {
@@ -71,22 +74,22 @@ final class RoomVisualization {
     
     /// Add a corner marker (flat circle with number)
     private func addCornerMarker(at position: simd_float3, index: Int, totalCorners: Int, arView: ARView) {
-        // Create larger, more visible flat circle
-        let radius: Float = 0.15  // Increased from 0.1
+        // Create much larger, more visible flat circle
+        let radius: Float = 0.25  // Increased significantly
         let mesh = MeshResource.generatePlane(
             width: radius * 2,
             depth: radius * 2,
             cornerRadius: radius
         )
         
-        // Color: green for first, orange for latest, blue for others
+        // Brighter colors with full opacity
         let color: UIColor
         if index == 0 {
-            color = UIColor.green.withAlphaComponent(0.9)
+            color = UIColor.systemGreen  // Brighter green
         } else if index == totalCorners - 1 {
-            color = UIColor.orange.withAlphaComponent(0.9)  // Latest corner in orange
+            color = UIColor.systemOrange  // Brighter orange for latest
         } else {
-            color = UIColor.blue.withAlphaComponent(0.9)
+            color = UIColor.systemBlue  // Brighter blue
         }
         
         let material = SimpleMaterial(color: color, isMetallic: false)
@@ -95,42 +98,56 @@ final class RoomVisualization {
         // Rotate to lay flat on floor
         circle.transform.rotation = simd_quatf(angle: -.pi/2, axis: [1, 0, 0])
         
-        // Add larger, more visible number label
+        // Add much larger number label
         let textMesh = MeshResource.generateText(
             "\(index + 1)",
-            extrusionDepth: 0.02,
-            font: .systemFont(ofSize: 0.2, weight: .bold),  // Larger, bold font
+            extrusionDepth: 0.03,
+            font: .systemFont(ofSize: 0.3, weight: .bold),  // Much larger font
             containerFrame: .zero,
             alignment: .center,
             lineBreakMode: .byClipping
         )
         let textMaterial = SimpleMaterial(color: .white, isMetallic: false)
         let textEntity = ModelEntity(mesh: textMesh, materials: [textMaterial])
-        textEntity.position = [0, 0.03, 0]  // Slightly higher
+        textEntity.position = [0, 0.05, 0]  // Higher above floor
         
-        // Add a vertical pole to make corner more visible
-        let poleMesh = MeshResource.generateCylinder(height: 0.5, radius: 0.01)
-        let poleMaterial = SimpleMaterial(color: color.withAlphaComponent(0.5), isMetallic: false)
+        // Add a taller, thicker vertical pole
+        let poleMesh = MeshResource.generateCylinder(height: 1.0, radius: 0.02)  // Taller and thicker
+        let poleMaterial = SimpleMaterial(color: color.withAlphaComponent(0.8), isMetallic: false)
         let poleEntity = ModelEntity(mesh: poleMesh, materials: [poleMaterial])
-        poleEntity.position = [0, 0.25, 0]  // Half height up
+        poleEntity.position = [0, 0.5, 0]  // Half height up
+        
+        // Add a sphere at the top of the pole for better visibility
+        let sphereMesh = MeshResource.generateSphere(radius: 0.05)
+        let sphereMaterial = SimpleMaterial(color: color, isMetallic: true)
+        let sphereEntity = ModelEntity(mesh: sphereMesh, materials: [sphereMaterial])
+        sphereEntity.position = [0, 1.0, 0]  // At top of pole
         
         // Create anchor at exact floor position
         let anchor = AnchorEntity(world: position)
         anchor.addChild(circle)
         anchor.addChild(textEntity)
         anchor.addChild(poleEntity)
+        anchor.addChild(sphereEntity)
         
-        // Add pop-in animation for new corners
+        // Add pop-in animation for new corners with bounce
         if index == totalCorners - 1 {
             circle.scale = [0.1, 0.1, 0.1]
             poleEntity.scale = [1, 0.1, 1]
+            sphereEntity.scale = [0.1, 0.1, 0.1]
             
-            // Animate scale
-            circle.move(to: Transform(scale: [1, 1, 1]), relativeTo: circle, duration: 0.3)
+            // Animate scale with overshoot for bounce effect
+            circle.move(to: Transform(scale: [1.2, 1.2, 1.2]), relativeTo: circle, duration: 0.2)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                circle.move(to: Transform(scale: [1, 1, 1]), relativeTo: circle, duration: 0.1)
+            }
             poleEntity.move(to: Transform(scale: [1, 1, 1]), relativeTo: poleEntity, duration: 0.3)
+            sphereEntity.move(to: Transform(scale: [1.2, 1.2, 1.2]), relativeTo: sphereEntity, duration: 0.3)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                sphereEntity.move(to: Transform(scale: [1, 1, 1]), relativeTo: sphereEntity, duration: 0.1)
+            }
         }
         
-        print("🎯 Adding corner marker #\(index + 1) at position: \(position)")
         
         arView.scene.addAnchor(anchor)
         cornerMarkers.append(anchor)
@@ -141,9 +158,9 @@ final class RoomVisualization {
         let distance = simd_distance(start, end)
         let midpoint = (start + end) / 2
         
-        // Create cylinder as line
-        let mesh = MeshResource.generateCylinder(height: distance, radius: 0.01)
-        let material = SimpleMaterial(color: .yellow, isMetallic: false)
+        // Create thicker cylinder as line
+        let mesh = MeshResource.generateCylinder(height: distance, radius: 0.02)  // Thicker line
+        let material = SimpleMaterial(color: UIColor.systemYellow, isMetallic: false)  // Brighter yellow
         let cylinder = ModelEntity(mesh: mesh, materials: [material])
         
         // Calculate rotation
@@ -155,19 +172,19 @@ final class RoomVisualization {
             cylinder.transform.rotation = rotation
         }
         
-        // Add distance label
+        // Add larger distance label
         let distanceText = String(format: "%.2fm", distance)
         let textMesh = MeshResource.generateText(
             distanceText,
-            extrusionDepth: 0.005,
-            font: .systemFont(ofSize: 0.05),
+            extrusionDepth: 0.01,
+            font: .systemFont(ofSize: 0.1, weight: .bold),  // Larger, bold text
             containerFrame: .zero,
             alignment: .center,
             lineBreakMode: .byClipping
         )
         let textMaterial = SimpleMaterial(color: .white, isMetallic: false)
         let textEntity = ModelEntity(mesh: textMesh, materials: [textMaterial])
-        textEntity.position = [0, 0.1, 0]
+        textEntity.position = [0, 0.15, 0]
         
         // Create anchor at midpoint
         let anchor = AnchorEntity(world: midpoint)

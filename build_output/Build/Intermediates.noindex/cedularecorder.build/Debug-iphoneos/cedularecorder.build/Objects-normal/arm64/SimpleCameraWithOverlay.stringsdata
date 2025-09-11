@@ -1,0 +1,16 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/SimpleCameraWithOverlay.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Camera access required",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 13
+        }
+      }
+    ]
+  },
+  "version": 1
+}

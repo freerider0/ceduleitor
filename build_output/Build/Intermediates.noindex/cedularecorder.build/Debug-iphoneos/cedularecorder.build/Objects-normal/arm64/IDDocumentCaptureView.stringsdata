@@ -1,0 +1,88 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/IDDocumentCaptureView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Position ID document within the frame",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "Auto-capturing in %lld...",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Document Detected",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "Auto",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 118
+        }
+      },
+      {
+        "comment": "",
+        "key": "Camera Error",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 191
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 106,
+          "startingLine": 191
+        }
+      },
+      {
+        "comment": "",
+        "key": "Review Captured Document",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 726
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%% Quality",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 741
+        }
+      },
+      {
+        "comment": "",
+        "key": "Retake",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 758
+        }
+      },
+      {
+        "comment": "",
+        "key": "Use Photo",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 767
+        }
+      }
+    ]
+  },
+  "version": 1
+}

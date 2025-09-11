@@ -1,0 +1,24 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/FloorPlanCAD/FloorPlanCADView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Area: %@",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "Perimeter: %@",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 42
+        }
+      }
+    ]
+  },
+  "version": 1
+}

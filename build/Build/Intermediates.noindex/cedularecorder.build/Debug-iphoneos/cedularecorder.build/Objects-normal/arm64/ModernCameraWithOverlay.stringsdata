@@ -1,0 +1,80 @@
+{
+  "source": "/Users/josep/Desktop/apps/cedularecorder/cedularecorder/cedularecorder/Views/ModernCameraWithOverlay.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Camera Error",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "Camera Access Required",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "Loading Camera...",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enable Camera",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "Position ID document within the frame",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 90
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 152
+        }
+      },
+      {
+        "comment": "",
+        "key": "Retake",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 543
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 550
+        }
+      },
+      {
+        "comment": "",
+        "key": "iOS 17+ required",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 567
+        }
+      }
+    ]
+  },
+  "version": 1
+}

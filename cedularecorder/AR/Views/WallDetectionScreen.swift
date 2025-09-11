@@ -1,0 +1,546 @@
+import SwiftUI
+import RealityKit
+import ARKit
+
+struct WallDetectionScreen: View {
+    @StateObject private var coordinator = WallDetectionCoordinator()
+    @Environment(\.dismiss) private var dismiss
+    @State private var trackedWallCount = 0
+    @State private var detectedWallCount = 0
+    
+    
+    
+    var body: some View {
+        ZStack {
+            // AR View
+            WallDetectionARView(coordinator: coordinator)
+                .edgesIgnoringSafeArea(.all)
+                .onReceive(Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()) { _ in
+                    // Update counts from ECS systems
+                    trackedWallCount = WallInteractionSystem.trackedWalls.count
+                    detectedWallCount = WallClassificationSystem.detectedWallCount
+                }
+            
+            // Crosshair in center of screen
+            WallCrosshairView()
+            
+            // UI Overlay
+            VStack {
+                // Top Status Bar
+                TopStatusBar(coordinator: coordinator, trackedCount: trackedWallCount, dismiss: dismiss)
+                
+                Spacer()
+                
+                // Bottom Controls
+                HStack(alignment: .bottom) {
+                    // Mini Map placeholder - will be implemented with ECS query
+                    if coordinator.isReady {
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(.ultraThinMaterial)
+                            .frame(width: 200, height: 200)
+                            .overlay(
+                                VStack {
+                                    Text("Walls: \(trackedWallCount)/\(detectedWallCount)")
+                                        .font(.caption)
+                                    Text("Tap walls to track")
+                                        .font(.caption2)
+                                }
+                            )
+                            .padding()
+                            .transition(.scale.combined(with: .opacity))
+                    }
+                    
+                    Spacer()
+                    
+                    // Control Buttons
+                    ControlButtons(trackedCount: trackedWallCount)
+                        .padding()
+                }
+            }
+        }
+        .navigationBarHidden(true)
+        .onDisappear {
+            coordinator.stopSession()
+        }
+    }
+}
+
+// MARK: - AR View with Coaching Overlay
+struct WallDetectionARView: UIViewRepresentable {
+    let coordinator: WallDetectionCoordinator
+    
+    func makeUIView(context: Context) -> UIView {
+        // IMPORTANT: Register systems BEFORE creating ARView
+        // This ensures RealityKit creates system instances for all scenes
+        WallDetectionARView.registerECSSystems()
+        
+        
+        // Create container view
+        let containerView = UIView()
+        
+        // Create AR view
+        let arView = ARView(frame: .zero)
+        arView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(arView)
+        
+        // Add constraints for AR view
+        NSLayoutConstraint.activate([
+            arView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            arView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            arView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            arView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        ])
+        
+        // Create and configure coaching overlay
+        let coachingOverlay = ARCoachingOverlayView()
+        coachingOverlay.translatesAutoresizingMaskIntoConstraints = false
+        coachingOverlay.session = arView.session
+        coachingOverlay.goal = .tracking
+        coachingOverlay.activatesAutomatically = true
+        containerView.addSubview(coachingOverlay)
+        
+        // Add constraints for coaching overlay
+        NSLayoutConstraint.activate([
+            coachingOverlay.topAnchor.constraint(equalTo: containerView.topAnchor),
+            coachingOverlay.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            coachingOverlay.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            coachingOverlay.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        ])
+        
+        // Setup the coordinator with this AR view
+        coordinator.setupARView(arView)
+        
+        return containerView
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {
+        // No updates needed
+    }
+    
+    // MARK: - System Registration
+    @MainActor
+    static func registerECSSystems() {
+        // Register components first
+        UserTrackedComponent.registerComponent()
+        CircleIndicatorComponent.registerComponent()
+        print("[AR] ✅ Components registered")
+        
+        // Register systems with RealityKit - must be done before ARView creation
+        // This tells RealityKit to instantiate these systems for every scene
+        WallClassificationSystem.registerSystem()
+        WallInteractionSystem.registerSystem()
+        WallCircleIndicatorSystem.registerSystem()
+        
+        print("[AR] ✅ Systems registered with RealityKit - they will be instantiated for each scene")
+    }
+}
+
+// MARK: - Top Status Bar
+struct TopStatusBar: View {
+    @ObservedObject var coordinator: WallDetectionCoordinator
+    let trackedCount: Int
+    let dismiss: DismissAction
+    
+    var statusColor: Color {
+        switch coordinator.trackingState {
+        case .normal:
+            return .green
+        case .limited(_):
+            return .orange
+        case .notAvailable:
+            return .red
+        }
+    }
+    
+    var body: some View {
+        HStack {
+            // Back button
+            Button(action: {
+                dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .frame(width: 44, height: 44)
+                    .background(Color.black.opacity(0.5))
+                    .clipShape(SwiftUI.Circle())
+            }
+            
+            Spacer()
+            
+            // Status info
+            VStack(alignment: .trailing, spacing: 4) {
+                HStack(spacing: 4) {
+                    // Tracking indicator
+                    TrackingIndicator(isReady: coordinator.isReady)
+                    
+                    Text("Walls Tracked")
+                        .font(.caption)
+                        .foregroundColor(.white.opacity(0.8))
+                }
+                
+                Text("\(trackedCount)")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    
+                Text(coordinator.isReady ? "Tap walls to track" : "Initializing...")
+                    .font(.caption2)
+                    .foregroundColor(.white.opacity(0.9))
+                    .multilineTextAlignment(.trailing)
+                    .lineLimit(2)
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.black.opacity(0.5))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(statusColor, lineWidth: 2)
+                    )
+            )
+        }
+        .padding()
+    }
+}
+
+// MARK: - Control Buttons
+struct ControlButtons: View {
+    let trackedCount: Int
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            // Clear button
+            Button(action: {
+                // Clear using ECS system
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                   let window = windowScene.windows.first,
+                   let arView = window.rootViewController?.view.subviews.compactMap({ $0 as? ARView }).first {
+                    WallInteractionSystem.clearAllTrackedWalls(in: arView.scene)
+                }
+            }) {
+                Image(systemName: "trash")
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .frame(width: 50, height: 50)
+                    .background(Color.red.opacity(0.8))
+                    .clipShape(SwiftUI.Circle())
+                    .shadow(radius: 4)
+            }
+            .disabled(trackedCount == 0)
+            .opacity(trackedCount == 0 ? 0.3 : 1.0)
+            
+        }
+    }
+}
+
+// MARK: - Mini Map View
+struct WallMiniMapView: View {
+    let walls: [WallModel]
+    let userPosition: SIMD3<Float>
+    let userDirection: Float
+    @State private var mapScale: CGFloat = 30.0
+    @State private var mapOffset: CGPoint = .zero
+    @State private var initialUserPosition: SIMD3<Float>?
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                // Background
+                Color.black.opacity(0.8)
+                
+                // Rotating and panning map content
+                ZStack {
+                    // Grid with panning offset
+                    WallGridOverlay(userPosition: userPosition, scale: mapScale)
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 0.5)
+                    
+                    // Walls
+                    ForEach(walls) { wall in
+                        WallPath(wall: wall, userPosition: .zero, size: geometry.size, scale: mapScale)
+                            .stroke(wall.color, lineWidth: 3)
+                            .shadow(color: wall.color.opacity(0.5), radius: 2)
+                    }
+                    
+                    // User position indicator (moves with actual position)
+                    UserPositionIndicator()
+                        .position(
+                            x: geometry.size.width / 2 + CGFloat(userPosition.x) * mapScale,
+                            y: geometry.size.height / 2 - CGFloat(userPosition.z) * mapScale
+                        )
+                    
+                    // North indicator (moves with map)
+                    NorthIndicator()
+                        .position(
+                            x: geometry.size.width / 2 + CGFloat(userPosition.x) * mapScale,
+                            y: 15 - CGFloat(userPosition.z) * mapScale
+                        )
+                }
+                .offset(
+                    x: -CGFloat(userPosition.x) * mapScale,
+                    y: CGFloat(userPosition.z) * mapScale
+                )
+                .rotationEffect(Angle(radians: Double(-userDirection)), anchor: .center)
+                
+                // Fixed elements (don't rotate or move)
+                // Direction cone (always points up)
+                DirectionCone()
+                    .fill(Color.blue.opacity(0.3))
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                
+                // Scale indicator
+                VStack {
+                    Spacer()
+                    HStack {
+                        Text("1m")
+                            .font(.caption2)
+                            .foregroundColor(.white.opacity(0.7))
+                        Rectangle()
+                            .fill(Color.white.opacity(0.7))
+                            .frame(width: mapScale, height: 1)
+                    }
+                    .padding(8)
+                }
+            }
+            .cornerRadius(16)
+        }
+    }
+}
+
+// MARK: - Grid Overlay
+struct WallGridOverlay: Shape {
+    let userPosition: SIMD3<Float>
+    let scale: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let gridSize: CGFloat = 20
+        
+        // Calculate offset based on user position to create panning effect
+        let offsetX = CGFloat(userPosition.x) * scale
+        let offsetY = CGFloat(userPosition.z) * scale
+        
+        // Calculate grid offset to keep it continuous
+        let gridOffsetX = offsetX.truncatingRemainder(dividingBy: gridSize)
+        let gridOffsetY = offsetY.truncatingRemainder(dividingBy: gridSize)
+        
+        // Vertical lines with panning
+        for x in stride(from: -gridSize - gridOffsetX, through: rect.width + gridSize, by: gridSize) {
+            path.move(to: CGPoint(x: x, y: -gridSize))
+            path.addLine(to: CGPoint(x: x, y: rect.height + gridSize))
+        }
+        
+        // Horizontal lines with panning
+        for y in stride(from: -gridSize - gridOffsetY, through: rect.height + gridSize, by: gridSize) {
+            path.move(to: CGPoint(x: -gridSize, y: y))
+            path.addLine(to: CGPoint(x: rect.width + gridSize, y: y))
+        }
+        
+        return path
+    }
+}
+
+// MARK: - Wall Path
+struct WallPath: Shape {
+    let wall: WallModel
+    let userPosition: SIMD3<Float>
+    let size: CGSize
+    let scale: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        let center = CGPoint(x: size.width / 2, y: size.height / 2)
+        
+        // Wall positions in world space (not relative to user)
+        // Use the actual calculated endpoints from the wall model
+        let start = CGPoint(
+            x: center.x + CGFloat(wall.startPoint.x) * scale,
+            y: center.y - CGFloat(wall.startPoint.z) * scale
+        )
+        let end = CGPoint(
+            x: center.x + CGFloat(wall.endPoint.x) * scale,
+            y: center.y - CGFloat(wall.endPoint.z) * scale
+        )
+        
+        // Draw the main wall line with proper thickness
+        path.move(to: start)
+        path.addLine(to: end)
+        
+        // Add end caps for better visibility
+        let capRadius: CGFloat = 3
+        path.addEllipse(in: CGRect(x: start.x - capRadius, y: start.y - capRadius, 
+                                   width: capRadius * 2, height: capRadius * 2))
+        path.addEllipse(in: CGRect(x: end.x - capRadius, y: end.y - capRadius, 
+                                   width: capRadius * 2, height: capRadius * 2))
+        
+        // Add a small perpendicular line at the center to show wall orientation
+        let midPoint = CGPoint(
+            x: (start.x + end.x) / 2,
+            y: (start.y + end.y) / 2
+        )
+        
+        // Calculate perpendicular direction (normal to the wall)
+        let wallDir = CGPoint(x: end.x - start.x, y: end.y - start.y)
+        let length = sqrt(wallDir.x * wallDir.x + wallDir.y * wallDir.y)
+        if length > 0 {
+            let normalDir = CGPoint(x: -wallDir.y / length, y: wallDir.x / length)
+            let normalLength: CGFloat = 5
+            
+            path.move(to: midPoint)
+            path.addLine(to: CGPoint(
+                x: midPoint.x + normalDir.x * normalLength,
+                y: midPoint.y + normalDir.y * normalLength
+            ))
+        }
+        
+        return path
+    }
+}
+
+// MARK: - Direction Cone
+struct DirectionCone: Shape {
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        let center = CGPoint(x: rect.width / 2, y: rect.height / 2)
+        let coneLength: CGFloat = 50
+        let coneAngle: CGFloat = .pi / 6  // 30 degrees cone
+        
+        // Cone always points up
+        let tip = CGPoint(
+            x: center.x,
+            y: center.y - coneLength
+        )
+        
+        let leftBase = CGPoint(
+            x: center.x - 20 * sin(coneAngle),
+            y: center.y - 20 * cos(coneAngle)
+        )
+        
+        let rightBase = CGPoint(
+            x: center.x + 20 * sin(coneAngle),
+            y: center.y - 20 * cos(coneAngle)
+        )
+        
+        // Draw the cone
+        path.move(to: center)
+        path.addLine(to: leftBase)
+        path.addLine(to: tip)
+        path.addLine(to: rightBase)
+        path.closeSubpath()
+        
+        return path
+    }
+}
+
+// MARK: - User Position Indicator
+struct UserPositionIndicator: View {
+    @State private var isAnimating = false
+    
+    var body: some View {
+        ZStack {
+            // Pulsing circle
+            SwiftUI.Circle()
+                .fill(Color.blue.opacity(0.3))
+                .frame(width: 20, height: 20)
+                .scaleEffect(isAnimating ? 1.5 : 1.0)
+                .opacity(isAnimating ? 0.0 : 0.5)
+                .animation(
+                    Animation.easeInOut(duration: 1.5)
+                        .repeatForever(autoreverses: false),
+                    value: isAnimating
+                )
+            
+            // Center dot
+            SwiftUI.Circle()
+                .fill(Color.blue)
+                .frame(width: 10, height: 10)
+                .overlay(
+                    SwiftUI.Circle()
+                        .stroke(Color.white, lineWidth: 2)
+                )
+        }
+        .onAppear {
+            isAnimating = true
+        }
+    }
+}
+
+// MARK: - North Indicator
+struct NorthIndicator: View {
+    var body: some View {
+        VStack(spacing: 2) {
+            Image(systemName: "location.north.fill")
+                .foregroundColor(.white.opacity(0.8))
+                .font(.system(size: 14))
+            Text("N")
+                .font(.caption2)
+                .fontWeight(.bold)
+                .foregroundColor(.white.opacity(0.8))
+        }
+    }
+}
+
+// MARK: - Preview
+// MARK: - Tracking Indicator
+struct TrackingIndicator: View {
+    let isReady: Bool
+    @State private var isAnimating = false
+    
+    var body: some View {
+        SwiftUI.Circle()
+            .fill(isReady ? Color.green : Color.orange)
+            .frame(width: 8, height: 8)
+            .scaleEffect(isAnimating && !isReady ? 1.2 : 1.0)
+            .opacity(isAnimating && !isReady ? 0.5 : 1.0)
+            .animation(
+                !isReady ? Animation.easeInOut(duration: 0.8).repeatForever(autoreverses: true) : .default,
+                value: isAnimating
+            )
+            .onAppear {
+                isAnimating = true
+            }
+    }
+}
+
+// MARK: - Wall Crosshair View
+struct WallCrosshairView: View {
+    var body: some View {
+        ZStack {
+            // Horizontal line
+            Rectangle()
+                .fill(Color.white)
+                .frame(width: 40, height: 2)
+                .overlay(
+                    Rectangle()
+                        .stroke(Color.black, lineWidth: 0.5)
+                )
+            
+            // Vertical line
+            Rectangle()
+                .fill(Color.white)
+                .frame(width: 2, height: 40)
+                .overlay(
+                    Rectangle()
+                        .stroke(Color.black, lineWidth: 0.5)
+                )
+            
+            // Center dot
+            SwiftUI.Circle()
+                .fill(Color.red)
+                .frame(width: 6, height: 6)
+                .overlay(
+                    SwiftUI.Circle()
+                        .stroke(Color.white, lineWidth: 1)
+                )
+        }
+        .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 0)
+    }
+}
+
+#Preview {
+    WallDetectionScreen()
+}
