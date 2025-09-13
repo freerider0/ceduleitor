@@ -1,0 +1,162 @@
+# MiniMap 2D Visualization
+# ~50 lines in Swift
+
+MiniMapView: View {
+  @ObservedObject coordinator: WallCoordinator
+  @State private var mapScale: CGFloat = 30.0
+
+  var body: some View {
+    GeometryReader { geometry in
+      ZStack {
+        # Background
+        RoundedRectangle(cornerRadius: 12)
+          .fill(Color.black.opacity(0.8))
+          .overlay(
+            RoundedRectangle(cornerRadius: 12)
+              .strokeBorder(Color.white.opacity(0.2), lineWidth: 1)
+          )
+
+        # Map Content
+        Canvas { context, size in
+          # Center the drawing
+          context.translateBy(x: size.width / 2, y: size.height / 2)
+
+          # Apply scale
+          context.scaleBy(x: mapScale, y: mapScale)
+
+          # Draw grid
+          drawGrid(context: context, size: size)
+
+          # Draw room polygon if complete
+          if let roomPolygon = coordinator.currentRoomPolygon {
+            drawRoomPolygon(context: context, polygon: roomPolygon)
+          }
+
+          # Draw wall segments
+          for segment in coordinator.getWallSegmentsForMiniMap() {
+            drawWallSegment(context: context, segment: segment)
+          }
+
+          # Draw user position
+          drawUserIndicator(
+            context: context,
+            position: coordinator.userPosition,
+            rotation: coordinator.userRotation
+          )
+        }
+
+        # Scale controls
+        VStack {
+          HStack {
+            Button(action: { mapScale *= 1.2 }) {
+              Image(systemName: "plus.magnifyingglass")
+                .font(.caption)
+                .padding(4)
+                .background(.ultraThinMaterial)
+                .clipShape(Circle())
+            }
+
+            Button(action: { mapScale *= 0.8 }) {
+              Image(systemName: "minus.magnifyingglass")
+                .font(.caption)
+                .padding(4)
+                .background(.ultraThinMaterial)
+                .clipShape(Circle())
+            }
+          }
+          .padding(8)
+
+          Spacer()
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
+      }
+    }
+  }
+
+  # Drawing Functions
+
+  func drawGrid(context: GraphicsContext, size: CGSize) {
+    # Draw grid lines
+    let gridSpacing: CGFloat = 1.0  # 1 meter
+    let gridCount = 10
+
+    for i in -gridCount...gridCount {
+      let offset = CGFloat(i) * gridSpacing
+
+      # Vertical lines
+      context.stroke(
+        Path { path in
+          path.move(to: CGPoint(x: offset, y: -size.height/2/mapScale))
+          path.addLine(to: CGPoint(x: offset, y: size.height/2/mapScale))
+        },
+        with: .color(.gray.opacity(0.2)),
+        lineWidth: 0.5 / mapScale
+      )
+
+      # Horizontal lines
+      context.stroke(
+        Path { path in
+          path.move(to: CGPoint(x: -size.width/2/mapScale, y: offset))
+          path.addLine(to: CGPoint(x: size.width/2/mapScale, y: offset))
+        },
+        with: .color(.gray.opacity(0.2)),
+        lineWidth: 0.5 / mapScale
+      )
+    }
+  }
+
+  func drawWallSegment(context: GraphicsContext, segment: WallSegment) {
+    context.stroke(
+      Path { path in
+        path.move(to: CGPoint(x: segment.start.x, y: segment.start.y))
+        path.addLine(to: CGPoint(x: segment.end.x, y: segment.end.y))
+      },
+      with: .color(segment.color),
+      lineWidth: 3.0 / mapScale
+    )
+  }
+
+  func drawRoomPolygon(context: GraphicsContext, polygon: RoomPolygon) {
+    if polygon.vertices.count < 2 { return }
+
+    # Draw filled polygon
+    let path = Path { path in
+      path.move(to: CGPoint(x: polygon.vertices[0].x, y: polygon.vertices[0].y))
+      for vertex in polygon.vertices.dropFirst() {
+        path.addLine(to: CGPoint(x: vertex.x, y: vertex.y))
+      }
+      if polygon.isClosed {
+        path.closeSubpath()
+      }
+    }
+
+    # Fill if complete
+    if polygon.isComplete() {
+      context.fill(path, with: .color(.green.opacity(0.2)))
+    }
+
+    # Stroke outline
+    context.stroke(path, with: .color(.green), lineWidth: 2.0 / mapScale)
+  }
+
+  func drawUserIndicator(context: GraphicsContext, position: Vector2, rotation: Float) {
+    # User position triangle
+    context.fill(
+      Path { path in
+        path.move(to: CGPoint(x: position.x, y: position.y - 0.3))
+        path.addLine(to: CGPoint(x: position.x - 0.15, y: position.y + 0.15))
+        path.addLine(to: CGPoint(x: position.x + 0.15, y: position.y + 0.15))
+        path.closeSubpath()
+      }
+      .rotation(Angle(radians: Double(rotation)), anchor: CGPoint(x: position.x, y: position.y)),
+      with: .color(.blue)
+    )
+
+    # User position dot
+    context.fill(
+      Circle()
+        .path(in: CGRect(x: position.x - 0.1, y: position.y - 0.1, width: 0.2, height: 0.2)),
+      with: .color(.white)
+    )
+  }
+}

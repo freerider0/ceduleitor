@@ -79,6 +79,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		725E81D22E759C7600E68E2B /* AR2 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AR2;
+			sourceTree = "<group>";
+		};
 		728504442E6A14BB009D0A5E /* cedularecorderTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = cedularecorderTests;
@@ -238,6 +243,7 @@
 		728505102E6A1FE2009D0A5E /* cedularecorder */ = {
 			isa = PBXGroup;
 			children = (
+				725E81D22E759C7600E68E2B /* AR2 */,
 				725E816D2E7570EF00E68E2B /* sudolang.md */,
 				7292B17C2E72E47600287E64 /* AR */,
 				7270EB362E6DB730004843ED /* Utils */,
@@ -268,6 +274,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				725E81D22E759C7600E68E2B /* AR2 */,
 				728505472E6A34E3009D0A5E /* Models */,
 				728505502E6A34F5009D0A5E /* Services */,
 				7285055A2E6A34FC009D0A5E /* Views */,

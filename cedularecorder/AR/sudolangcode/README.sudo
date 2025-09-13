@@ -1,0 +1,78 @@
+# AR System Architecture in SudoLang
+
+## File Structure & Line Count
+
+```
+WallCoordinator.swift (~30 lines)
+  ├── WallData.swift (~40 lines) - Models & Storage
+  ├── WallDetector.swift (~80 lines) - Core Detection
+  ├── WallTracker.swift (~50 lines) - User Interaction
+  └── ARDelegate.swift (~40 lines) - Session Handling
+
+Total: ~240 lines (vs original 2,889 lines)
+```
+
+## Clean Separation of Concerns
+
+### WallData (~40 lines)
+- Wall model with ARKit data
+- WallStorage container
+- MiniMap data structures
+- NO calculations, just storage
+
+### WallDetector (~80 lines)
+- AR session setup
+- Plane creation/update/removal
+- Entity management
+- NO tracking logic
+
+### WallTracker (~50 lines)
+- Tap handling
+- Toggle visibility
+- Color management
+- Intersection checking
+- NO AR session logic
+
+### ARDelegate (~40 lines)
+- ARSessionDelegate implementation
+- Performance optimizations
+- Event forwarding
+- NO business logic
+
+### WallCoordinator (~30 lines)
+- ObservableObject for SwiftUI
+- Combines all components
+- Public API for UI
+- Published state
+
+## Key Design Principles
+
+1. **Single Responsibility** - Each file does ONE thing
+2. **No Duplication** - Shared data in WallStorage
+3. **Clear Dependencies** - Components communicate through storage
+4. **Testable** - Each component can be tested independently
+5. **Under 100 lines** - Each file is digestible
+
+## Data Flow
+
+```
+ARKit → ARDelegate → WallDetector → WallStorage ← WallTracker ← User Tap
+                                           ↓
+                                    WallCoordinator → SwiftUI
+```
+
+## Implementation Order
+
+1. Start with WallData (models)
+2. Implement WallDetector (core logic)
+3. Add WallTracker (interaction)
+4. Wire up ARDelegate (session handling)
+5. Combine in WallCoordinator
+
+## Benefits Over Original
+
+- **88% less code** (240 vs 2,889 lines)
+- **Clear file boundaries** (each file has one job)
+- **No fake Systems** (just direct implementation)
+- **Easy to debug** (follow the data flow)
+- **SwiftUI ready** (ObservableObject pattern)

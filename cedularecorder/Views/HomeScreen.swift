@@ -141,6 +141,23 @@ struct HomeScreen: View {
                             )
                             .foregroundColor(.white)
                         }
+
+                        // AR2 Wall Detection button
+                        NavigationLink(destination: AR2WallDetectionView()) {
+                            HStack {
+                                Image(systemName: "cube.transparent")
+                                    .font(.title2)
+                                Text("AR2")
+                                    .font(.headline)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.mint)
+                            )
+                            .foregroundColor(.white)
+                        }
                         
                         // Settings button (placeholder)
                         Button(action: {

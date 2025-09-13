@@ -1,0 +1,77 @@
+# ARView Container - Bridge between SwiftUI and RealityKit
+# ~30 lines in Swift
+
+ARViewContainer: UIViewRepresentable {
+  let coordinator: WallCoordinator
+
+  func makeUIView(context: Context) -> ARView {
+    let arView = ARView(frame: .zero)
+
+    # Setup AR with our coordinator
+    coordinator.setupAR(arView: arView)
+
+    # Add tap gesture recognizer
+    let tapGesture = UITapGestureRecognizer(
+      target: context.coordinator,
+      action: #selector(Coordinator.handleTap(_:))
+    )
+    arView.addGestureRecognizer(tapGesture)
+
+    # Add long press for delete
+    let longPressGesture = UILongPressGestureRecognizer(
+      target: context.coordinator,
+      action: #selector(Coordinator.handleLongPress(_:))
+    )
+    longPressGesture.minimumPressDuration = 0.5
+    arView.addGestureRecognizer(longPressGesture)
+
+    return arView
+  }
+
+  func updateUIView(_ uiView: ARView, context: Context) {
+    # Update AR view if needed
+    # Most updates happen through the coordinator's @Published properties
+  }
+
+  func makeCoordinator() -> Coordinator {
+    Coordinator(wallCoordinator: coordinator)
+  }
+
+  # Coordinator for handling gestures
+  class Coordinator: NSObject {
+    let wallCoordinator: WallCoordinator
+
+    init(wallCoordinator: WallCoordinator) {
+      self.wallCoordinator = wallCoordinator
+    }
+
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+      guard let arView = gesture.view as? ARView else { return }
+      let location = gesture.location(in: arView)
+      wallCoordinator.handleTap(at: location)
+    }
+
+    @objc func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
+      guard gesture.state == .began,
+            let arView = gesture.view as? ARView else { return }
+      let location = gesture.location(in: arView)
+      wallCoordinator.handleLongPress(at: location)
+    }
+  }
+}
+
+# Helper extension for cleaner setup
+extension ARView {
+  func setupForWallDetection() {
+    # Performance optimizations
+    environment.sceneUnderstanding.options = [.collision]
+
+    # Lighting
+    environment.lighting.intensityMultiplier = 1.0
+
+    # Debug options (disable in production)
+    #if DEBUG
+    debugOptions = [.showStatistics]
+    #endif
+  }
+}

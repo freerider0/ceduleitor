@@ -1,0 +1,94 @@
+# Wall Detection Core Logic
+# ~80 lines in Swift
+
+WallDetector {
+  # Dependencies
+  storage: WallStorage
+  weak arView: ARView?
+
+  # Setup AR Session
+  setupARView(arView: ARView) {
+    this.arView = arView
+
+    # Performance mode
+    arView.sceneUnderstanding.options = [.collision]
+
+    # Configure
+    config = ARWorldTrackingConfiguration {
+      planeDetection: [.vertical, .horizontal]
+    }
+
+    arView.session.delegate = ARDelegate(detector: this)
+    arView.session.run(config)
+
+    # Tap gesture
+    arView.addGestureRecognizer(
+      UITapGestureRecognizer(target: this, action: handleTap)
+    )
+  }
+
+  # Process New Plane
+  addPlane(plane: ARPlaneAnchor) {
+    # Log for debugging
+    log("Detected: ${plane.classification} at ${plane.alignment}")
+
+    # Create invisible entity for collision
+    entity = createCollisionEntity(plane)
+
+    # Store wall data
+    wall = Wall {
+      id: plane.identifier
+      transform: plane.transform
+      extent: plane.extent
+      center: plane.center
+      classification: plane.classification
+      alignment: plane.alignment
+      entity: entity
+    }
+
+    storage.add(wall)
+
+    # Add to scene
+    anchor = AnchorEntity(anchor: plane)
+    anchor.addChild(entity)
+    arView.scene.addAnchor(anchor)
+  }
+
+  # Update Existing Plane
+  updatePlane(plane: ARPlaneAnchor) {
+    guard let wall = storage.get(plane.identifier) else return
+
+    # Update with new ARKit data
+    wall.transform = plane.transform
+    wall.extent = plane.extent
+    wall.center = plane.center
+
+    # Update mesh if tracked
+    if wall.isTracked {
+      wall.entity?.model?.mesh = generatePlane(plane.extent)
+    }
+
+    storage.update(plane.identifier, wall)
+  }
+
+  # Remove Plane
+  removePlane(planeID: UUID) {
+    # Keep if tracked, otherwise remove
+    if storage.trackedWalls.contains(planeID) {
+      log("Keeping tracked wall ${planeID}")
+      # Convert to world anchor
+    } else {
+      storage.remove(planeID)
+    }
+  }
+
+  # Helper: Create Collision Entity
+  private createCollisionEntity(plane: ARPlaneAnchor) -> ModelEntity {
+    entity = ModelEntity(
+      mesh: .generatePlane(plane.extent.x, plane.extent.z),
+      materials: [SimpleMaterial(color: .clear)]
+    )
+    entity.generateCollisionShapes(recursive: false)
+    return entity
+  }
+}

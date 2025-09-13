@@ -1,0 +1,184 @@
+# Use Cases - Business Logic Layer for MVVM
+# This is WHERE business logic should go in MVVM!
+
+## Wall Tracking Use Case
+
+WallTrackingUseCase {
+  private let storage: WallStorage
+  private let arService: ARService
+
+  # Business Logic: Can we track this wall?
+  func canTrackWall(_ wall: Wall) -> Bool {
+    # YOUR business rules
+    guard wall.extent.x >= 0.5 else { return false }  # Min 50cm width
+    guard wall.extent.y >= 1.0 else { return false }  # Min 1m height
+    guard wall.classification == .wall else { return false }  # Only walls
+    guard storage.trackedWalls.count < 20 else { return false }  # Max 20 walls
+
+    return true
+  }
+
+  # Business Logic: Execute wall tracking
+  func trackWall(_ wallID: UUID) -> Result<Wall, TrackingError> {
+    guard let wall = storage.get(wallID) else {
+      return .failure(.wallNotFound)
+    }
+
+    guard canTrackWall(wall) else {
+      return .failure(.invalidWall)
+    }
+
+    # Business logic for tracking
+    storage.trackedWalls.insert(wallID)
+    wall.isTracked = true
+    storage.update(wallID, wall)
+
+    return .success(wall)
+  }
+
+  # Business Logic: Should walls be merged?
+  func shouldMergeWalls(_ wall1: Wall, _ wall2: Wall) -> Bool {
+    let distance = simd_distance(wall1.transform.position, wall2.transform.position)
+    let angleDiff = abs(wall1.transform.rotation.y - wall2.transform.rotation.y)
+
+    # YOUR business rules for merging
+    return distance < 0.2 &&  # Less than 20cm apart
+           angleDiff < 0.1 &&  # Less than ~6 degrees rotation difference
+           wall1.classification == wall2.classification
+  }
+}
+
+## Room Creation Use Case
+
+RoomCreationUseCase {
+  private let storage: WallStorage
+  private let geometryService: GeometryService
+
+  # Business Logic: Can we create a room?
+  func canCreateRoom(from walls: [Wall]) -> Bool {
+    # YOUR business rules
+    guard walls.count >= 3 else { return false }  # Need at least 3 walls
+    guard walls.allSatisfy({ $0.isTracked }) else { return false }  # All must be tracked
+
+    # Check if walls connect
+    return wallsFormConnectedShape(walls)
+  }
+
+  # Business Logic: Create room from walls
+  func createRoom(name: String?, wallIDs: [UUID]) -> Result<Room, RoomError> {
+    let walls = wallIDs.compactMap { storage.get($0) }
+
+    guard canCreateRoom(from: walls) else {
+      return .failure(.invalidWalls)
+    }
+
+    # Business logic for room creation
+    let room = Room(
+      id: UUID(),
+      name: name ?? "Room \(storage.rooms.count + 1)",
+      walls: Set(wallIDs)
+    )
+
+    # Check if room closes properly
+    if let polygon = geometryService.completePolygon(from: walls.map { $0.get2DSegment() }) {
+      room.isComplete = true
+      room.area = polygon.area()
+
+      # Business rule: Max room size
+      guard room.area! < 200.0 else {  # Max 200 square meters
+        return .failure(.roomTooLarge)
+      }
+    }
+
+    # Assign walls to room
+    for wallID in wallIDs {
+      storage.assignWallToRoom(wallID, room.id)
+    }
+
+    storage.rooms[room.id] = room
+    return .success(room)
+  }
+
+  # Business Logic: Auto-complete room
+  func shouldAutoComplete(_ room: Room) -> Bool {
+    guard room.walls.count >= 3 else { return false }
+
+    let walls = room.walls.compactMap { storage.get($0) }
+    let segments = walls.map { $0.get2DSegment() }
+
+    # Check if gap is small enough to auto-close
+    if let gap = findLargestGap(in: segments) {
+      return gap < 0.5  # Auto-close if gap less than 50cm
+    }
+
+    return false
+  }
+}
+
+## Wall Interaction Use Case
+
+WallInteractionUseCase {
+  private let storage: WallStorage
+  private let trackingUseCase: WallTrackingUseCase
+
+  # Business Logic: Handle tap on wall
+  func handleWallTap(_ wallID: UUID) -> WallAction {
+    guard let wall = storage.get(wallID) else {
+      return .none
+    }
+
+    if wall.isTracked {
+      # Already tracked - untrack it
+      return .untrack(wallID)
+    } else if trackingUseCase.canTrackWall(wall) {
+      # Can track - track it
+      return .track(wallID)
+    } else {
+      # Can't track - show reason
+      return .showError(reason: getTrackingError(wall))
+    }
+  }
+
+  # Business Logic: Can delete wall?
+  func canDeleteWall(_ wallID: UUID) -> Bool {
+    guard let wall = storage.get(wallID) else { return false }
+
+    # Business rules for deletion
+    if let roomID = wall.roomID,
+       let room = storage.rooms[roomID] {
+      # Can't delete if it would break the room
+      return room.walls.count > 3
+    }
+
+    return true
+  }
+
+  private func getTrackingError(_ wall: Wall) -> String {
+    if wall.extent.x < 0.5 { return "Wall too narrow" }
+    if wall.extent.y < 1.0 { return "Wall too short" }
+    if wall.classification != .wall { return "Not a wall surface" }
+    if storage.trackedWalls.count >= 20 { return "Maximum walls reached" }
+    return "Cannot track wall"
+  }
+}
+
+## Enums for Use Case Results
+
+enum TrackingError: Error {
+  case wallNotFound
+  case invalidWall
+  case maximumWallsReached
+}
+
+enum RoomError: Error {
+  case invalidWalls
+  case roomTooLarge
+  case notConnected
+}
+
+enum WallAction {
+  case track(UUID)
+  case untrack(UUID)
+  case showError(reason: String)
+  case none
+}

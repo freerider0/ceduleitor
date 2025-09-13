@@ -1,0 +1,49 @@
+# Wall and Room Storage Management
+# ~40 lines in Swift
+
+WallStorage {
+  walls: Dictionary<UUID, Wall> = {}
+  rooms: Dictionary<UUID, Room> = {}
+  trackedWalls: Set<UUID> = []
+  currentRoomID: UUID?  # Room being built
+
+  # Wall CRUD
+  add(wall: Wall)
+  update(id: UUID, with: Wall)
+  remove(id: UUID)
+  get(id: UUID) -> Wall?
+
+  # Room Management
+  createRoom(name: String?) -> Room {
+    room = Room(id: UUID(), name: name)
+    rooms[room.id] = room
+    currentRoomID = room.id
+    return room
+  }
+
+  assignWallToRoom(wallID: UUID, roomID: UUID) {
+    if var wall = walls[wallID], var room = rooms[roomID] {
+      wall.roomID = roomID
+      room.walls.insert(wallID)
+      walls[wallID] = wall
+      rooms[roomID] = room
+    }
+  }
+
+  # Queries
+  getTracked() -> [Wall] {
+    trackedWalls.map { walls[$0] }.filter { $0 != nil }
+  }
+
+  getWallsForRoom(roomID: UUID) -> [Wall] {
+    rooms[roomID]?.walls.compactMap { walls[$0] } ?? []
+  }
+
+  getRoomsForWall(wallID: UUID) -> [Room] {
+    walls[wallID]?.adjacentRooms.compactMap { rooms[$0] } ?? []
+  }
+
+  getByClassification(type: PlaneClassification) -> [Wall] {
+    walls.values.filter { $0.classification == type }
+  }
+}

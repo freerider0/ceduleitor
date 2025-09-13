@@ -1,0 +1,134 @@
+# Services Layer for MVVM
+# ~60 lines in Swift
+
+## AR Service - Handles ARKit/RealityKit interaction
+
+ARService {
+  private arView: ARView?
+  private delegate: ARDelegate
+
+  # Setup and Configuration
+  func configureSession(arView: ARView, delegate: ARSessionDelegate) {
+    self.arView = arView
+
+    # Configure AR session
+    let config = ARWorldTrackingConfiguration()
+    config.planeDetection = [.vertical, .horizontal]
+    config.environmentTexturing = .automatic
+
+    # Performance settings
+    arView.environment.sceneUnderstanding.options = [.collision]
+
+    arView.session.delegate = delegate
+    arView.session.run(config)
+  }
+
+  func pauseSession() {
+    arView?.session.pause()
+  }
+
+  func resetSession() {
+    guard let arView = arView else { return }
+    arView.session.run(
+      ARWorldTrackingConfiguration(),
+      options: [.resetTracking, .removeExistingAnchors]
+    )
+  }
+
+  # Raycasting
+  func raycast(from point: CGPoint) -> ARRaycastResult? {
+    arView?.raycast(from: point, allowing: .existingPlaneGeometry, alignment: .any).first
+  }
+
+  # Entity Management
+  func addEntity(_ entity: Entity, at anchor: ARAnchor) {
+    let anchorEntity = AnchorEntity(anchor: anchor)
+    anchorEntity.addChild(entity)
+    arView?.scene.addAnchor(anchorEntity)
+  }
+}
+
+## Persistence Service - Save/Load rooms and walls
+
+PersistenceService {
+  private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+  func saveRooms(_ rooms: [Room]) throws {
+    let encoder = JSONEncoder()
+    let data = try encoder.encode(rooms)
+    let url = documentsDirectory.appendingPathComponent("rooms.json")
+    try data.write(to: url)
+  }
+
+  func loadRooms() throws -> [Room] {
+    let url = documentsDirectory.appendingPathComponent("rooms.json")
+    let data = try Data(contentsOf: url)
+    let decoder = JSONDecoder()
+    return try decoder.decode([Room].self, from: data)
+  }
+
+  func exportToUSDZ(rooms: [Room]) throws -> URL {
+    # Create USDZ file from room geometry
+    # Implementation would use ModelIO/SceneKit
+    let exportURL = documentsDirectory.appendingPathComponent("room_\(Date().timeIntervalSince1970).usdz")
+    # ... export logic
+    return exportURL
+  }
+}
+
+## Analytics Service - Track user interactions
+
+AnalyticsService {
+  func trackWallDetected(classification: PlaneClassification) {
+    # Log wall detection event
+    print("[Analytics] Wall detected: \(classification)")
+  }
+
+  func trackRoomCompleted(wallCount: Int, area: Float) {
+    # Log room completion
+    print("[Analytics] Room completed: \(wallCount) walls, \(area)m²")
+  }
+
+  func trackInteraction(action: String) {
+    # Log user interaction
+    print("[Analytics] User action: \(action)")
+  }
+}
+
+## Calculation Service - Complex geometry calculations
+
+GeometryService {
+  func calculateRoomArea(walls: [Wall]) -> Float {
+    # Calculate room area from walls
+    # Using shoelace formula or triangulation
+    return 0.0
+  }
+
+  func findIntersections(between walls: [Wall]) -> [PlaneIntersection] {
+    # Calculate wall intersections
+    var intersections: [PlaneIntersection] = []
+    # ... intersection logic
+    return intersections
+  }
+
+  func completePolygon(from segments: [WallSegment]) -> RoomPolygon? {
+    # Try to close the polygon
+    # ... polygon completion logic
+    return nil
+  }
+
+  func calculateWallVertices(wall: Wall) -> (topLeft: SIMD3<Float>, topRight: SIMD3<Float>,
+                                              bottomLeft: SIMD3<Float>, bottomRight: SIMD3<Float>) {
+    # Calculate corner points from ARKit data
+    let halfWidth = wall.extent.x / 2
+    let halfHeight = wall.extent.y / 2
+
+    # Transform local corners to world space
+    let tl = wall.transform * SIMD4(-halfWidth, halfHeight, 0, 1)
+    let tr = wall.transform * SIMD4(halfWidth, halfHeight, 0, 1)
+    let bl = wall.transform * SIMD4(-halfWidth, -halfHeight, 0, 1)
+    let br = wall.transform * SIMD4(halfWidth, -halfHeight, 0, 1)
+
+    return (tl.xyz, tr.xyz, bl.xyz, br.xyz)
+  }
+}

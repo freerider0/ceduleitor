@@ -1,0 +1,93 @@
+# MVVM Structure Explanation
+
+## Clear Separation:
+
+### 1. MODELS (Data)
+```
+Wall, Room, WallSegment
+- Just data structures
+- No logic at all
+```
+
+### 2. VIEWS (UI)
+```
+WallDetectionView, MiniMapView
+- Just UI layout and styling
+- No business logic
+- Observes ViewModel
+```
+
+### 3. VIEWMODEL (UI State + Orchestration)
+```
+WallCoordinator
+- @Published properties for UI
+- Orchestrates between Business Logic and Services
+- Handles user actions from View
+- NO business rules here, just coordination
+```
+
+### 4. BUSINESS LOGIC (Your App's Rules)
+```
+WallBusinessRules, RoomBusinessRules
+- YOUR domain-specific rules
+- "Can this wall be tracked?"
+- "Is this room complete?"
+- "Should these walls merge?"
+```
+
+### 5. SERVICES (External/Infrastructure)
+```
+ARService - How to talk to ARKit
+PersistenceService - How to save files
+GeometryService - How to calculate math
+```
+
+## Example Flow:
+
+User taps a wall:
+
+1. **View** → Button tap
+2. **ViewModel** → handleTap(location)
+3. **Business Logic** → canTrackWall(wall)?
+4. **Service** → ARService.raycast(location)
+5. **Business Logic** → Returns decision
+6. **ViewModel** → Updates @Published state
+7. **View** → Re-renders with new state
+
+## The Key Difference:
+
+**Service Example:**
+```swift
+// Service: HOW to calculate distance (pure math)
+GeometryService {
+  func calculateDistance(p1, p2) -> Float {
+    return simd_distance(p1, p2)
+  }
+}
+```
+
+**Business Logic Example:**
+```swift
+// Business Logic: WHEN walls are too close (your rule)
+WallBusinessRules {
+  func wallsAreTooClose(w1, w2) -> Bool {
+    let distance = geometryService.calculateDistance(w1.pos, w2.pos)
+    return distance < 0.2  // YOUR business rule: 20cm minimum
+  }
+}
+```
+
+## Why Separate?
+
+1. **Services** can be reused in ANY app (distance calculation)
+2. **Business Logic** is UNIQUE to YOUR app (20cm wall rule)
+3. **Services** you might replace (ARKit → ARCore)
+4. **Business Logic** stays the same regardless of platform
+
+## For Your AR App:
+
+- **WallDetector/WallTracker** = Business Logic (your rules)
+- **ARService** = Service (ARKit wrapper)
+- **GeometryService** = Service (math calculations)
+- **WallBusinessRules** = Business Logic (when to track/merge)
+- **WallCoordinator** = ViewModel (orchestrates everything)

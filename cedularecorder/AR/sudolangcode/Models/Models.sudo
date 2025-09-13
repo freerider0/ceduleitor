@@ -1,0 +1,119 @@
+# All AR Models and Data Structures
+# ~60 lines in Swift
+
+## Core Types
+
+PlaneClassification {
+  wall
+  door
+  window
+  floor
+  ceiling
+  table
+  seat
+  none
+}
+
+PlaneAlignment {
+  horizontal
+  vertical
+  any
+}
+
+TrackingState {
+  normal
+  limited(reason: TrackingStateReason)
+  notAvailable
+}
+
+TrackingStateReason {
+  initializing
+  excessiveMotion
+  insufficientFeatures
+  relocalizing
+}
+
+## Room Model
+
+Room {
+  id: UUID
+  name: String?  # Optional user-defined name
+  walls: Set<UUID> = []  # Wall IDs that form this room
+  isComplete: Boolean = false  # True when room polygon is closed
+
+  # Computed
+  wallCount => walls.count
+  area: Float?  # Calculated when room is complete
+}
+
+## Wall Model
+
+Wall {
+  # Identity
+  id: UUID
+  roomID: UUID?  # Which room this wall belongs to
+
+  # ARKit Data (stored as-is, never calculated)
+  transform: Matrix4x4      # Position + rotation from ARKit
+  extent: Vector3           # Width, height, depth from ARKit
+  center: Vector3           # Center offset from ARKit
+  classification: PlaneClassification
+  alignment: PlaneAlignment
+
+  # Our State
+  entity: ModelEntity?      # RealityKit visualization
+  isTracked: Boolean = false
+  intersectingWalls: Set<UUID> = []
+  adjacentRooms: Set<UUID> = []  # Rooms that share this wall (for doors/openings)
+
+  # Computed Properties (just access, no math)
+  isWall => classification == .wall && alignment == .vertical
+  isDoor => classification == .door
+  isWindow => classification == .window
+  isFloor => alignment == .horizontal
+
+  # For MiniMap (2D projection)
+  get2DSegment() -> WallSegment {
+    # Simple projection to 2D (X-Z plane)
+    start = Vector2(transform.x - extent.x/2, transform.z)
+    end = Vector2(transform.x + extent.x/2, transform.z)
+    return WallSegment(start, end, classification.color)
+  }
+}
+
+## MiniMap Data
+
+WallSegment {
+  start: Vector2
+  end: Vector2
+  color: Color
+}
+
+RoomPolygon {
+  vertices: [Vector2]
+  isClosed: Boolean
+
+  isComplete() -> Boolean {
+    return vertices.count >= 3 && isClosed
+  }
+
+  area() -> Float {
+    if !isComplete() return 0
+    # Shoelace formula
+    sum = 0
+    for i in 0..<vertices.count {
+      j = (i + 1) % vertices.count
+      sum += vertices[i].x * vertices[j].y
+      sum -= vertices[j].x * vertices[i].y
+    }
+    return abs(sum) / 2
+  }
+}
+
+MiniMapData {
+  walls: [WallSegment]
+  roomPolygon: RoomPolygon?
+  userPosition: Vector2
+  userDirection: Float
+  scale: Float = 30.0
+}

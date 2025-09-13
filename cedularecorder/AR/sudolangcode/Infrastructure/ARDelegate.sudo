@@ -1,0 +1,67 @@
+# AR Session Delegate Handler
+# ~40 lines in Swift
+
+ARDelegate: ARSessionDelegate {
+  # Dependencies
+  weak detector: WallDetector
+  weak tracker: WallTracker
+
+  # Performance Optimization
+  private lastUpdateTime: TimeInterval = 0
+  private updateInterval: TimeInterval = 0.5  # Update every 500ms
+
+  # Delegate Methods
+
+  session(didAdd anchors: [ARAnchor]) {
+    anchors
+      |> filter { $0 is ARPlaneAnchor }
+      |> map { $0 as! ARPlaneAnchor }
+      |> forEach { plane in
+        detector.addPlane(plane)
+        tracker.checkIntersections(plane.identifier)
+      }
+  }
+
+  session(didUpdate anchors: [ARAnchor]) {
+    # Performance: Only update center plane
+    currentTime = Date.timeIntervalSinceReferenceDate
+    if currentTime - lastUpdateTime < updateInterval {
+      return  # Skip this update
+    }
+    lastUpdateTime = currentTime
+
+    # Find plane at screen center
+    screenCenter = CGPoint(
+      arView.bounds.width / 2,
+      arView.bounds.height / 2
+    )
+
+    centerPlaneID = arView
+      .raycast(from: screenCenter, allowing: .existingPlaneGeometry)
+      .first?.anchor?.identifier
+
+    # Only update the center plane
+    anchors
+      |> filter { $0 is ARPlaneAnchor }
+      |> map { $0 as! ARPlaneAnchor }
+      |> filter { $0.identifier == centerPlaneID }
+      |> forEach { plane in
+        detector.updatePlane(plane)
+        tracker.checkIntersections(plane.identifier)
+      }
+  }
+
+  session(didRemove anchors: [ARAnchor]) {
+    anchors
+      |> filter { $0 is ARPlaneAnchor }
+      |> map { $0 as! ARPlaneAnchor }
+      |> forEach { plane in
+        detector.removePlane(plane.identifier)
+      }
+  }
+
+  session(didUpdate frame: ARFrame) {
+    # Update tracking state
+    @Published trackingState = frame.camera.trackingState
+  }
+}

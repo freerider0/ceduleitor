@@ -1,0 +1,78 @@
+# Wall Tracking and Interaction
+# ~50 lines in Swift
+
+WallTracker {
+  # Dependencies
+  storage: WallStorage
+  weak arView: ARView?
+
+  # Handle User Tap
+  @objc handleTap(gesture: UITapGestureRecognizer) {
+    location = gesture.location(in: arView)
+
+    # Raycast to find tapped plane
+    results = arView.raycast(from: location, allowing: .existingPlaneGeometry)
+
+    if let result = results.first,
+       let plane = result.anchor as? ARPlaneAnchor {
+      toggleTracking(plane.identifier)
+    }
+  }
+
+  # Toggle Wall Tracking
+  toggleTracking(wallID: UUID) {
+    guard let wall = storage.get(wallID) else return
+
+    if wall.isTracked {
+      # Untrack - make invisible
+      wall.entity?.model?.materials = [SimpleMaterial(color: .clear)]
+      wall.isTracked = false
+      storage.trackedWalls.remove(wallID)
+    } else {
+      # Track - make visible with color based on type
+      color = getColorForClassification(wall.classification)
+      wall.entity?.model?.materials = [SimpleMaterial(color: color.withAlpha(0.3))]
+      wall.isTracked = true
+      storage.trackedWalls.insert(wallID)
+    }
+
+    storage.update(wallID, wall)
+  }
+
+  # Get Color Based on Classification
+  private getColorForClassification(classification: PlaneClassification) -> Color {
+    switch classification {
+      .wall => .green
+      .door => .blue
+      .window => .yellow
+      .floor => .gray
+      .ceiling => .lightGray
+      default => .white
+    }
+  }
+
+  # Check Intersections
+  checkIntersections(wallID: UUID) {
+    guard let wall = storage.get(wallID) else return
+
+    wall.intersectingWalls.clear()
+
+    # Simple distance-based check
+    for (otherID, otherWall) in storage.walls {
+      if otherID != wallID {
+        distance = simd_distance(
+          wall.transform.translation,
+          otherWall.transform.translation
+        )
+
+        maxReach = (wall.extent.x + otherWall.extent.x) / 2
+
+        if distance < maxReach {
+          wall.intersectingWalls.insert(otherID)
+        }
+      }
+    }
+
+    storage.update(wallID, wall)
+  }
+}

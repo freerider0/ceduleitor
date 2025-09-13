@@ -1,0 +1,95 @@
+# Business Logic - Your App's Domain Rules
+# ~50 lines in Swift
+
+## Wall Business Rules
+
+WallBusinessRules {
+  # Minimum requirements for valid wall
+  static let minimumWallWidth: Float = 0.5  # meters
+  static let minimumWallHeight: Float = 1.0  # meters
+  static let maximumWallDistance: Float = 10.0  # meters from user
+
+  func isValidWall(_ wall: Wall) -> Bool {
+    return wall.extent.x >= minimumWallWidth &&
+           wall.extent.y >= minimumWallHeight &&
+           wall.classification == .wall
+  }
+
+  func canTrackWall(_ wall: Wall) -> Bool {
+    # Business rule: Don't track windows or doors as walls
+    return wall.classification != .window &&
+           wall.classification != .door &&
+           isValidWall(wall)
+  }
+
+  func shouldMergeWalls(_ wall1: Wall, _ wall2: Wall) -> Bool {
+    # Business rule: Merge if walls are very close and aligned
+    let distance = simd_distance(wall1.transform.position, wall2.transform.position)
+    let angleThreshold: Float = 0.1  # radians
+
+    return distance < 0.2 &&  # 20cm threshold
+           abs(wall1.transform.rotation.y - wall2.transform.rotation.y) < angleThreshold
+  }
+}
+
+## Room Business Rules
+
+RoomBusinessRules {
+  static let minimumWallsForRoom = 3
+  static let maximumRoomArea: Float = 100.0  # square meters
+
+  func canCreateRoom(from walls: [Wall]) -> Bool {
+    return walls.count >= minimumWallsForRoom
+  }
+
+  func isRoomComplete(_ room: Room) -> Bool {
+    # Business rule: Room needs at least 3 walls and forms closed polygon
+    guard room.walls.count >= minimumWallsForRoom else { return false }
+
+    # Check if walls form a closed loop
+    return room.isComplete && room.area != nil
+  }
+
+  func validateRoomArea(_ area: Float) -> Bool {
+    return area > 0 && area <= maximumRoomArea
+  }
+
+  func shouldAutoCompleteRoom(walls: [Wall]) -> Bool {
+    # Business rule: Auto-complete if we have 3+ walls that almost close
+    guard walls.count >= minimumWallsForRoom else { return false }
+
+    # Check if endpoints are close enough to auto-close
+    let gapThreshold: Float = 0.5  # 50cm gap allowed
+    return checkPolygonGap(walls) < gapThreshold
+  }
+}
+
+## Wall Interaction Rules
+
+InteractionBusinessRules {
+  func canDeleteWall(_ wall: Wall, in room: Room?) -> Bool {
+    # Business rule: Can't delete if it would break room
+    if let room = room {
+      return room.walls.count > RoomBusinessRules.minimumWallsForRoom
+    }
+    return true
+  }
+
+  func canAddWallToRoom(_ wall: Wall, room: Room) -> Bool {
+    # Business rule: Wall must connect to existing room walls
+    return wall.intersectingWalls.contains { room.walls.contains($0) }
+  }
+
+  func getWallColor(for classification: PlaneClassification, isTracked: Bool) -> Color {
+    # Business rule: Color coding by type
+    if !isTracked { return .clear }
+
+    switch classification {
+      case .wall: return .green
+      case .door: return .blue
+      case .window: return .yellow
+      case .floor: return .gray
+      default: return .white
+    }
+  }
+}

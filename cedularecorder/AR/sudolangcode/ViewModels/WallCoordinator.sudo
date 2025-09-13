@@ -1,0 +1,72 @@
+# ViewModel/Coordinator - MVVM Pattern
+# ~40 lines in Swift
+
+WallCoordinator: ObservableObject {
+  # Published State for SwiftUI
+  @Published var trackingState: ARCamera.TrackingState = .notAvailable
+  @Published var trackedWallCount: Int = 0
+  @Published var currentRoomPolygon: RoomPolygon?
+  @Published var userPosition: Vector2 = .zero
+  @Published var userRotation: Float = 0
+
+  # Services (injected for testability)
+  private let arService: ARService
+  private let persistenceService: PersistenceService
+  private let analyticsService: AnalyticsService
+  private let geometryService: GeometryService
+
+  # Use Cases (Business Logic)
+  private let wallTrackingUseCase: WallTrackingUseCase
+  private let roomCreationUseCase: RoomCreationUseCase
+  private let wallInteractionUseCase: WallInteractionUseCase
+
+  # Components (No business logic here!)
+  private let storage = WallStorage()
+  private let delegate: ARDelegate
+
+  # Initialize with dependency injection
+  init(arService: ARService = ARService(),
+       persistenceService: PersistenceService = PersistenceService(),
+       analyticsService: AnalyticsService = AnalyticsService(),
+       geometryService: GeometryService = GeometryService()) {
+
+    self.arService = arService
+    self.persistenceService = persistenceService
+    self.analyticsService = analyticsService
+    self.geometryService = geometryService
+
+    detector = WallDetector(storage: storage, arService: arService)
+    tracker = WallTracker(storage: storage, analyticsService: analyticsService)
+    delegate = ARDelegate(detector: detector, tracker: tracker)
+  }
+
+  # Setup AR
+  func setupAR(arView: ARView) {
+    arService.configureSession(arView: arView, delegate: delegate)
+    detector.arView = arView
+    tracker.arView = arView
+  }
+
+  # Public API for UI
+
+  func getTrackedWalls() -> [Wall] {
+    return storage.getTracked()
+  }
+
+  func getWallSegmentsForMiniMap() -> [WallSegment] {
+    return storage.getTracked().map { $0.get2DSegment() }
+  }
+
+  func getTrackingQuality() -> String {
+    switch trackingState {
+      .normal => "Good"
+      .limited(let reason) => "Limited: \(reason)"
+      .notAvailable => "Not Available"
+    }
+  }
+
+  # Update published properties
+  private func updatePublishedState() {
+    trackedWallCount = storage.trackedWalls.count
+  }
+}
