@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		725E816E2E7570F500E68E2B /* sudolang.md in Resources */ = {isa = PBXBuildFile; fileRef = 725E816D2E7570EF00E68E2B /* sudolang.md */; };
 		7265BB6E2E703822009A58A1 /* functions.js in Resources */ = {isa = PBXBuildFile; fileRef = 7265BB6D2E70381C009A58A1 /* functions.js */; };
 		7270EB372E6DB731004843ED /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB222E6DB730004843ED /* Diagnostics.swift */; };
 		7270EB382E6DB731004843ED /* SubSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270EB232E6DB730004843ED /* SubSystem.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		725E816D2E7570EF00E68E2B /* sudolang.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = sudolang.md; sourceTree = "<group>"; };
 		7265BB6D2E70381C009A58A1 /* functions.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = functions.js; sourceTree = "<group>"; };
 		7270EB1E2E6DB730004843ED /* AngleConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleConstraints.swift; sourceTree = "<group>"; };
 		7270EB1F2E6DB730004843ED /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		728505102E6A1FE2009D0A5E /* cedularecorder */ = {
 			isa = PBXGroup;
 			children = (
+				725E816D2E7570EF00E68E2B /* sudolang.md */,
 				7292B17C2E72E47600287E64 /* AR */,
 				7270EB362E6DB730004843ED /* Utils */,
 				728505472E6A34E3009D0A5E /* Models */,
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				728505122E6A1FE2009D0A5E /* Assets.xcassets in Resources */,
+				725E816E2E7570F500E68E2B /* sudolang.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

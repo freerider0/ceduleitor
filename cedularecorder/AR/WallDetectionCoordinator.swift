@@ -301,7 +301,7 @@ extension WallDetectionCoordinator: ARSessionDelegate {
         }
         
         // Create anchor entity using the plane anchor directly
-        let anchorEntity = AnchorEntity(anchor: planeAnchor)
+        let anchorEntity = AnchorEntity(.plane([.any], classification: [.any], minimumBounds: SIMD2<Float>(0.1, 0.1)))
         anchorEntity.name = "Anchor_\(planeAnchor.identifier.uuidString)"
         
         // Create invisible collision entity for hit testing (no mesh)

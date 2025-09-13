@@ -259,6 +259,12 @@ class WallInteractionSystem: RealityKit.System {
         PlaneIntersectionSystem.floorPolygonEntity?.removeFromParent()
         PlaneIntersectionSystem.polygonDirty = false
         
+        // Clear vertex visualizations
+        PlaneIntersectionSystem.vertexEntities.forEach { $0.removeFromParent() }
+        PlaneIntersectionSystem.vertexEntities.removeAll()
+        PlaneIntersectionSystem.connectionEntities.forEach { $0.removeFromParent() }
+        PlaneIntersectionSystem.connectionEntities.removeAll()
+        
         // Reset all walls to preview state
         for entity in scene.performQuery(allWallsQuery) {
             if var trackingComponent = entity.components[UserTrackedComponent.self] {

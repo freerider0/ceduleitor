@@ -45,20 +45,6 @@ struct WallMiniMapView: View {
                             .stroke(wall.color, lineWidth: 3)
                             .shadow(color: wall.color.opacity(0.5), radius: 2)
                     }
-                    
-                    // User indicator stays in center
-                    UserPositionIndicator()
-                        .position(
-                            x: geometry.size.width / 2,
-                            y: geometry.size.height / 2
-                        )
-                    
-                    // North indicator
-                    NorthIndicator()
-                        .position(
-                            x: geometry.size.width / 2,
-                            y: 20
-                        )
                 }
                 // Apply transformations: first offset, then rotate
                 .offset(
@@ -69,6 +55,25 @@ struct WallMiniMapView: View {
                 .scaleEffect(x: -1)  // Mirror horizontally to fix rotation
                 .animation(.linear(duration: 0.033), value: userPosition)
                 .animation(.linear(duration: 0.033), value: userDirection)
+                
+                // Fixed position indicators (not transformed with map)
+                // Direction cone FIRST (behind user dot)
+                ZStack {
+                    DirectionCone()
+                    UserPositionIndicator()
+                }
+                .position(
+                    x: geometry.size.width / 2,
+                    y: geometry.size.height / 2
+                )
+                .allowsHitTesting(false)
+                
+                // North indicator
+                NorthIndicator()
+                    .position(
+                        x: geometry.size.width / 2,
+                        y: 20
+                    )
                 
                 // Fixed UI elements (don't rotate)
                 VStack {
@@ -91,13 +96,6 @@ struct WallMiniMapView: View {
                     }
                     .padding(8)
                 }
-                
-                // Direction cone (always points up to show forward)
-                DirectionCone()
-                    .position(
-                        x: geometry.size.width / 2,
-                        y: geometry.size.height / 2
-                    )
             }
             .clipShape(RoundedRectangle(cornerRadius: 16))
         }
@@ -192,26 +190,79 @@ struct UserPositionIndicator: View {
     }
 }
 
-// MARK: - Direction Cone
+// MARK: - Direction Cone (Metal Gear Solid Style)
 struct DirectionCone: View {
+    @State private var scanlineOffset: CGFloat = 0
+    @State private var pulseAnimation = false
+    
     var body: some View {
-        Path { path in
-            // Triangle pointing up
-            path.move(to: CGPoint(x: 0, y: -15))
-            path.addLine(to: CGPoint(x: -8, y: 5))
-            path.addLine(to: CGPoint(x: 8, y: 5))
-            path.closeSubpath()
-        }
-        .fill(Color.white.opacity(0.8))
-        .overlay(
-            Path { path in
-                path.move(to: CGPoint(x: 0, y: -15))
-                path.addLine(to: CGPoint(x: -8, y: 5))
-                path.addLine(to: CGPoint(x: 8, y: 5))
+        // Classic MGS vision cone
+        Canvas { context, size in
+            let center = CGPoint(x: size.width / 2, y: size.height / 2)
+            
+            // MGS cone parameters
+            let coneLength: CGFloat = 70
+            let coneAngle: CGFloat = .pi / 4  // 45 degrees each side = 90 degree FOV
+            
+            // Calculate cone points from center
+            let leftAngle = -coneAngle
+            let rightAngle = coneAngle
+            
+            let leftPoint = CGPoint(
+                x: center.x + sin(leftAngle) * coneLength,
+                y: center.y - cos(leftAngle) * coneLength
+            )
+            let rightPoint = CGPoint(
+                x: center.x + sin(rightAngle) * coneLength,
+                y: center.y - cos(rightAngle) * coneLength
+            )
+            
+            // Create cone path
+            let conePath = Path { path in
+                path.move(to: center)
+                path.addLine(to: leftPoint)
+                
+                // Add arc for rounded cone end (MGS style)
+                path.addArc(
+                    center: center,
+                    radius: coneLength,
+                    startAngle: Angle(radians: -(.pi/2 + coneAngle)),
+                    endAngle: Angle(radians: -(.pi/2 - coneAngle)),
+                    clockwise: false
+                )
+                
+                path.addLine(to: rightPoint)
                 path.closeSubpath()
             }
-            .stroke(Color.blue, lineWidth: 2)
-        )
+            
+            // Draw gradient fill (MGS blue-green)
+            context.fill(
+                conePath,
+                with: .linearGradient(
+                    Gradient(colors: [
+                        Color(red: 0, green: 1, blue: 0.8, opacity: 0.4),  // Cyan-green
+                        Color(red: 0, green: 0.8, blue: 1, opacity: 0.2),  // Fading cyan
+                        Color(red: 0, green: 0.6, blue: 0.8, opacity: 0.05) // Almost transparent
+                    ]),
+                    startPoint: center,
+                    endPoint: CGPoint(x: center.x, y: center.y - coneLength)
+                )
+            )
+            
+            // Add soft glow effect (no lines, just light)
+            context.drawLayer { ctx in
+                ctx.addFilter(.blur(radius: 5))
+                ctx.fill(conePath, with: .color(.green.opacity(0.3)))
+            }
+        }
+        .frame(width: 150, height: 150)
+        .onAppear {
+            pulseAnimation = true
+            // Scanning animation
+            withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: true)) {
+                scanlineOffset = 1.0
+            }
+        }
     }
 }
 

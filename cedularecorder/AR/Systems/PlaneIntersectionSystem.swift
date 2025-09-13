@@ -21,6 +21,8 @@ class PlaneIntersectionSystem: RealityKit.System {
     static var polygonDirty = false  // Only recompute when walls change
     static var floorHeight: Float = 0  // Detected floor height
     static var floorPolygonEntity: ModelEntity?  // Floor visualization
+    static var vertexEntities: [ModelEntity] = []  // Vertex visualization
+    static var connectionEntities: [ModelEntity] = []  // Connection line visualization
     
     // MARK: - Initialization
     required init(scene: RealityKit.Scene) {
@@ -62,6 +64,7 @@ class PlaneIntersectionSystem: RealityKit.System {
         
         // Compute room polygon when walls change
         if Self.polygonDirty && !Self.trackedVerticalPlanes.isEmpty {
+            print("[PlaneIntersection] 🔄 Polygon dirty, computing with \(Self.trackedVerticalPlanes.count) walls")
             Self.computeRoomPolygon()
             Self.polygonDirty = false
         }
@@ -243,154 +246,140 @@ class PlaneIntersectionSystem: RealityKit.System {
     
     // MARK: - Diamond Solid Polygon Completion Algorithm
     
-    private struct WallFragment {
-        let id: UUID
+    private struct VirtualLine {
         let start: SIMD3<Float>
         let end: SIMD3<Float>
-        
-        func directionVector() -> SIMD3<Float> {
-            return normalize(end - start)
-        }
+        let segmentId: UUID
+        let type: String  // "start" or "end"
     }
     
-    private struct Ray {
-        let fragmentId: UUID
-        let origin: SIMD3<Float>
-        let direction: SIMD3<Float>
-        let fromEnd: Bool
+    private static func getLineIntersection(_ line1Start: SIMD3<Float>, _ line1End: SIMD3<Float>,
+                                           _ line2Start: SIMD3<Float>, _ line2End: SIMD3<Float>) -> SIMD3<Float>? {
+        // Work in XZ plane (floor projection)
+        let x1 = line1Start.x
+        let z1 = line1Start.z
+        let x2 = line1End.x
+        let z2 = line1End.z
         
-        func intersectWith(_ other: Ray, floorHeight: Float) -> SIMD3<Float>? {
-            // 2D intersection in XZ plane (ignoring Y for floor projection)
-            let o1x = origin.x
-            let o1z = origin.z
-            let d1x = direction.x
-            let d1z = direction.z
-            
-            let o2x = other.origin.x
-            let o2z = other.origin.z
-            let d2x = other.direction.x
-            let d2z = other.direction.z
-            
-            let denom = d1x * d2z - d1z * d2x
-            if abs(denom) < 1e-10 { return nil }  // Parallel rays
-            
-            let t1 = ((o2x - o1x) * d2z - (o2z - o1z) * d2x) / denom
-            let t2 = ((o2x - o1x) * d1z - (o2z - o1z) * d1x) / denom
-            
-            // Only accept forward intersections
-            if t1 >= 1e-10 && t2 >= 1e-10 {
-                return SIMD3<Float>(
-                    o1x + t1 * d1x,
-                    floorHeight,  // Use passed floor height
-                    o1z + t1 * d1z
-                )
-            }
-            
+        let x3 = line2Start.x
+        let z3 = line2Start.z
+        let x4 = line2End.x
+        let z4 = line2End.z
+        
+        let denominator = (x1 - x2) * (z3 - z4) - (z1 - z2) * (x3 - x4)
+        
+        // Lines are parallel
+        if abs(denominator) < 0.0001 {
             return nil
         }
+        
+        let t = ((x1 - x3) * (z3 - z4) - (z1 - z3) * (x3 - x4)) / denominator
+        
+        // Calculate intersection point
+        let intersectionX = x1 + t * (x2 - x1)
+        let intersectionZ = z1 + t * (z2 - z1)
+        
+        return SIMD3<Float>(intersectionX, floorHeight, intersectionZ)
+    }
+    
+    private static func getRaySegmentIntersection(_ rayStart: SIMD3<Float>, _ rayEnd: SIMD3<Float>,
+                                                 _ segStart: SIMD3<Float>, _ segEnd: SIMD3<Float>) -> SIMD3<Float>? {
+        // Work in XZ plane
+        let x1 = rayStart.x
+        let z1 = rayStart.z
+        let x2 = rayEnd.x
+        let z2 = rayEnd.z
+        
+        let x3 = segStart.x
+        let z3 = segStart.z
+        let x4 = segEnd.x
+        let z4 = segEnd.z
+        
+        let denominator = (x1 - x2) * (z3 - z4) - (z1 - z2) * (x3 - x4)
+        
+        // Lines are parallel
+        if abs(denominator) < 0.0001 {
+            return nil
+        }
+        
+        let t = ((x1 - x3) * (z3 - z4) - (z1 - z3) * (x3 - x4)) / denominator
+        let s = ((x1 - x3) * (z1 - z2) - (z1 - z3) * (x1 - x2)) / denominator
+        
+        // Check if intersection is within segment bounds (0 <= s <= 1)
+        // and along the ray direction (t can be any value for virtual lines)
+        if s >= 0 && s <= 1 {
+            let intersectionX = x3 + s * (x4 - x3)
+            let intersectionZ = z3 + s * (z4 - z3)
+            return SIMD3<Float>(intersectionX, floorHeight, intersectionZ)
+        }
+        
+        return nil
     }
     
     static func computeRoomPolygon() {
-        print("[PlaneIntersection] Computing room polygon from \(trackedVerticalPlanes.count) walls")
+        print("[PlaneIntersection] ===== DIAMOND SOLID ALGORITHM START =====")
         
-        // Convert wall geometry to fragments
-        var fragments: [WallFragment] = []
+        // Get wall segments 
+        var segments: [(id: UUID, start: SIMD3<Float>, end: SIMD3<Float>)] = []
         for (wallID, _) in trackedVerticalPlanes {
             if let geometry = WallInteractionSystem.wallGeometryCache[wallID] {
-                fragments.append(WallFragment(
-                    id: wallID,
-                    start: geometry.start,
-                    end: geometry.end
-                ))
+                segments.append((wallID, geometry.start, geometry.end))
             }
         }
         
-        guard fragments.count >= 2 else {
+        guard segments.count >= 2 else {
             roomPolygon = []
             return
         }
         
-        // Detect floor height from horizontal planes
+        // Detect floor height
         if let firstFloor = trackedHorizontalPlanes.values.first {
             floorHeight = firstFloor.transform.columns.3.y + firstFloor.center.y
         }
         
-        // Generate rays from fragment endpoints
-        var rays: [Ray] = []
-        for fragment in fragments {
-            let direction = fragment.directionVector()
-            
-            // Ray from start going backward
-            rays.append(Ray(
-                fragmentId: fragment.id,
-                origin: fragment.start,
-                direction: SIMD3<Float>(-direction.x, 0, -direction.z),  // Project to XZ plane
-                fromEnd: false
-            ))
-            
-            // Ray from end going forward
-            rays.append(Ray(
-                fragmentId: fragment.id,
-                origin: fragment.end,
-                direction: SIMD3<Float>(direction.x, 0, direction.z),  // Project to XZ plane
-                fromEnd: true
+        // Use Diamond Solid Algorithm
+        let algorithm = DiamondSolidAlgorithm()
+        
+        // Add fragments (convert from 3D to 2D in XZ plane)
+        for (i, segment) in segments.enumerated() {
+            algorithm.addFragment(Fragment(
+                id: segment.id.uuidString,
+                start: DSPoint(x: segment.start.x, y: segment.start.z),  // Use X and Z (ignore Y)
+                end: DSPoint(x: segment.end.x, y: segment.end.z)
             ))
         }
         
-        // Pre-expansion phase: find mutual first intersections
-        var vertices: [SIMD3<Float>] = []
-        var usedRays = Set<Int>()
+        // Execute algorithm
+        let result = algorithm.execute()
         
-        for i in 0..<rays.count {
-            if usedRays.contains(i) { continue }
-            
-            for j in (i+1)..<rays.count {
-                if usedRays.contains(j) { continue }
-                if rays[i].fragmentId == rays[j].fragmentId { continue }  // Skip same fragment
-                
-                if let intersection = rays[i].intersectWith(rays[j], floorHeight: floorHeight) {
-                    // Check if this is mutual first intersection (simplified check)
-                    let dist1 = distance(rays[i].origin, intersection)
-                    let dist2 = distance(rays[j].origin, intersection)
-                    
-                    // Accept if reasonably close (within room bounds)
-                    if dist1 < 20.0 && dist2 < 20.0 {  // Max 20 meters
-                        vertices.append(intersection)
-                        usedRays.insert(i)
-                        usedRays.insert(j)
-                        break
-                    }
-                }
-            }
+        print("[PlaneIntersection] 🎯 Diamond Solid Results:")
+        print("[PlaneIntersection]   - Vertices: \(result.vertices.count)")
+        print("[PlaneIntersection]   - Connections: \(result.connections.count)")
+        
+        // Convert vertices back to 3D
+        var polygonVertices: [SIMD3<Float>] = []
+        for vertex in result.vertices {
+            let vertex3D = SIMD3<Float>(vertex.x, floorHeight + 1.0, vertex.y)  // Y is floor + 1m, Z is from 2D y
+            polygonVertices.append(vertex3D)
+            print("[PlaneIntersection]   - Vertex at: (\(vertex.x), \(vertex.y)) -> 3D: \(vertex3D)")
         }
         
-        // Handle remaining rays (deadlock resolution)
-        let remainingRays = rays.enumerated().compactMap { !usedRays.contains($0.offset) ? $0.element : nil }
-        if !remainingRays.isEmpty && vertices.count < fragments.count * 2 {
-            // Find closest pairs among remaining rays
-            for i in 0..<remainingRays.count {
-                for j in (i+1)..<remainingRays.count {
-                    if remainingRays[i].fragmentId == remainingRays[j].fragmentId { continue }
-                    
-                    if let intersection = remainingRays[i].intersectWith(remainingRays[j], floorHeight: floorHeight) {
-                        vertices.append(intersection)
-                        break
-                    }
-                }
-            }
+        // Create vertex and connection visualizations
+        if !polygonVertices.isEmpty {
+            createVertexVisualizations(vertices: polygonVertices, connections: result.connections)
         }
         
-        // Order vertices by angle from centroid to form polygon
-        if vertices.count >= 3 {
-            let centroid = vertices.reduce(SIMD3<Float>(0, 0, 0), +) / Float(vertices.count)
-            vertices.sort { v1, v2 in
+        // Order vertices by angle from centroid for polygon
+        if polygonVertices.count >= 3 {
+            let centroid = polygonVertices.reduce(SIMD3<Float>(0, 0, 0), +) / Float(polygonVertices.count)
+            polygonVertices.sort { v1, v2 in
                 let angle1 = atan2(v1.z - centroid.z, v1.x - centroid.x)
                 let angle2 = atan2(v2.z - centroid.z, v2.x - centroid.x)
                 return angle1 < angle2
             }
             
-            roomPolygon = vertices
-            print("[PlaneIntersection] Polygon completed with \(vertices.count) vertices")
+            roomPolygon = polygonVertices
+            print("[PlaneIntersection] ✅ Diamond Solid found \(polygonVertices.count) vertices from \(segments.count) walls")
             
             // Create floor visualization
             createFloorPolygon()
@@ -400,8 +389,10 @@ class PlaneIntersectionSystem: RealityKit.System {
             WallInteractionSystem.coordinator?.wallUpdatePublisher.send()
         } else {
             roomPolygon = []
-            print("[PlaneIntersection] Not enough vertices for polygon")
+            print("[PlaneIntersection] ⚠️ No vertices found by Diamond Solid")
         }
+        
+        print("[PlaneIntersection] ===== DIAMOND SOLID ALGORITHM END =====")
     }
     
     private static func createFloorPolygon() {
@@ -460,5 +451,79 @@ class PlaneIntersectionSystem: RealityKit.System {
     // Mark polygon dirty when walls change
     static func markPolygonDirty() {
         polygonDirty = true
+    }
+    
+    // MARK: - Vertex Visualization
+    private static func createVertexVisualizations(vertices: [SIMD3<Float>], connections: [(String, String)]) {
+        guard let arView = sharedARView else { return }
+        
+        // Remove existing visualizations
+        vertexEntities.forEach { $0.removeFromParent() }
+        vertexEntities.removeAll()
+        connectionEntities.forEach { $0.removeFromParent() }
+        connectionEntities.removeAll()
+        
+        // Create bright sphere for each vertex
+        var vertexMaterial = UnlitMaterial()
+        vertexMaterial.color = .init(tint: UIColor.systemYellow)
+        
+        for (index, vertex) in vertices.enumerated() {
+            let sphereMesh = MeshResource.generateSphere(radius: 0.15)  // 15cm radius spheres
+            let sphereEntity = ModelEntity(mesh: sphereMesh, materials: [vertexMaterial])
+            sphereEntity.name = "DSVertex_\(index)"
+            
+            // Create anchor at vertex position
+            let anchor = AnchorEntity(world: vertex)
+            anchor.addChild(sphereEntity)
+            arView.scene.addAnchor(anchor)
+            
+            vertexEntities.append(sphereEntity)
+            
+            // Add text label showing vertex index
+            print("[PlaneIntersection] Created vertex sphere \(index) at \(vertex)")
+        }
+        
+        // Create connection lines between vertices based on connections
+        var connectionMaterial = UnlitMaterial()
+        connectionMaterial.color = .init(tint: UIColor.systemOrange.withAlphaComponent(0.8))
+        
+        for (index, connection) in connections.enumerated() {
+            // Find vertices that match this connection (by fragment ID)
+            // For now, just connect consecutive vertices
+            if index < vertices.count - 1 {
+                let start = vertices[index]
+                let end = vertices[index + 1]
+                
+                let distance = simd_distance(start, end)
+                let midpoint = (start + end) / 2
+                
+                // Create cylinder connecting vertices
+                let cylinderMesh = MeshResource.generateBox(width: 0.05, height: distance, depth: 0.05)
+                let cylinderEntity = ModelEntity(mesh: cylinderMesh, materials: [connectionMaterial])
+                cylinderEntity.name = "DSConnection_\(index)"
+                
+                // Position and orient cylinder
+                let anchor = AnchorEntity(world: midpoint)
+                
+                // Calculate rotation to align with connection direction
+                let direction = normalize(end - start)
+                let up = SIMD3<Float>(0, 1, 0)
+                
+                // If direction is not vertical
+                if abs(dot(direction, up)) < 0.999 {
+                    let axis = normalize(cross(up, direction))
+                    let angle = acos(dot(up, direction))
+                    cylinderEntity.orientation = simd_quatf(angle: angle, axis: axis)
+                }
+                
+                anchor.addChild(cylinderEntity)
+                arView.scene.addAnchor(anchor)
+                
+                connectionEntities.append(cylinderEntity)
+                print("[PlaneIntersection] Created connection \(index): \(connection.0) <-> \(connection.1)")
+            }
+        }
+        
+        print("[PlaneIntersection] Created \(vertexEntities.count) vertex spheres and \(connectionEntities.count) connection lines")
     }
 }
