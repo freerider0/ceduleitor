@@ -9,6 +9,7 @@ class AR2Delegate: NSObject, ARSessionDelegate {
 
     private var lastUpdateTime: TimeInterval = 0
     private let updateInterval: TimeInterval = 0.5
+    private var lastRotation: Float = 0
 
     init(tracker: AR2WallTracker, coordinator: AR2WallCoordinator, storage: AR2WallStorage) {
         self.tracker = tracker
@@ -51,14 +52,30 @@ class AR2Delegate: NSObject, ARSessionDelegate {
             }
     }
 
+    // Helper function to normalize angle difference to [-π, π]
+    private func normalizeAngleDifference(_ angle: Float) -> Float {
+        var normalized = angle
+        while normalized > Float.pi { normalized -= 2 * Float.pi }
+        while normalized < -Float.pi { normalized += 2 * Float.pi }
+        return normalized
+    }
+
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         coordinator?.updateTrackingState(frame.camera.trackingState)
 
         let transform = frame.camera.transform
         let position = SIMD2(transform.columns.3.x, transform.columns.3.z)
-        let rotation = atan2(transform.columns.0.z, transform.columns.0.x)
+
+        // Get the forward direction from the camera transform
+        let forward = -transform.columns.2
+        let newRotation = atan2(forward.x, forward.z)
+
+        // Calculate the shortest angle difference and accumulate
+        let diff = normalizeAngleDifference(newRotation - lastRotation)
+        let smoothRotation = lastRotation + diff
+        lastRotation = smoothRotation
 
         coordinator?.userPosition = position
-        coordinator?.userRotation = rotation
+        coordinator?.userRotation = smoothRotation
     }
 }

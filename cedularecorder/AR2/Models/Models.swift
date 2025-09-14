@@ -124,6 +124,7 @@ struct AR2Wall: Identifiable {
         let endX = actualCenterX + halfWidth * cos(rotation)
         let endZ = actualCenterZ + halfWidth * sin(rotation)
 
+        // Store raw coordinates - we'll transform in the view
         return AR2WallSegment(
             start: SIMD2(startX, startZ),
             end: SIMD2(endX, endZ),
