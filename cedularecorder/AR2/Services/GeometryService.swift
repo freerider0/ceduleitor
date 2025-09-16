@@ -8,6 +8,8 @@ struct AR2PlaneIntersection {
 }
 
 class AR2GeometryService {
+    private let polygonClosingService = AR2PolygonClosingService()
+
     func calculateRoomArea(walls: [AR2Wall]) -> Float {
         // TODO: Implement using shoelace formula
         return 0.0
@@ -20,20 +22,8 @@ class AR2GeometryService {
     }
 
     func completePolygon(from segments: [AR2WallSegment]) -> AR2RoomPolygon? {
-        guard segments.count >= 3 else { return nil }
-
-        var vertices: [SIMD2<Float>] = []
-        for segment in segments {
-            vertices.append(segment.start)
-        }
-
-        let firstSegment = segments.first!
-        let lastSegment = segments.last!
-        let gap = simd_distance(lastSegment.end, firstSegment.start)
-
-        let isClosed = gap < 0.5
-
-        return AR2RoomPolygon(vertices: vertices, isClosed: isClosed)
+        // Use the new polygon closing service
+        return polygonClosingService.updatePolygon(segments: segments)
     }
 
     func calculateWallVertices(wall: AR2Wall) -> (topLeft: SIMD3<Float>, topRight: SIMD3<Float>,

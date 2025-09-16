@@ -594,6 +594,8 @@
 				DEVELOPMENT_TEAM = H7N98P2ZWL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "use distos";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "use distos";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to record inspection videos";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to record the GPS position of each inspection";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access to record audio with inspection videos";
@@ -627,6 +629,8 @@
 				DEVELOPMENT_TEAM = H7N98P2ZWL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "use distos";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "use distos";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to record inspection videos";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to record the GPS position of each inspection";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access to record audio with inspection videos";

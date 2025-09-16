@@ -23,12 +23,41 @@ struct AR2MiniMapView: View {
 
                         drawGrid(context: context, size: size)
 
-                        if let roomPolygon = coordinator.currentRoomPolygon {
-                            drawRoomPolygon(context: context, polygon: roomPolygon)
+                        // Draw wall segments first
+                        let segments = coordinator.getWallSegmentsForMiniMap()
+                        for segment in segments {
+                            drawWallSegment(context: context, segment: segment)
                         }
 
-                        for segment in coordinator.getWallSegmentsForMiniMap() {
-                            drawWallSegment(context: context, segment: segment)
+                        // Draw intersections
+                        drawIntersections(context: context, segments: segments)
+
+                        // Draw debug info if available
+                        if let roomPolygon = coordinator.currentRoomPolygon {
+                            if let debugInfo = roomPolygon.debugInfo {
+                                // Draw rays from unconnected endpoints
+                                for ray in debugInfo.rays {
+                                    drawRay(context: context, ray: ray)
+                                }
+
+                                // Draw possible vertices
+                                for vertex in debugInfo.possibleVertices {
+                                    drawPossibleVertex(context: context, vertex: vertex)
+                                }
+
+                                // Draw cleaned segments in different color
+                                for segment in debugInfo.cleanedSegments {
+                                    drawCleanedSegment(context: context, segment: segment)
+                                }
+
+                                // Draw extended segments in a different color to show the result
+                                for segment in debugInfo.extendedSegments {
+                                    drawExtendedSegment(context: context, segment: segment)
+                                }
+                            }
+
+                            // Draw the polygon last (on top)
+                            drawRoomPolygon(context: context, polygon: roomPolygon)
                         }
                     }
                 }
@@ -110,6 +139,7 @@ struct AR2MiniMapView: View {
     }
 
     private func drawWallSegment(context: GraphicsContext, segment: AR2WallSegment) {
+        // Draw the line segment
         context.stroke(
             Path { path in
                 // Negate X to flip horizontally (since we removed mirror)
@@ -119,6 +149,32 @@ struct AR2MiniMapView: View {
             },
             with: .color(segment.color),
             lineWidth: 3.0 / mapScale
+        )
+
+        // Draw initial point (start) in yellow
+        context.fill(
+            Path { path in
+                path.addEllipse(in: CGRect(
+                    x: -CGFloat(segment.start.x) - 0.08,
+                    y: -CGFloat(segment.start.y) - 0.08,
+                    width: 0.16,
+                    height: 0.16
+                ))
+            },
+            with: .color(.yellow)
+        )
+
+        // Draw endpoint in orange
+        context.fill(
+            Path { path in
+                path.addEllipse(in: CGRect(
+                    x: -CGFloat(segment.end.x) - 0.08,
+                    y: -CGFloat(segment.end.y) - 0.08,
+                    width: 0.16,
+                    height: 0.16
+                ))
+            },
+            with: .color(.orange)
         )
     }
 
@@ -142,6 +198,160 @@ struct AR2MiniMapView: View {
         }
 
         context.stroke(path, with: .color(.green), lineWidth: 2.0 / mapScale)
+    }
+
+    private func drawRay(context: GraphicsContext, ray: AR2PolygonDebugInfo.Ray) {
+        let rayLength: Float = 100.0  // Length of ray to draw (100 meters)
+        let endPoint = ray.origin + ray.direction * rayLength
+
+        // Use orange for endpoint rays, green for start point rays
+        let rayColor: Color = ray.isFromEnd ? .orange : .green
+
+        context.stroke(
+            Path { path in
+                path.move(to: CGPoint(x: -CGFloat(ray.origin.x), y: -CGFloat(ray.origin.y)))
+                path.addLine(to: CGPoint(x: -CGFloat(endPoint.x), y: -CGFloat(endPoint.y)))
+            },
+            with: .color(rayColor.opacity(0.6)),
+            style: StrokeStyle(lineWidth: 1.0 / mapScale, dash: [0.1, 0.1])
+        )
+
+        // Draw arrow head (pointing forward in ray direction)
+        let arrowSize: Float = 0.2
+        let arrowAngle: Float = 0.4  // radians (about 23 degrees)
+        // Create arrow points going back from the endpoint
+        let arrowPoint1 = endPoint - rotate2D(ray.direction * arrowSize, by: arrowAngle)
+        let arrowPoint2 = endPoint - rotate2D(ray.direction * arrowSize, by: -arrowAngle)
+
+        context.stroke(
+            Path { path in
+                path.move(to: CGPoint(x: -CGFloat(arrowPoint1.x), y: -CGFloat(arrowPoint1.y)))
+                path.addLine(to: CGPoint(x: -CGFloat(endPoint.x), y: -CGFloat(endPoint.y)))
+                path.addLine(to: CGPoint(x: -CGFloat(arrowPoint2.x), y: -CGFloat(arrowPoint2.y)))
+            },
+            with: .color(rayColor),
+            lineWidth: 1.5 / mapScale
+        )
+    }
+
+    private func drawPossibleVertex(context: GraphicsContext, vertex: AR2PolygonDebugInfo.PossibleVertex) {
+        let color: Color = {
+            switch vertex.type {
+            case .rayIntersection: return .red
+            case .mutual: return .orange
+            case .extended: return .purple
+            }
+        }()
+
+        context.fill(
+            Path { path in
+                path.addEllipse(in: CGRect(
+                    x: -CGFloat(vertex.position.x) - 0.15,
+                    y: -CGFloat(vertex.position.y) - 0.15,
+                    width: 0.3,
+                    height: 0.3
+                ))
+            },
+            with: .color(color)
+        )
+
+        // Draw a ring around it
+        context.stroke(
+            Path { path in
+                path.addEllipse(in: CGRect(
+                    x: -CGFloat(vertex.position.x) - 0.2,
+                    y: -CGFloat(vertex.position.y) - 0.2,
+                    width: 0.4,
+                    height: 0.4
+                ))
+            },
+            with: .color(color.opacity(0.5)),
+            lineWidth: 1.0 / mapScale
+        )
+    }
+
+    private func drawCleanedSegment(context: GraphicsContext, segment: AR2WallSegment) {
+        context.stroke(
+            Path { path in
+                path.move(to: CGPoint(x: -CGFloat(segment.start.x), y: -CGFloat(segment.start.y)))
+                path.addLine(to: CGPoint(x: -CGFloat(segment.end.x), y: -CGFloat(segment.end.y)))
+            },
+            with: .color(.cyan.opacity(0.5)),
+            lineWidth: 1.0 / mapScale
+        )
+    }
+
+    private func drawExtendedSegment(context: GraphicsContext, segment: AR2WallSegment) {
+        context.stroke(
+            Path { path in
+                path.move(to: CGPoint(x: -CGFloat(segment.start.x), y: -CGFloat(segment.start.y)))
+                path.addLine(to: CGPoint(x: -CGFloat(segment.end.x), y: -CGFloat(segment.end.y)))
+            },
+            with: .color(.mint),
+            lineWidth: 4.0 / mapScale
+        )
+    }
+
+    private func rotate2D(_ vector: SIMD2<Float>, by angle: Float) -> SIMD2<Float> {
+        let cosA = cos(angle)
+        let sinA = sin(angle)
+        return SIMD2<Float>(
+            vector.x * cosA - vector.y * sinA,
+            vector.x * sinA + vector.y * cosA
+        )
+    }
+
+    private func drawIntersections(context: GraphicsContext, segments: [AR2WallSegment]) {
+        // Find all intersections between segments
+        var intersections: [SIMD2<Float>] = []
+
+        for i in 0..<segments.count {
+            for j in (i+1)..<segments.count {
+                if let intersection = lineSegmentIntersection(
+                    segments[i].start, segments[i].end,
+                    segments[j].start, segments[j].end
+                ) {
+                    intersections.append(intersection)
+                }
+            }
+        }
+
+        // Draw intersection points in blue
+        for intersection in intersections {
+            context.fill(
+                Path { path in
+                    path.addEllipse(in: CGRect(
+                        x: -CGFloat(intersection.x) - 0.1,
+                        y: -CGFloat(intersection.y) - 0.1,
+                        width: 0.2,
+                        height: 0.2
+                    ))
+                },
+                with: .color(.blue)
+            )
+        }
+    }
+
+    private func lineSegmentIntersection(_ p1: SIMD2<Float>, _ p2: SIMD2<Float>,
+                                        _ p3: SIMD2<Float>, _ p4: SIMD2<Float>) -> SIMD2<Float>? {
+        let d1 = p2 - p1
+        let d2 = p4 - p3
+        let denominator = d1.x * d2.y - d1.y * d2.x
+
+        // Parallel lines
+        if abs(denominator) < 0.0001 {
+            return nil
+        }
+
+        let t = ((p3.x - p1.x) * d2.y - (p3.y - p1.y) * d2.x) / denominator
+        let u = ((p3.x - p1.x) * d1.y - (p3.y - p1.y) * d1.x) / denominator
+
+        // Check if intersection is within both segments
+        if t >= 0 && t <= 1 && u >= 0 && u <= 1 {
+            return p1 + t * d1
+        }
+
+        return nil
     }
 
 }

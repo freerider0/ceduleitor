@@ -128,22 +128,36 @@ struct AR2Wall: Identifiable {
         return AR2WallSegment(
             start: SIMD2(startX, startZ),
             end: SIMD2(endX, endZ),
-            color: classification.color
+            color: classification.color,
+            wallID: self.id
         )
     }
 }
 
 // MARK: - MiniMap Data
 
-struct AR2WallSegment {
+struct AR2WallSegment: Equatable {
     let start: SIMD2<Float>
     let end: SIMD2<Float>
     let color: Color
+    let wallID: UUID?  // Optional ID to track which wall this segment came from
+
+    init(start: SIMD2<Float>, end: SIMD2<Float>, color: Color, wallID: UUID? = nil) {
+        self.start = start
+        self.end = end
+        self.color = color
+        self.wallID = wallID
+    }
+
+    static func == (lhs: AR2WallSegment, rhs: AR2WallSegment) -> Bool {
+        return lhs.start == rhs.start && lhs.end == rhs.end && lhs.wallID == rhs.wallID
+    }
 }
 
 struct AR2RoomPolygon {
     var vertices: [SIMD2<Float>]
     var isClosed: Bool
+    var debugInfo: AR2PolygonDebugInfo?
 
     func isComplete() -> Bool {
         vertices.count >= 3 && isClosed
@@ -160,6 +174,32 @@ struct AR2RoomPolygon {
         }
         return abs(sum) / 2
     }
+}
+
+// Debug visualization data
+struct AR2PolygonDebugInfo {
+    struct Ray {
+        let origin: SIMD2<Float>
+        let direction: SIMD2<Float>
+        let isFromEnd: Bool
+        let segmentIndex: Int
+    }
+
+    struct PossibleVertex {
+        let position: SIMD2<Float>
+        let type: VertexType
+    }
+
+    enum VertexType {
+        case rayIntersection
+        case extended
+        case mutual
+    }
+
+    var rays: [Ray] = []
+    var possibleVertices: [PossibleVertex] = []
+    var cleanedSegments: [AR2WallSegment] = []
+    var extendedSegments: [AR2WallSegment] = []
 }
 
 struct AR2MiniMapData {

@@ -145,11 +145,12 @@ class AR2WallCoordinator: ObservableObject {
     private func updatePublishedState() {
         trackedWallCount = storage.trackedWalls.count
 
-        // Disable room polygon for now - just show tracked walls
-        // if let currentRoom = storage.currentRoomID.flatMap({ storage.rooms[$0] }) {
-        //     let walls = storage.getWallsForRoom(currentRoom.id)
-        //     let segments = walls.map { $0.get2DSegment() }
-        //     currentRoomPolygon = geometryService.completePolygon(from: segments)
-        // }
+        // Update polygon from tracked walls
+        let segments = getWallSegmentsForMiniMap()
+        if segments.count >= 2 {
+            currentRoomPolygon = geometryService.completePolygon(from: segments)
+        } else {
+            currentRoomPolygon = nil
+        }
     }
 }

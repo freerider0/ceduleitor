@@ -40,6 +40,23 @@ struct HomeScreen: View {
                         
                         // Navigation buttons
                         VStack(spacing: 20) {
+                        // DISTO Discovery button
+                        NavigationLink(destination: DISTOCommandDiscovery()) {
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .font(.title2)
+                                Text("Discover DISTO Commands")
+                                    .font(.headline)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.red)
+                            )
+                            .foregroundColor(.white)
+                        }
+
                         // ID Document Capture button
                         NavigationLink(destination: ModernCameraWithOverlay()) {
                             HStack {
@@ -191,6 +208,23 @@ struct HomeScreen: View {
                             .background(
                                 RoundedRectangle(cornerRadius: 15)
                                     .fill(Color.green)
+                            )
+                            .foregroundColor(.white)
+                        }
+
+                        // Leica DISTO button
+                        NavigationLink(destination: LeicaDISTOControl()) {
+                            HStack {
+                                Image(systemName: "ruler")
+                                    .font(.title2)
+                                Text("Leica DISTO")
+                                    .font(.headline)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.blue)
                             )
                             .foregroundColor(.white)
                         }
