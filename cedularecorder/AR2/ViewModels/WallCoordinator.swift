@@ -14,6 +14,7 @@ class AR2WallCoordinator: ObservableObject {
     private let persistenceService: AR2PersistenceService
     private let analyticsService: AR2AnalyticsService
     private let geometryService: AR2GeometryService
+    private let polygonVisualizationService = AR2PolygonVisualizationService()
 
     private let wallTrackingUseCase: AR2WallTrackingUseCase
     private let roomCreationUseCase: AR2RoomCreationUseCase
@@ -24,6 +25,11 @@ class AR2WallCoordinator: ObservableObject {
     private lazy var arDelegate: AR2Delegate = {
         AR2Delegate(tracker: wallTracker, coordinator: self, storage: storage)
     }()
+
+    // Polygon visualization entities
+    private var floorPolygonAnchor: AnchorEntity?
+    private var ceilingPolygonAnchor: AnchorEntity?
+    private weak var arView: ARView?
 
     init(arService: AR2Service = AR2Service(),
          persistenceService: AR2PersistenceService = AR2PersistenceService(),
@@ -44,6 +50,7 @@ class AR2WallCoordinator: ObservableObject {
     }
 
     func setupAR(arView: ARView) {
+        self.arView = arView
         arService.configureSession(arView: arView, delegate: arDelegate)
         wallTracker.arView = arView
     }
@@ -118,6 +125,7 @@ class AR2WallCoordinator: ObservableObject {
         storage.rooms.removeAll()
         storage.trackedWalls.removeAll()
         currentRoomPolygon = nil
+        removePolygonVisualization()
         updatePublishedState()
     }
 
@@ -149,8 +157,83 @@ class AR2WallCoordinator: ObservableObject {
         let segments = getWallSegmentsForMiniMap()
         if segments.count >= 2 {
             currentRoomPolygon = geometryService.completePolygon(from: segments)
+            updatePolygonVisualization()
         } else {
             currentRoomPolygon = nil
+            removePolygonVisualization()
         }
+    }
+
+    private func updatePolygonVisualization() {
+        guard let arView = arView,
+              let polygon = currentRoomPolygon else { return }
+
+        // Remove old visualizations
+        removePolygonVisualization()
+
+        // Use extended segments if available (same as vertices), otherwise use original
+        let segmentsToShow = polygon.debugInfo?.extendedSegments ?? getWallSegmentsForMiniMap()
+
+        let vertices = polygon.vertices
+
+        // Only visualize if we have segments
+        guard !segmentsToShow.isEmpty else { return }
+
+        // Find floor and ceiling planes
+        let floorPlane = storage.getByClassification(.floor).first
+        let ceilingPlane = storage.getByClassification(.ceiling).first
+
+        // Create visualization on floor
+        if let floor = floorPlane {
+            let floorHeight = floor.transform.columns.3.y
+
+            // Debug: print segment coordinates and wall positions
+            print("DEBUG: Floor height: \(floorHeight)")
+            print("DEBUG: Floor position: \(floor.transform.columns.3)")
+            for (i, segment) in segmentsToShow.enumerated() {
+                print("DEBUG: Segment \(i): start(\(segment.start.x), \(segment.start.y)) end(\(segment.end.x), \(segment.end.y))")
+            }
+
+            // Also print actual wall positions
+            for wall in storage.getTracked() {
+                let pos = wall.transform.columns.3
+                print("DEBUG: Wall \(wall.id) position: (\(pos.x), \(pos.y), \(pos.z))")
+            }
+
+            let floorEntity = polygonVisualizationService.createPolygonVisualization(
+                segments: segmentsToShow,
+                vertices: vertices,
+                isClosed: polygon.isClosed,
+                at: floorHeight
+            )
+
+            let floorAnchor = AnchorEntity()
+            floorAnchor.addChild(floorEntity)
+            arView.scene.addAnchor(floorAnchor)
+            floorPolygonAnchor = floorAnchor
+        }
+
+        // Create visualization on ceiling
+        if let ceiling = ceilingPlane {
+            let ceilingHeight = ceiling.transform.columns.3.y
+            let ceilingEntity = polygonVisualizationService.createPolygonVisualization(
+                segments: segmentsToShow,
+                vertices: vertices,
+                isClosed: polygon.isClosed,
+                at: ceilingHeight
+            )
+
+            let ceilingAnchor = AnchorEntity()
+            ceilingAnchor.addChild(ceilingEntity)
+            arView.scene.addAnchor(ceilingAnchor)
+            ceilingPolygonAnchor = ceilingAnchor
+        }
+    }
+
+    private func removePolygonVisualization() {
+        floorPolygonAnchor?.removeFromParent()
+        floorPolygonAnchor = nil
+        ceilingPolygonAnchor?.removeFromParent()
+        ceilingPolygonAnchor = nil
     }
 }

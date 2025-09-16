@@ -56,12 +56,29 @@ struct AR2ViewContainer: UIViewRepresentable {
     }
 }
 
-extension ARView {
+extension ARView: ARCoachingOverlayViewDelegate {
     func setupForWallDetection() {
         environment.sceneUnderstanding.options = [.collision]
 
         #if DEBUG
         debugOptions = [.showStatistics]
         #endif
+
+        // Add coaching overlay to guide users
+        addCoachingOverlay()
+    }
+
+    func addCoachingOverlay() {
+        let coachingOverlay = ARCoachingOverlayView()
+        coachingOverlay.session = self.session
+        coachingOverlay.goal = .anyPlane
+        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        coachingOverlay.delegate = self
+        self.addSubview(coachingOverlay)
+    }
+
+    // ARCoachingOverlayViewDelegate methods
+    public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
+        // Coaching completed, user has scanned enough
     }
 }

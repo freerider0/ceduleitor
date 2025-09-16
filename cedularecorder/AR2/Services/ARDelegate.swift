@@ -19,8 +19,15 @@ class AR2Delegate: NSObject, ARSessionDelegate {
     }
 
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-        // Don't store planes automatically - wait for user interaction
-        // ARKit already tracks all planes internally
+        // Automatically store floor and ceiling planes for polygon visualization
+        for anchor in anchors {
+            if let planeAnchor = anchor as? ARPlaneAnchor {
+                // Store floor and ceiling planes automatically
+                if planeAnchor.classification == .floor || planeAnchor.classification == .ceiling {
+                    tracker?.addPlane(planeAnchor)
+                }
+            }
+        }
     }
 
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
